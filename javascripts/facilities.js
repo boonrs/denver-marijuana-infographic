@@ -8,28 +8,20 @@ $( document ).ready(function() {
 <!-- http://chartjs.devexpress.com/Demos/VizGallery/#chart/chartslineandpointseriesline -->
 function facilitiesLineGraph() {
   var dataSource = [
-    { year: 1950, europe: 546, americas: 332, africa: 227 },
-    { year: 1960, europe: 605, americas: 417, africa: 283 },
-    { year: 1970, europe: 656, americas: 513, africa: 361 },
-    { year: 1980, europe: 694, americas: 614, africa: 471 },
-    { year: 1990, europe: 721, americas: 721, africa: 623 },
-    { year: 2000, europe: 730, americas: 836, africa: 797 },
-    { year: 2010, europe: 728, americas: 935, africa: 982 },
-    { year: 2020, europe: 721, americas: 1027, africa: 1189 },
-    { year: 2030, europe: 704, americas: 1110, africa: 1416 },
-    { year: 2040, europe: 680, americas: 1178, africa: 1665 },
-    { year: 2050, europe: 650, americas: 1231, africa: 1937 }
+    { quarter: "Q1 2013", number: 12},
+    { quarter: "Q2 2013", number: 50},
+    { quarter: "Q3 2013", number: 52},
+    { quarter: "Q4 2013", number: 54},
+    { quarter: "Q1 2014", number: 110}
   ]; 
 
   $("#facilities-line").dxChart({
     dataSource: dataSource,
     commonSeriesSettings: {
-        argumentField: "year"
+        argumentField: "quarter"
     },
     series: [
-        { valueField: "europe", name: "Europe" },
-        { valueField: "americas", name: "Americas" },
-        { valueField: "africa", name: "Africa" }
+        { valueField: "number", name: "Number" }
     ],
     argumentAxis:{
         grid:{
@@ -39,7 +31,7 @@ function facilitiesLineGraph() {
     tooltip:{
         enabled: true
     },
-    title: "Historic, Current and Future Population",
+    title: "Number of Marijuana Facilities in Denver",
     legend: {
         verticalAlignment: "bottom",
         horizontalAlignment: "center"
@@ -56,21 +48,17 @@ function facilitiesLineGraph() {
 <!-- http://chartjs.devexpress.com/Demos/VizGallery/#chart/piesimpledoughnut -->
 function facilitiesDonut() {
   var dataSource = [
-    {region: "Asia", val: 4119626293},
-    {region: "Africa", val: 1012956064},
-    {region: "Northern America", val: 344124520},
-    {region: "Latin America and the Caribbean", val: 590946440},
-    {region: "Europe", val: 727082222},
-    {region: "Oceania", val: 35104756}
+    {type: "Recreational Retail Stores", val: 28},
+    {type: "Medical Centers", val: 28},
+    {type: "Grow Facilities", val: 28}
   ];
 
   $("#facilities-donut").dxPieChart({
     dataSource: dataSource,
-    title: "The Population of Continents and Regions",
+    title: "Types of Marijuana Facilities",
     tooltip: {
         enabled: true,
-        format:"millions",
-        percentPrecision: 2,
+        percentPrecision: 0,
         customizeText: function() { 
             return this.valueText + " - " + this.percentText;
         }
@@ -82,10 +70,9 @@ function facilitiesDonut() {
     },
     series: [{
         type: "doughnut",
-        argumentField: "region",
+        argumentField: "type",
         label: {
             visible: true,
-            format: "millions",
             connector: {
                 visible: true
             }
@@ -98,20 +85,18 @@ function facilitiesDonut() {
 function facilitiesBar() {
   $("#facilities-bar").dxChart({
     dataSource: [
-        {day: "Monday", oranges: 3},
-        {day: "Tuesday", oranges: 2},
-        {day: "Wednesday", oranges: 3},
-        {day: "Thursday", oranges: 4},
-        {day: "Friday", oranges: 6},
-        {day: "Saturday", oranges: 11},
-        {day: "Sunday", oranges: 4} ],
+        {quarter: "Q1 2013", employees: 3},
+        {quarter: "Q2 2013", employees: 2},
+        {quarter: "Q3 2013", employees: 3},
+        {quarter: "Q4 2013", employees: 4},
+        {quarter: "Q1 2014", employees: 6} ],
  
     series: {
-        argumentField: "day",
-        valueField: "oranges",
-        name: "My oranges",
+        argumentField: "quarter",
+        valueField: "employees",
+        name: "Employees",
         type: "bar",
-        color: '#ffa500'
+        color: 'white'
     }
   });
 }

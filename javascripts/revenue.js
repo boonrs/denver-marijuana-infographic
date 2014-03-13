@@ -7,26 +7,24 @@ $( document ).ready(function() {
 <!-- http://chartjs.devexpress.com/Demos/VizGallery/#chart/chartsareaseriesarea -->
 function revenueArea() {
   var dataSource = [
-    { country: "China", y014: 320866959, y1564: 853191410, y65: 87774113 },
-    { country: "India", y014: 340419115, y1564: 626520945, y65: 47063757 },
-    { country: "United States", y014: 58554755, y1564: 182172625, y65: 34835293 },
-    { country: "Indonesia", y014: 68715705, y1564: 146014815, y65: 10053690 },
-    { country: "Brazil", y014: 50278034, y1564: 113391494, y65: 9190842 },
-    { country: "Russia", y014: 26465156, y1564: 101123777, y65: 18412243 }
+    { quarter: "Q1 2013", recreational: 0, medical: 120000000 },
+    { quarter: "Q2 2013", recreational: 0, medical: 150000000 },
+    { quarter: "Q3 2013", recreational: 0, medical: 170000000},
+    { quarter: "Q4 2013", recreational: 0, medical: 199000000 },
+    { quarter: "Q1 2014", recreational: 500000000, medical: 400000000 }
   ];
 
   $("#revenue-area").dxChart({
     dataSource: dataSource,
     commonSeriesSettings: {
         type: "area",
-        argumentField: "country"
+        argumentField: "quarter"
     },
     series: [
-        { valueField: "y1564", name: "15-64 years" },
-        { valueField: "y014", name: "0-14 years" },
-        { valueField: "y65", name: "65 years and older" }
+        { valueField: "recreational", name: "Recreational" },
+        { valueField: "medical", name: "Medical" }
     ],
-    title: "Population: Age Structure (2000)",
+    title: "Marijuana Revenue in Denver",
     argumentAxis:{
         valueMarginsEnabled: false
     },
@@ -45,20 +43,14 @@ function revenueArea() {
 <!-- http://chartjs.devexpress.com/Demos/VizGallery/#chart/piecustomappearancedoughnutwithselection -->
 function revenueDonut() {
   var dataSource = [
-    { country: "USA", medals: 110 },
-    { country: "China", medals: 100 },
-    { country: "Russia", medals: 72 },
-    { country: "Britain", medals: 47 },
-    { country: "Australia", medals: 46 },
-    { country: "Germany", medals: 41 },
-    { country: "France", medals: 40 },
-    { country: "South Korea", medals: 31 }
+    { strain: "Medical", money: 109000000 },
+    { strain: "Recreational", money: 19000000}
   ];
 
   $("#revenue-donut").dxPieChart({
     dataSource: dataSource,
     palette: "Soft Pastel",
-    title: "Olympic Medals in 2008",
+    title: "Where Marijuana Revenue Came From",
     legend: {
         horizontalAlignment: "right",
         verticalAlignment: "top",
@@ -69,8 +61,8 @@ function revenueDonut() {
     },
     series: [{
       type: "doughnut",
-      argumentField: "country",
-      valueField: "medals",
+      argumentField: "strain",
+      valueField: "money",
       hoverStyle: {
         color: "#ffd700" 
       }

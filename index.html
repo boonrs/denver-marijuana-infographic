@@ -1,13 +1,12 @@
 ---
 layout: default
-title: Marijuana Indicators in Denver
+title: {{ site.name }}
 ---
 
-<div id="home">
-  <h1>Denver Marijuana Indicators</h1>
-
-  <div id="facilities">{% include facilities.html %}</div>
-  <div id="revenue">{% include revenue.html %}</div>
-  <div id="crime">{% include crime.html %}</div>
-  <div id="faq">{% include faq.html %}</div>
+<div id="home" class="container-fluid">  
+  <div id="titlePage" class="row-fluid">{% include title.html %}</div>
+  <div id="facilities" class="row-fluid">{% include facilities.html %}</div>
+  <div id="revenue" class="row-fluid">{% include revenue.html %}</div>
+  <div id="crime" class="row-fluid">{% include crime.html %}</div>
+  <div id="faq" class="row-fluid">{% include faq.html %}</div>
 </div>
