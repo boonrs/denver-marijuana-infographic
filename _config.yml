@@ -2,3 +2,7 @@ name: Marijuana Indicators in Denver
 timestamp: March 2014
 markdown: redcarpet
 pygments: true
+facilities: 
+  label:  "... marijuana facilities are currently running in the City and County of Denver"
+  description: "These include places where marijuana is grown and where it is sold, both recreationally and medically."
+
