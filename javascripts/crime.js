@@ -33,7 +33,7 @@ function crimeStacked() {
         horizontalAlignment: "center",
         itemTextPosition: "right"
     },
-    title: "Energy Consumption in 2004 (Millions of Tons, Oil Equivalent)",
+    title: "Criminal Offenses",
     tooltip: {
         enabled: true,
         customizeText: function () {
