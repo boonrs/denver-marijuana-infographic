@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>{{ page.title }}</title>
+        <meta name="viewport" content="width=device-width">
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/main.css">
+        <script type="text/javascript" src="javascripts/bootstrap.js "></script>
+        <script type="text/javascript" src="javascripts/DevExpressChartJS-13.2.7/globalize.min.js"></script>
+        <script type="text/javascript" src="javascripts/DevExpressChartJS-13.2.7/dx.chartjs.js"></script>
+        <script type="text/javascript" src="javascripts/crime.js "></script>
+        <script type="text/javascript" src="javascripts/facilities.js "></script>
+        <script type="text/javascript" src="javascripts/revenue.js "></script>
+        <script type="text/javascript" src="javascripts/faq.js "></script>
+    </head>
+
+    <body>
+      <nav id="potbar" class="navbar navbar-default navbar-static" role="navigation">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".potbar-scrollspy">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">{{ page.title }}</a>
+          </div>
+
+          <div class="collapse navbar-collapse potbar-scrollspy">
+            <ul class="nav navbar-nav">
+              <li><a href="#facilities">facilities</a></li>
+              <li><a href="#revenue">revenue</a></li>
+              <li><a href="#crime">crime</a></li>
+              <li><a href="#faq">faq</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <div data-spy="scroll" data-target="#potbar" data-offset="0" class="seeds-of-knowledge">
+        {{ content }}
+
+        <div class="footer">
+          <br />
+           <p>This interactive graphic is by the <b>2014 Code for America Fellows in Denver</b>. The data represented is taken from open data provided by the <b>City and County of Denver</b>.</p>
+           <p>You can find more open data at <a href="http://data.denvergov.org">http://data.denvergov.org</a> and read more about this project <a href="#">here</a>.
+          </div>
+        </div>
+      </div>
+
+    </body>
+
+</html>
