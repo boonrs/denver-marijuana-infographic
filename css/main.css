@@ -1,27 +1,208 @@
+/*todo
+
+navbar
+navbar-nav
+navbar-brand
+heading
+footer
+content-container
+h3
+body
+big-number
+normal-text
+
+*/
+
+
+/* Master Styles */
+
 body {
-	color: white;
-	background-color: #8BBF3F;
-  font-family: "Times New Roman";
+  color: white;
+  background-color: #8CC63F;
+
 }
-h2 {
-	font-size: 50px;
-	margin-left: -20px;
-	margin-right: -20px;
-	padding-top: 15px;
-	padding-bottom: 15px;
-	padding-left: 20px;
-	background-color: #59A536;
+
+.jumbotron { background-color: #8CC63F;}
+
+.row {margin-bottom: 50px;}
+
+/*Add Media Query for Mobile*/
+.container {   margin-top: 200px;}
+
+.big-number {
+  font-family: "HelveticaNeue-Bold", "Helvetica Neue Bold", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+  font-size: 10em;
+  text-align: center;
 }
+
+.block {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+ 
+.block:before {
+  content: '';
+  display: inline-block;
+  height: 100%; 
+  vertical-align: middle;
+  margin-right: -0.25em; /* Adjusts for spacing */
+    
+ }
+
+
+ 
+.centered {
+  display: inline-block;
+  vertical-align: middle;
+  padding: 10px 0px;
+
+ }
+
+
+
+/*h2 {
+  font-size: 50px;
+  margin-left: -20px;
+  margin-right: -20px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 20px;
+  background-color: #57B239;
+}*/
+
+
+
+
+
+/* Fluid Containers */
+/*
+.content-container {
+  width: 75%;
+
+  height: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid grey;
+}
+
+
+
+.two-thirds {
+  display: block;
+  float:left;
+  width: 66.66%;
+  border: 1px solid grey;
+  padding-left: 20px;
+
+}
+
+.one-third {
+  display: block;
+  float:left;
+  width: 33.33%;
+  border: 1px solid grey;
+
+}
+
+.full {
+  display: block;
+  float: left;
+  width:100%;
+  border: 1px solid grey;
+}
+
+
+.half {
+  display: block;
+  float:left;
+  width: 50%;
+  height: 500px;  
+  background-color: green; 
+}
+
+*/
+
+/*.center {
+  margin-left: auto;
+  margin-right: auto; 
+}*/
+
+/*.heading {
+  background-color: #57B239;
+  font-family: "HelveticaNeue-Bold", "Helvetica Neue Bold", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+  font-size: 1.2em;
+  padding-left: 15px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}*/
+
+
+
+/* Title Page */
+
+
+/*#title {
+  font-family: "HelveticaNeue-Bold", "Helvetica Neue Bold", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+  padding-top: 150px;
+  font-size: 2.5em;
+  text-align: center;
+  width: 
+
+}*/
+
+
+/*
+#subtitle {
+  width: 50%;
+  padding-top: 20px;
+  font-size: 1em;
+  text-align: center;
+
+}
+*/
+
+
+
+
+/*#last-update {
+  padding-top: 20px;
+  font-size: .8em;
+  font-style: italic;
+  text-align: center;
+}
+*/
+
+/* Statistics */
+/*
+.big-number {
+  font-family: "HelveticaNeue-Bold", "Helvetica Neue Bold", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+  font-size: 10em;
+  text-align: center;
+}
+
+.stat-title {
+  font-family: "HelveticaNeue-Bold", "Helvetica Neue Bold", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+  width: 80%;
+}
+
+.stat-subtitle {
+  padding-left: 
+}
+*/
+
+
+
 
 .footer {
 	background-color: white;
 	color: black;
+  display:none;
 }
 
 .navbar-default {
   color: white;
-	background-color: #59A536;
-	border-color: #59A536;
+	background-color: #57B239;
+	border-color: #57B239;
 }
 /* title */
 .navbar-default .navbar-brand {
