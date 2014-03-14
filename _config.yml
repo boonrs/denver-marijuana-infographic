@@ -9,3 +9,6 @@ revenue:
   label: "... has been made in tax revenue from marijuana industry since "
   start: 2010
   description: "This does not represent the amount of money spent on marijuana in Denver."
+crime:
+  label: "... marijuana related crimes have been reported this year."
+  description: "Crimes can be criminal or non criminal."
