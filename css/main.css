@@ -27,7 +27,7 @@ body {
 .row {margin-bottom: 50px;}
 
 /*Add Media Query for Mobile*/
-.container {   margin-top: 200px;}
+/*.container {   margin-top: 200px;}*/
 
 .big-number {
   font-family: "HelveticaNeue-Bold", "Helvetica Neue Bold", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
@@ -191,22 +191,28 @@ body {
 */
 
 
+.full-width {width: 100%;}
+.half-width {width: 50%;}
 
-
+.icon-description {
+  padding-top: 20px;
+}
 .footer {
 	background-color: white;
 	color: black;
-  display:none;
+  /*display:none;*/
 }
 
 .navbar-default {
   color: white;
 	background-color: #57B239;
 	border-color: #57B239;
+  border-radius: 0;
 }
 /* title */
 .navbar-default .navbar-brand {
     color: white;
+    font-weight: 500;
 }
 .navbar-default .navbar-brand:hover,
 .navbar-default .navbar-brand:focus {
