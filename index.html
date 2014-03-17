@@ -3,10 +3,165 @@ layout: default
 title: {{ site.name }}
 ---
 
-<div id="home" class="container-fluid">  
-  <div id="titlePage" class="row-fluid">{% include title.html %}</div>
-  <div id="facilities" class="row-fluid">{% include facilities.html %}</div>
+
+
+	<div class="row">
+		<div class="col-sm-8 col-sm-offset-2">
+
+		<div class="jumbotron">
+	    	<div class="row">
+		    	<div class="col-sm-2"><img class="img-circle" src="http://placehold.it/100"></div>
+		    	<div class="col-sm-10">
+		        	
+			        	<h1>Marijuana Indicators in Denver</h1>
+			        	<p class="lead">The information presented here is a representation of Open Data provided by the City and County of Denver.</p>
+			        	<p class="small">Last updated:</p>
+		        </div>
+	        </div>
+        </div>
+
+
+
+		<div class="section-block">
+			<div class="row">
+				<div class="col-sm-4 text-center"><span class="big-number">97</span></div>
+				<div class="col-sm-8">
+					<div class="block" style="height: 100%;">
+					<div class="centered">
+					  	<strong>... marijuana facilities are currently running in the City and County Denver.</strong>
+						These include places where marijuana is grown and where it is sold, both recreationally and medically.
+					</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-12 text-center">
+					<div id="facilities-line" class="full-width-image"></div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12 text-center">
+					<div id="facilities-donut" class="full-width-image"></div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-sm-4 text-center">
+					<div><img class="img-circle half-width-image" src="http://placehold.it/100&text=Money"></div>
+					<div class="icon-description">Recreational Retail Stores</div>
+				</div>
+				
+				<div class="col-sm-4 text-center">
+					<div><img class="img-circle half-width-image" src="http://placehold.it/100&text=Caduceus"></div>
+					<div class="icon-description">Medical Centers</div>
+				</div>
+				
+				<div class="col-sm-4 text-center">
+					<div><img class="img-circle half-width-image" src="http://placehold.it/100&text=MJ"></div>
+					<div class="icon-description">Grow Facilities</div>
+				</div>
+				
+			</div>
+		</div>
+
+		<div class="row">
+		<!-- 3/1/4 -->
+			<div class="col-md-6">
+				<div class="block" style="height: 100%;">
+					<div class="centered">
+						In addition to adding revenue, the Marijuana Industry has created new jobs. An employee here means anyone who works in a Marijuana Facility.
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div id="facilities-bar" class="full-width-image"></div>
+			</div>
+		</div>
+
+		<div class="section-block">
+			<div class="row">
+				<div class="col-md-4 big-number text-center">$160M</div>
+				<div class="col-md-8">
+					<div class="block" style="height: 100%;">
+					  	<strong>... has been made in tax revenue from marijuana industry since 2010.</strong>
+						This does not represent the ammount of money spent on marijuana in Denver.
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-12 text-center">
+					<div id="revenue-area" class="full-width-image"></div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-6">
+					<div id="revenue-donut" class="full-width-image"></div>
+				</div>
+				<div class="col-md-6" style="padding-top:10%;">
+					"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+				</div>
+			</div>
+		</div>
+
+		<div class="section-block">
+			<div class="row">
+				<div class="col-md-4 text-center big-number">160</div>
+					<div class="col-md-8">
+						<div class="block" style="height: 100%;">
+						  	<strong>... marijuana related crimes have been reported this year.</strong>
+							These crimes can be criminal or non criminal.
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-8">
+					<div id="crime-stacked" class="full-width-image"></div>
+				</div>
+				<div class="col-md-4" style="padding-top:20%;">
+				<img class="img-circle full-width-image" src="http://placehold.it/200&text=Handcuffs">
+					<br><br>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-4">
+					<img class="img-circle full-width-image" src="http://placehold.it/200&text=SpeechBubble">
+					<br><br>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+				</div>
+				<div class="col-md-8">
+					<img class="full-width-image" src="http://placehold.it/550x400&text=This is a Chart">
+				</div>
+
+			</div>
+
+
+
+		<div class="section-block">
+			<div class="row">
+				<div class="col-md-12">
+					<div id="faq" class="row">{% include faq.html %}</div>
+				</div>
+			</div>
+		</div>
+	</div>
+		
+	</div>
+
+
+
+
+
+  <!-- <div style="height:1000px;">Clearing!</div> -->
+
+<!--   <div id="facilities" class="row-fluid">{% include facilities.html %}</div>
   <div id="revenue" class="row-fluid">{% include revenue.html %}</div>
-  <div id="crime" class="row-fluid">{% include crime.html %}</div>
-  <div id="faq" class="row-fluid">{% include faq.html %}</div>
-</div>
+  <div id="crime" class="row-fluid">{% include crime.html %}</div> -->
+  <!-- <div id="faq" class="row-fluid">{% include faq.html %}</div> -->
+<!-- </div> -->
