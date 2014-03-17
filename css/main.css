@@ -29,11 +29,8 @@ body {
 /*Add Media Query for Mobile*/
 /*.container {   margin-top: 200px;}*/
 
-.big-number {
-  font-family: "HelveticaNeue-Bold", "Helvetica Neue Bold", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
-  font-size: 10em;
-  text-align: center;
-}
+
+/*Center Content Vertically*/
 
 .block {
   margin-top: 40px;
@@ -50,7 +47,6 @@ body {
  }
 
 
- 
 .centered {
   display: inline-block;
   vertical-align: middle;
@@ -59,148 +55,28 @@ body {
  }
 
 
+/* Useful Classes */
 
-/*h2 {
-  font-size: 50px;
-  margin-left: -20px;
-  margin-right: -20px;
-  padding-top: 15px;
-  padding-bottom: 15px;
-  padding-left: 20px;
-  background-color: #57B239;
-}*/
+.full-width-image {width: 100%;}
+.half-width-image {width: 50%;}
 
+/* Project-Specific */
 
-
-
-
-/* Fluid Containers */
-/*
-.content-container {
-  width: 75%;
-
-  height: 500px;
-  margin-left: auto;
-  margin-right: auto;
-  border: 1px solid grey;
-}
-
-
-
-.two-thirds {
-  display: block;
-  float:left;
-  width: 66.66%;
-  border: 1px solid grey;
-  padding-left: 20px;
-
-}
-
-.one-third {
-  display: block;
-  float:left;
-  width: 33.33%;
-  border: 1px solid grey;
-
-}
-
-.full {
-  display: block;
-  float: left;
-  width:100%;
-  border: 1px solid grey;
-}
-
-
-.half {
-  display: block;
-  float:left;
-  width: 50%;
-  height: 500px;  
-  background-color: green; 
-}
-
-*/
-
-/*.center {
-  margin-left: auto;
-  margin-right: auto; 
-}*/
-
-/*.heading {
-  background-color: #57B239;
-  font-family: "HelveticaNeue-Bold", "Helvetica Neue Bold", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
-  font-size: 1.2em;
-  padding-left: 15px;
+.icon-description {
   padding-top: 20px;
-  padding-bottom: 20px;
-}*/
-
-
-
-/* Title Page */
-
-
-/*#title {
-  font-family: "HelveticaNeue-Bold", "Helvetica Neue Bold", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
-  padding-top: 150px;
-  font-size: 2.5em;
-  text-align: center;
-  width: 
-
-}*/
-
-
-/*
-#subtitle {
-  width: 50%;
-  padding-top: 20px;
-  font-size: 1em;
-  text-align: center;
-
 }
-*/
 
-
-
-
-/*#last-update {
-  padding-top: 20px;
-  font-size: .8em;
-  font-style: italic;
-  text-align: center;
-}
-*/
-
-/* Statistics */
-/*
 .big-number {
   font-family: "HelveticaNeue-Bold", "Helvetica Neue Bold", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
   font-size: 10em;
   text-align: center;
 }
 
-.stat-title {
-  font-family: "HelveticaNeue-Bold", "Helvetica Neue Bold", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
-  width: 80%;
-}
+/* Chrome */
 
-.stat-subtitle {
-  padding-left: 
-}
-*/
-
-
-.full-width {width: 100%;}
-.half-width {width: 50%;}
-
-.icon-description {
-  padding-top: 20px;
-}
 .footer {
 	background-color: white;
 	color: black;
-  /*display:none;*/
 }
 
 .navbar-default {
@@ -209,6 +85,7 @@ body {
 	border-color: #57B239;
   border-radius: 0;
 }
+
 /* title */
 .navbar-default .navbar-brand {
     color: white;
