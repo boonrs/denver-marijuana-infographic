@@ -6,10 +6,18 @@ A simple overview of Denver marijuana data.
 
 ## Installation, Usage  
 
-1. [Check if there are new bundles][bundle]
-2. [Get Jekyll to watch your build][jekyll build --watch]
-3. [Stage the files you've updated][git add {some file}]
-4. [Commit the staged files][git commit -m "{some explanation}"]
+1. Check if there are new libraries, using this syntax:
+
+` bundle `
+
+if you get an error, make sure you have bundler installed:
+` gem install bundler `
+
+2. Get Jekyll to watch your build
+
+` jekyll build --watch `
+
+3. Use git normally, stage changes, commit, pull request, etc.
 
 
 
@@ -30,4 +38,3 @@ We use the GitHub issue tracker to track bugs and features. Before submitting a 
 # License
 See the [LICENSE][] for details.  
 [license]: https://github.com/boonrs/denver-marijuana-data/blob/master/LICENSE
-
