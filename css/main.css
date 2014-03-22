@@ -36,14 +36,14 @@ body {
   margin-top: 40px;
   margin-bottom: 40px;
 }
- 
+
 .block:before {
   content: '';
   display: inline-block;
-  height: 100%; 
+  height: 100%;
   vertical-align: middle;
   margin-right: -0.25em; /* Adjusts for spacing */
-    
+
  }
 
 
@@ -67,7 +67,7 @@ body {
 }
 
 .big-number {
-  font-family: "HelveticaNeue-Bold", "Helvetica Neue Bold", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+  font-family: "HelveticaNeue-Bold", "Helvetica Neue Bold", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-size: 10em;
   text-align: center;
 }
@@ -77,6 +77,7 @@ body {
 .footer {
 	background-color: white;
 	color: black;
+  padding:50px 50px 25px 25px;
 }
 
 .navbar-default {
@@ -103,14 +104,14 @@ body {
 .navbar-default .navbar-nav > li > a:focus {
     color: white;
 }
-.navbar-default .navbar-nav > .active > a, 
-.navbar-default .navbar-nav > .active > a:hover, 
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus {
     color: white;
     background-color: #8BBF3F;
 }
-.navbar-default .navbar-nav > .open > a, 
-.navbar-default .navbar-nav > .open > a:hover, 
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
 .navbar-default .navbar-nav > .open > a:focus {
     color: white;
     background-color: #8BBF3F;
@@ -125,8 +126,8 @@ body {
     border-top-color: #333;
     border-bottom-color: #333;
 }
-.navbar-default .navbar-nav > .open > a .caret, 
-.navbar-default .navbar-nav > .open > a:hover .caret, 
+.navbar-default .navbar-nav > .open > a .caret,
+.navbar-default .navbar-nav > .open > a:hover .caret,
 .navbar-default .navbar-nav > .open > a:focus .caret {
     border-top-color: #555;
     border-bottom-color: #555;
@@ -136,6 +137,7 @@ body {
   display: block;
   overflow: scroll;
   width: 100%;
-  height: 600px;
 }
-
+.faq-area {
+  width:100%;
+}
