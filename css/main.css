@@ -1,17 +1,4 @@
-/*todo
 
-navbar
-navbar-nav
-navbar-brand
-heading
-footer
-content-container
-h3
-body
-big-number
-normal-text
-
-*/
 
 
 /* Master Styles */
@@ -20,6 +7,11 @@ body {
   color: white;
   background-color: #8CC63F;
 
+}
+
+#sidebar {
+  display:block; 
+  float: left;
 }
 
 .jumbotron { background-color: #8CC63F;}
@@ -75,15 +67,46 @@ body {
 /* Chrome */
 
 .footer {
+  width: 100%;
 	background-color: white;
 	color: black;
+  height: 100%;
+
 }
 
 .navbar-default {
   color: white;
-	background-color: #57B239;
-	border-color: #57B239;
+	background-color: #8CC63F;
+	margin: 0;
   border-radius: 0;
+  border:none;
+}
+
+.navbar-default .navbar-toggle {
+  border-color: white;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: white;
+}
+
+
+.navbar-default .navbar-toggle:hover {
+  background-color: white;
+  -o-transition:.2s;
+    -ms-transition:.2s;
+    -moz-transition:.2s;
+    -webkit-transition:.2s;
+    transition:.2s;
+}
+
+.navbar-default .navbar-toggle:hover .icon-bar{
+  background-color: #8CC63F;
+  -o-transition:.2s;
+  -ms-transition:.2s;
+  -moz-transition:.2s;
+  -webkit-transition:.2s;
+  transition:.2s;
 }
 
 /* title */
@@ -102,18 +125,24 @@ body {
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
     color: white;
+    opacity:0.5;
+    -o-transition:.2s;
+    -ms-transition:.2s;
+    -moz-transition:.2s;
+    -webkit-transition:.2s;
+    transition:.2s;
 }
 .navbar-default .navbar-nav > .active > a, 
 .navbar-default .navbar-nav > .active > a:hover, 
 .navbar-default .navbar-nav > .active > a:focus {
-    color: white;
-    background-color: #8BBF3F;
+    color: #8CC63F;
+    background-color: white;
 }
 .navbar-default .navbar-nav > .open > a, 
 .navbar-default .navbar-nav > .open > a:hover, 
 .navbar-default .navbar-nav > .open > a:focus {
-    color: white;
-    background-color: #8BBF3F;
+    color: #8CC63F;
+    background-color: white;
 }
 /* caret */
 .navbar-default .navbar-nav > .dropdown > a .caret {
@@ -132,10 +161,116 @@ body {
     border-bottom-color: #555;
 }
 
-.seeds-of-knowledge {
-  display: block;
-  overflow: scroll;
+/*Pin the top nav to the top while scrolling*/
+.navbar-default {
+  position:fixed;
+  left:0px;
+  top:0px;
+  z-index: 1;
   width: 100%;
-  height: 600px;
 }
+
+
+/*
+ * Side navigation
+ *
+ * Scrollspy and affixed enhanced navigation to highlight sections and secondary
+ * sections of docs content.
+ */
+
+/* By default it's not affixed in mobile views, so undo that */
+.bs-sidebar.affix {
+  position: static;
+}
+
+#sidebar h3 {
+  padding-left: 5px;
+}
+
+/* First level of nav */
+.bs-sidenav {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  padding-top:    10px;
+  padding-bottom: 10px;
+  text-shadow: 0 1px 0 #fff;
+  background-color: #f7f5fa;
+  border-radius: 5px;
+}
+
+/* All levels of nav */
+.bs-sidebar .nav > li > a {
+  display: block;
+  color: #4d4d4d;
+  padding: 5px 20px;
+}
+.bs-sidebar .nav > li > a:hover,
+.bs-sidebar .nav > li > a:focus {
+  text-decoration: none;
+  background-color: #8CC63F;
+  color: white;
+  text-shadow: none;
+}
+.bs-sidebar .nav > .active > a,
+.bs-sidebar .nav > .active:hover > a,
+.bs-sidebar .nav > .active:focus > a {
+  font-weight: bold;
+  color: #8CC63F;
+  text-shadow: none;
+  border-left: 2px solid #8CC63F;
+}
+
+.bs-sidebar .nav > .active:hover > a {
+  color:white;
+}
+
+/* Nav: second level (shown on .active) */
+.bs-sidebar .nav .nav {
+  display: none; /* Hide by default, but at >768px, show it */
+  margin-bottom: 8px;
+}
+.bs-sidebar .nav .nav > li > a {
+  padding-top:    3px;
+  padding-bottom: 3px;
+  padding-left: 30px;
+  font-size: 90%;
+}
+
+.affix-top,.affix{
+  position: static;
+}
+
+
+
+
+/* Show and affix the side nav when space allows it */
+@media (min-width: 992px) {
+  .bs-sidebar .nav > .active > ul {
+    display: block;
+  }
+  /* Widen the fixed sidebar */
+  .bs-sidebar.affix,
+  .bs-sidebar.affix-bottom {
+    width: 213px;
+  }
+  .bs-sidebar.affix {
+    position: fixed; /* Undo the static from mobile first approach */
+  }
+  .bs-sidebar.affix-bottom {
+    position: absolute; /* Undo the static from mobile first approach */
+  }
+  .bs-sidebar.affix-bottom .bs-sidenav,
+  .bs-sidebar.affix .bs-sidenav {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+@media (min-width: 1200px) {
+  /* Widen the fixed sidebar again */
+  .bs-sidebar.affix-bottom,
+  .bs-sidebar.affix {
+    width: 263px;
+  }
+}
+
 
