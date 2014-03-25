@@ -1,27 +1,24 @@
 
 $( document ).ready(function() {
-  facilitiesLineGraph();
-  facilitiesDonut();
-  facilitiesBar();
+  facilitiesCount(facilities.total);
+  facilitiesLineGraph(facilities.over_time);
+  facilitiesDonut(facilities.types);
+  facilitiesBar(facilities.employees);
 });
 
-<!-- http://chartjs.devexpress.com/Demos/VizGallery/#chart/chartslineandpointseriesline -->
-function facilitiesLineGraph() {
-  var dataSource = [
-    { quarter: "Q1 2013", number: 12},
-    { quarter: "Q2 2013", number: 50},
-    { quarter: "Q3 2013", number: 52},
-    { quarter: "Q4 2013", number: 54},
-    { quarter: "Q1 2014", number: 110}
-  ]; 
+function facilitiesCount(count) {
+  $("#facilities-number").text(count);
+}
 
+<!-- http://chartjs.devexpress.com/Demos/VizGallery/#chart/chartslineandpointseriesline -->
+function facilitiesLineGraph(over_time) {
   $("#facilities-line").dxChart({
-    dataSource: dataSource,
+    dataSource: over_time.data,
     commonSeriesSettings: {
-        argumentField: "quarter"
+        argumentField: over_time.argument
     },
     series: [
-        { valueField: "number", name: "Number" }
+        { valueField: over_time.value, name: over_time.value_name }
     ],
     argumentAxis:{
         grid:{
@@ -31,7 +28,7 @@ function facilitiesLineGraph() {
     tooltip:{
         enabled: true
     },
-    title: "Number of Marijuana Facilities in Denver",
+    title: over_time.title,
     legend: {
         verticalAlignment: "bottom",
         horizontalAlignment: "center"
@@ -46,16 +43,10 @@ function facilitiesLineGraph() {
 }
 
 <!-- http://chartjs.devexpress.com/Demos/VizGallery/#chart/piesimpledoughnut -->
-function facilitiesDonut() {
-  var dataSource = [
-    {type: "Recreational Retail Stores", val: 28},
-    {type: "Medical Centers", val: 28},
-    {type: "Grow Facilities", val: 28}
-  ];
-
+function facilitiesDonut(types) {
   $("#facilities-donut").dxPieChart({
-    dataSource: dataSource,
-    title: "Types of Marijuana Facilities",
+    dataSource: types.data,
+    title: types.title,
     tooltip: {
         enabled: true,
         percentPrecision: 0,
@@ -70,7 +61,7 @@ function facilitiesDonut() {
     },
     series: [{
         type: "doughnut",
-        argumentField: "type",
+        argumentField: types.argument,
         label: {
             visible: true,
             connector: {
@@ -82,19 +73,14 @@ function facilitiesDonut() {
 }
 
 <!-- http://chartjs.devexpress.com/Demos/VizGallery/#chart/chartsbarseriessimplestsingle -->
-function facilitiesBar() {
+function facilitiesBar(employees) {
   $("#facilities-bar").dxChart({
-    dataSource: [
-        {quarter: "Q1 2013", employees: 3},
-        {quarter: "Q2 2013", employees: 2},
-        {quarter: "Q3 2013", employees: 3},
-        {quarter: "Q4 2013", employees: 4},
-        {quarter: "Q1 2014", employees: 6} ],
- 
+    dataSource: employees.data,
+    title: employees.title,
     series: {
-        argumentField: "quarter",
-        valueField: "employees",
-        name: "Employees",
+        argumentField: employees.argument,
+        valueField: employees.value,
+        name: employees.value_name,
         type: "bar",
         color: 'white'
     }
