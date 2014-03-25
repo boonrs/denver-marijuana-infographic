@@ -1,0 +1,46 @@
+var revenue  = {
+  "total": 160000000,
+  "over_time": {
+    "title": "Marijuana Revenue in Denver",
+    "argument": "quarter",
+    "value_label": "millions",
+    "value1": "recreational",
+    "value1_name": "Recreational",
+    "value2": "medical",
+    "value_name": "facilities",
+    "value2_name": "Facilities",
+    "argument": "quarter",
+    "data": [
+      { quarter: "Q1 2013", recreational: 0, medical: 120000000 },
+      { quarter: "Q2 2013", recreational: 0, medical: 150000000 },
+      { quarter: "Q3 2013", recreational: 0, medical: 170000000},
+      { quarter: "Q4 2013", recreational: 0, medical: 199000000 },
+      { quarter: "Q1 2014", recreational: 500000000, medical: 400000000 }
+    ]
+  },
+  "types": {
+    "title": "Where Marijuana Revenue Came From",
+    "argument": "strain",
+    "value": "money",
+    "data": [
+      { strain: "Medical", money: 109000000 },
+      { strain: "Recreational", money: 19000000}
+    ]
+  },
+  "employees": {
+    "title": "Employees",
+    "argument": "quarter",
+    "value": "employees",
+    "value_name": "Employees",
+    "data": [
+      {quarter: "Q1 2012", employees: 1214},
+      {quarter: "Q2 2012", employees: 1235},
+      {quarter: "Q3 2012", employees: 1299},
+      {quarter: "Q4 2012", employees: 1531},
+      {quarter: "Q1 2013", employees: 1645},
+      {quarter: "Q2 2013", employees: 1754},
+      {quarter: "Q3 2013", employees: 1818},
+      {quarter: "Q4 2013", employees: 1589}
+    ]
+  }
+};

@@ -1,36 +1,34 @@
 
 $( document ).ready(function() {
-  revenueArea();
-  revenueDonut();
+  revenueCount(revenue.total);
+  revenueArea(revenue.over_time);
+  revenueDonut(revenue.types);
 });
 
+function revenueCount(count) {
+  $("#revenue-number").text(count);
+}
+
 <!-- http://chartjs.devexpress.com/Demos/VizGallery/#chart/chartsareaseriesarea -->
-function revenueArea() {
-  var dataSource = [
-    { quarter: "Q1 2013", recreational: 0, medical: 120000000 },
-    { quarter: "Q2 2013", recreational: 0, medical: 150000000 },
-    { quarter: "Q3 2013", recreational: 0, medical: 170000000},
-    { quarter: "Q4 2013", recreational: 0, medical: 199000000 },
-    { quarter: "Q1 2014", recreational: 500000000, medical: 400000000 }
-  ];
+function revenueArea(over_time) {
 
   $("#revenue-area").dxChart({
-    dataSource: dataSource,
+    dataSource: over_time.data,
     commonSeriesSettings: {
         type: "area",
-        argumentField: "quarter"
+        argumentField: over_time.argument
     },
     series: [
-        { valueField: "recreational", name: "Recreational" },
-        { valueField: "medical", name: "Medical" }
+        { valueField: over_time.value1, name: over_time.value1_name },
+        { valueField: over_time.value2, name: over_time.value2_name }
     ],
-    title: "Marijuana Revenue in Denver",
+    title: over_time.title,
     argumentAxis:{
         valueMarginsEnabled: false
     },
   valueAxis:{
     label: {
-      format: "millions"
+      format: over_time.value_label
     }
   },
     legend: {
@@ -41,16 +39,11 @@ function revenueArea() {
 }
 
 <!-- http://chartjs.devexpress.com/Demos/VizGallery/#chart/piecustomappearancedoughnutwithselection -->
-function revenueDonut() {
-  var dataSource = [
-    { strain: "Medical", money: 109000000 },
-    { strain: "Recreational", money: 19000000}
-  ];
-
+function revenueDonut(types) {
   $("#revenue-donut").dxPieChart({
-    dataSource: dataSource,
+    dataSource: types.data,
     palette: "Soft Pastel",
-    title: "Where Marijuana Revenue Came From",
+    title: types.title,
     legend: {
         horizontalAlignment: "right",
         verticalAlignment: "top",
@@ -61,8 +54,8 @@ function revenueDonut() {
     },
     series: [{
       type: "doughnut",
-      argumentField: "strain",
-      valueField: "money",
+      argumentField: types.argument,
+      valueField: types.value,
       hoverStyle: {
         color: "#ffd700" 
       }
