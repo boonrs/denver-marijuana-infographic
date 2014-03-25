@@ -1,0 +1,27 @@
+var crime  = {
+  "total": 160,
+  "offenses": {
+    "title": "Criminal Offenses",
+    "argument": "quarter",
+    "value_label": "crimes",
+    "value1": "consumption",
+    "value1_name": "Public Consumption Tickets",
+    "value2": "industry",
+    "value2_name": "Industry Related Crimes",
+    "value3": "nonindustry",
+    "value3_name": "Non-Industry Related Crimes",
+    "value4": "incidentally",
+    "value4_name": "Incidentally Related Crimes",
+    "argument": "quarter",
+    "data": [ 
+      { quarter: "Q1 2012", consumption: 59.8, industry: 937.6, nonindustry: 582, incidentally: 564.3 },
+      { quarter: "Q2 2012", consumption: 74.2, industry: 308.6, nonindustry: 35.1, incidentally: 956.9 },
+      { quarter: "Q3 2012", consumption: 40, industry: 128.5, nonindustry: 361.8, incidentally: 105 },
+      { quarter: "Q4 2012", consumption: 22.6, industry: 241.5, nonindustry: 64.9, incidentally: 120.8 },
+      { quarter: "Q1 2013", consumption: 19, industry: 119.3, nonindustry: 28.9, incidentally: 204.8 },
+      { quarter: "Q2 2013", consumption: 6.1, industry: 123.6, nonindustry: 77.3, incidentally: 85.7 },
+      { quarter: "Q3 2013", consumption: 19, industry: 119.3, nonindustry: 28.9, incidentally: 204.8 },
+      { quarter: "Q4 2013", consumption: 6.1, industry: 123.6, nonindustry: 77.3, incidentally: 85.7 }
+    ]
+  }
+};
