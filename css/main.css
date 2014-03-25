@@ -1,17 +1,4 @@
-/*todo
 
-navbar
-navbar-nav
-navbar-brand
-heading
-footer
-content-container
-h3
-body
-big-number
-normal-text
-
-*/
 
 
 /* Master Styles */
@@ -83,7 +70,8 @@ body {
   width: 100%;
 	background-color: white;
 	color: black;
-  height: 100px;
+  height: 100%;
+
 }
 
 .navbar-default {
@@ -173,6 +161,14 @@ body {
     border-bottom-color: #555;
 }
 
+/*Pin the top nav to the top while scrolling*/
+.navbar-default {
+  position:fixed;
+  left:0px;
+  top:0px;
+  z-index: 1;
+  width: 100%;
+}
 
 
 /*
@@ -211,16 +207,21 @@ body {
 .bs-sidebar .nav > li > a:hover,
 .bs-sidebar .nav > li > a:focus {
   text-decoration: none;
-  background-color: #e5e3e9;
-  border-right: 1px solid #dbd8e0;
+  background-color: #8CC63F;
+  color: white;
+  text-shadow: none;
 }
 .bs-sidebar .nav > .active > a,
 .bs-sidebar .nav > .active:hover > a,
 .bs-sidebar .nav > .active:focus > a {
   font-weight: bold;
   color: #8CC63F;
-  background-color: transparent;
-  border-right: 1px solid #4d4d4d;
+  text-shadow: none;
+  border-left: 2px solid #8CC63F;
+}
+
+.bs-sidebar .nav > .active:hover > a {
+  color:white;
 }
 
 /* Nav: second level (shown on .active) */
@@ -238,6 +239,10 @@ body {
 .affix-top,.affix{
   position: static;
 }
+
+
+
+
 /* Show and affix the side nav when space allows it */
 @media (min-width: 992px) {
   .bs-sidebar .nav > .active > ul {
