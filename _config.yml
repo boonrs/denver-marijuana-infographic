@@ -5,4 +5,7 @@ pygments: true
 facilities: 
   label:  "... marijuana facilities are currently running in the City and County of Denver"
   description: "These include places where marijuana is grown and where it is sold, both recreationally and medically."
-
+revenue:  
+  label: "... has been made in tax revenue from marijuana industry since "
+  start: 2010
+  description: "This does not represent the amount of money spent on marijuana in Denver."
