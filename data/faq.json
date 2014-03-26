@@ -1,0 +1,46 @@
+var faq  = {
+  "total": 255,
+  "questions": {
+    "title": "Top 311 Questions about Marijuana in Denver",
+    "data": [
+      {question: "How many licenses are there for marijuana groups?", answer: ""},
+      {question: "How do I find out more information in regards to MJ Inspections?", answer: ""},
+      {question: "What licenses are required to start a marijuana business?", answer: ""},
+      {question: "What are the zoning requirements for starting a marijuana center?", answer: ""},
+      {question: "What qualifies as medical marijuana edibles and strains?", answer: ""},
+      {question: "How do I file a complaint related to marijuana?", answer: ""},
+      {question: "Can I place my marijuana facility in a certain location?", answer: ""}
+    ]
+  },
+  "cases": {
+    "title": "311 Calls",
+    "argument": "quarter",
+    "series_label": "crimes",
+    "series1": "marijuana_dispensery",
+    "series1_name": "marijuana_dispensery",
+    "series2": "edible_requirements",
+    "series2_name": "Env Health requirements and regulations for medical marijuana edibles operations   ",
+    "series3": "edible_complaints",
+    "series3_name": "Medical marijuana edibles or food complaint",
+    "series4": "inspection_schedule",
+    "series4_name": "Schedule a Marijuana Zoning Inspection",
+    "series5": "carryon",
+    "series5_name": "Carryon item - medical marijuana",
+    "series6": "inspections",
+    "series6_name": "Marijuana Inspections",
+    "series7": "sign_off",
+    "series7_name": "Medical Marijuana Dispensary Sign Off",
+
+    "data": [ 
+      { quarter: "2012 Q1", marijuana_dispensery: 60, edible_requirements: 3, edible_complaints:  2 },
+      { quarter: "2012 Q2", marijuana_dispensery: 66, inspection_schedule: 5, edible_requirements: 3, carryon: 1 },
+      { quarter: "2012 Q3", marijuana_dispensery: 47, inspection_schedule: 40, edible_requirements: 6, sign_off:  1  },
+      { quarter: "2012 Q4", inspection_schedule: 112, marijuana_dispensery: 100, edible_requirements: 14  },
+      { quarter: "2013 Q1", marijuana_dispensery: 103, inspection_schedule: 90, edible_requirements: 5 },
+      { quarter: "2013 Q2", marijuana_dispensery: 78, inspection_schedule: 42, edible_requirements: 3, carryon:  1  },
+      { quarter: "2013 Q3", marijuana_dispensery: 176, inspection_schedule: 147, edible_requirements: 16, edible_complaints:  1  },
+      { quarter: "2013 Q4", inspection_schedule: 237, marijuana_dispensery: 195, sign_off:  91, edible_requirements: 23, edible_complaints:  1 },
+      { quarter: "2014 Q1", inspection_schedule: 123, marijuana_dispensery: 116, sign_off, cases:  76, edible_requirements: 3 }
+    ]
+  }
+};
