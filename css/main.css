@@ -170,6 +170,9 @@ body {
   width: 100%;
 }
 
+.panel-body {
+  color: black;
+}
 
 /*
  * Side navigation

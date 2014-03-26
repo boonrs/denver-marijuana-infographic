@@ -1,10 +1,11 @@
 
 $( document ).ready(function() {
-  faqArea();
+  faqArea(faq.cases);
 });
 
 <!-- http://chartjs.devexpress.com/Demos/VizGallery/#chart/chartsareaseriesspline -->
-function faqArea() {
+function faqArea(cases) {
+
   var dataSource = [
     { company: "ExxonMobil", y2005: 362.53, y2004: 277.02},
     { company: "GeneralElectric", y2005: 348.45, y2004: 328.54},
@@ -15,23 +16,30 @@ function faqArea() {
   ];
 
   $("#faq-area").dxChart({
-    title: "Corporations with Highest Market Value",
-    dataSource: dataSource,
-    commonSeriesSettings: {
-      type: "splineArea",
-      argumentField: "company"
-    },
-    argumentAxis:{
-      valueMarginsEnabled: false
-    },
-    series: [
-      { valueField: "y2005", name: "2005" },
-      { valueField: "y2004", name: "2004" }
-    ],
-    legend: {
-      verticalAlignment: "bottom",
-      horizontalAlignment: "center"
-    }
+      title: cases.title,
+      dataSource: cases.data,
+      commonSeriesSettings: {
+          type: "splineArea",
+          argumentField: cases.argument
+      },
+      argumentAxis:{
+          valueMarginsEnabled: true
+      },
+      series: [
+          { valueField: cases.series1, name: cases.series1_name },
+          { valueField: cases.series2, name: cases.series2_name },
+          { valueField: cases.series3, name: cases.series3_name },
+          { valueField: cases.series4, name: cases.series4_name },
+          { valueField: cases.series5, name: cases.series5_name },
+          { valueField: cases.series6, name: cases.series6_name },
+          { valueField: cases.series7, name: cases.series7_name }
+      ],
+      legend: {
+          verticalAlignment: "bottom",
+          horizontalAlignment: "center"
+      }
   });
 }
+
+
 
