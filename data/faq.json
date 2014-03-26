@@ -1,3 +1,44 @@
+var faq = {
+  "total": 255,
+  "cases": {
+    "title": "311 Calls",
+    "argument": "quarter",
+    /* TODO: This is dumb, arrays are built for this problem */
+    "series1": "carryon",
+    "series1_name": "Carryon item - medical marijuana",
+    "series2": "edible_requirements",
+    "series2_name": "Env Health requirements and regulations for medical marijuana edibles operations",
+    "series3": "license",
+    "series3_name": "Marijuana Dispensary License",
+    "series4": "inspections",
+    "series4_name": "Marijuana Inspections",
+    "series5": "sign_off",
+    "series5_name": "Medical Marijuana Dispensary Sign Off",
+    "series6": "edible_complaints",
+    "series6_name": "Medical marijuana edibles or food complaint",
+    "series7": "inspection_schedule",
+    "series7_name": "Schedule a Marijuana Zoning Inspection", 
+    "data": [
+      { quarter:"2010 Q2", carryon:0, edible_requirements:47, license:311, inspections:0, sign_off:0, edible_complaints:1, inspections_schedule:0 },
+      { quarter:"2010 Q3", carryon:0, edible_requirements:21, license:212, inspections:0, sign_off:0, edible_complaints:4, inspections_schedule:0 },
+      { quarter:"2010 Q4", carryon:0, edible_requirements:6, license:74, inspections:0, sign_off:0, edible_complaints:2, inspections_schedule:0 },
+      { quarter:"2011 Q1", carryon:0, edible_requirements:5, license:89, inspections:0, sign_off:0, edible_complaints:3, inspections_schedule:0 },
+      { quarter:"2011 Q2", carryon:0, edible_requirements:6, license:128, inspections:0, sign_off:0, edible_complaints:1, inspections_schedule:0 },
+      { quarter:"2011 Q3", carryon:0, edible_requirements:6, license:79, inspections:0, sign_off:0, edible_complaints:0, inspections_schedule:0 },
+      { quarter:"2011 Q4", carryon:0, edible_requirements:2, license:59, inspections:0, sign_off:0, edible_complaints:0, inspections_schedule:0 },
+      { quarter:"2012 Q1", carryon:0, edible_requirements:3, license:60, inspections:0, sign_off:0, edible_complaints:2, inspections_schedule:0 },
+      { quarter:"2012 Q2", carryon:1, edible_requirements:3, license:66, inspections:0, sign_off:0, edible_complaints:0, inspections_schedule:5 },
+      { quarter:"2012 Q3", carryon:0, edible_requirements:6, license:47, inspections:0, sign_off:1, edible_complaints:0, inspections_schedule:40 },
+      { quarter:"2012 Q4", carryon:0, edible_requirements:14, license:100, inspections:0, sign_off:0, edible_complaints:0, inspections_schedule:112 },
+      { quarter:"2013 Q1", carryon:0, edible_requirements:5, license:103, inspections:0, sign_off:0, edible_complaints:0, inspections_schedule:90 },
+      { quarter:"2013 Q2", carryon:0, edible_requirements:3, license:78, inspections:0, sign_off:0, edible_complaints:0, inspections_schedule:42 },
+      { quarter:"2013 Q3", carryon:0, edible_requirements:16, license:176, inspections:0, sign_off:0, edible_complaints:1, inspections_schedule:147 },
+      { quarter:"2013 Q4", carryon:0, edible_requirements:23, license:195, inspections:91, sign_off:0, edible_complaints:1, inspections_schedule:237 },
+      { quarter:"2014 Q1", carryon:0, edible_requirements:3, license:116, inspections:76, sign_off:0, edible_complaints:0, inspections_schedule:123 }
+    ]
+  }
+};
+/*
 var faq  = {
   "total": 255,
   "questions": {
@@ -15,32 +56,39 @@ var faq  = {
   "cases": {
     "title": "311 Calls",
     "argument": "quarter",
-    "series_label": "crimes",
-    "series1": "marijuana_dispensery",
-    "series1_name": "marijuana_dispensery",
+    "series_label": "quarter",
+    "series1": "carryon",
+    "series1_name": "Carryon item - medical marijuana",
     "series2": "edible_requirements",
-    "series2_name": "Env Health requirements and regulations for medical marijuana edibles operations   ",
-    "series3": "edible_complaints",
-    "series3_name": "Medical marijuana edibles or food complaint",
-    "series4": "inspection_schedule",
-    "series4_name": "Schedule a Marijuana Zoning Inspection",
-    "series5": "carryon",
-    "series5_name": "Carryon item - medical marijuana",
-    "series6": "inspections",
-    "series6_name": "Marijuana Inspections",
-    "series7": "sign_off",
-    "series7_name": "Medical Marijuana Dispensary Sign Off",
-
+    "series2_name": "Env Health requirements and regulations for medical marijuana edibles operations",
+    "series3": "license",
+    "series3_name": "Marijuana Dispensary License",
+    "series4": "inspections",
+    "series4_name": "Marijuana Inspections",
+    "series5": "sign_off",
+    "series5_name": "Medical Marijuana Dispensary Sign Off",
+    "series6": "edible_complaints",
+    "series6_name": "Medical marijuana edibles or food complaint",
+    "series7": "inspection_schedule",
+    "series7_name": "Schedule a Marijuana Zoning Inspection", 
     "data": [ 
-      { quarter: "2012 Q1", marijuana_dispensery: 60, edible_requirements: 3, edible_complaints:  2 },
-      { quarter: "2012 Q2", marijuana_dispensery: 66, inspection_schedule: 5, edible_requirements: 3, carryon: 1 },
-      { quarter: "2012 Q3", marijuana_dispensery: 47, inspection_schedule: 40, edible_requirements: 6, sign_off:  1  },
-      { quarter: "2012 Q4", inspection_schedule: 112, marijuana_dispensery: 100, edible_requirements: 14  },
-      { quarter: "2013 Q1", marijuana_dispensery: 103, inspection_schedule: 90, edible_requirements: 5 },
-      { quarter: "2013 Q2", marijuana_dispensery: 78, inspection_schedule: 42, edible_requirements: 3, carryon:  1  },
-      { quarter: "2013 Q3", marijuana_dispensery: 176, inspection_schedule: 147, edible_requirements: 16, edible_complaints:  1  },
-      { quarter: "2013 Q4", inspection_schedule: 237, marijuana_dispensery: 195, sign_off:  91, edible_requirements: 23, edible_complaints:  1 },
-      { quarter: "2014 Q1", inspection_schedule: 123, marijuana_dispensery: 116, sign_off, cases:  76, edible_requirements: 3 }
+      { quarter:"2010 Q2", carryon:0, edible_requirements:47, license:311, inspections:0, sign_off:0, edible_complaints:1, inspections_schedule:0 }
+      { quarter:"2010 Q3", carryon:0, edible_requirements:21, license:212, inspections:0, sign_off:0, edible_complaints:4, inspections_schedule:0 }
+      { quarter:"2010 Q4", carryon:0, edible_requirements:6, license:74, inspections:0, sign_off:0, edible_complaints:2, inspections_schedule:0 }
+      { quarter:"2011 Q1", carryon:0, edible_requirements:5, license:89, inspections:0, sign_off:0, edible_complaints:3, inspections_schedule:0 }
+      { quarter:"2011 Q2", carryon:0, edible_requirements:6, license:128, inspections:0, sign_off:0, edible_complaints:1, inspections_schedule:0 }
+      { quarter:"2011 Q3", carryon:0, edible_requirements:6, license:79, inspections:0, sign_off:0, edible_complaints:0, inspections_schedule:0 }
+      { quarter:"2011 Q4", carryon:0, edible_requirements:2, license:59, inspections:0, sign_off:0, edible_complaints:0, inspections_schedule:0 }
+      { quarter:"2012 Q1", carryon:0, edible_requirements:3, license:60, inspections:0, sign_off:0, edible_complaints:2, inspections_schedule:0 }
+      { quarter:"2012 Q2", carryon:1, edible_requirements:3, license:66, inspections:0, sign_off:0, edible_complaints:0, inspections_schedule:5 }
+      { quarter:"2012 Q3", carryon:0, edible_requirements:6, license:47, inspections:0, sign_off:1, edible_complaints:0, inspections_schedule:40 }
+      { quarter:"2012 Q4", carryon:0, edible_requirements:14, license:100, inspections:0, sign_off:0, edible_complaints:0, inspections_schedule:112 }
+      { quarter:"2013 Q1", carryon:0, edible_requirements:5, license:103, inspections:0, sign_off:0, edible_complaints:0, inspections_schedule:90 }
+      { quarter:"2013 Q2", carryon:0, edible_requirements:3, license:78, inspections:0, sign_off:0, edible_complaints:0, inspections_schedule:42 }
+      { quarter:"2013 Q3", carryon:0, edible_requirements:16, license:176, inspections:0, sign_off:0, edible_complaints:1, inspections_schedule:147 }
+      { quarter:"2013 Q4", carryon:0, edible_requirements:23, license:195, inspections:91, sign_off:0, edible_complaints:1, inspections_schedule:237 }
+      { quarter:"2014 Q1", carryon:0, edible_requirements:3, license:116, inspections:76, sign_off:0, edible_complaints:0, inspections_schedule:123 }
     ]
   }
 };
+*/
