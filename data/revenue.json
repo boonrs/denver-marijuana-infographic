@@ -1,5 +1,9 @@
 var revenue  = {
-  "total": 160000000,
+  "big_number": {
+    "total":  "$160M",
+    "bold_description": "... has been made in tax revenue from marijuana industry since 2010.",
+    "description": "This does not represent the ammount of money spent on marijuana in Denver."
+  },
   "over_time": {
     "title": "Marijuana Revenue in Denver",
     "argument": "quarter",
@@ -20,6 +24,7 @@ var revenue  = {
   },
   "types": {
     "title": "Where Marijuana Revenue Came From",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     "argument": "strain",
     "value": "money",
     "data": [
@@ -29,6 +34,7 @@ var revenue  = {
   },
   "employees": {
     "title": "Employees",
+    "description": "In addition to adding revenue, the Marijuana Industry has created new jobs. An employee here means anyone who works in a Marijuana Facility.",
     "argument": "quarter",
     "value": "employees",
     "value_name": "Employees",

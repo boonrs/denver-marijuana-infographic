@@ -1,7 +1,18 @@
 var crime  = {
-  "total": 160,
+  "big_number": {
+    "total": 160,
+    "description_bold": "... marijuana related crimes have been reported this year.",
+    "description": "These crimes can be criminal or non criminal."
+  },
+  "arrests": {
+    "title": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+  },
+  "speech": {
+    "title": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+  },
   "offenses": {
     "title": "Criminal Offenses",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     "argument": "quarter",
     "value_label": "crimes",
     "value1": "consumption",
