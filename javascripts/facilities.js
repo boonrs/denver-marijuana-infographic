@@ -1,13 +1,18 @@
 
 $( document ).ready(function() {
-  facilitiesCount(facilities.total);
+
+  facilitiesCount(facilities.big_number);
   facilitiesLineGraph(facilities.over_time);
   facilitiesDonut(facilities.types);
-  facilitiesBar(facilities.employees);
+  facilitiesRetail(facilities.retail);
+  facilitiesMedical(facilities.medical);
+  facilitiesGrow(facilities.grow);
 });
 
-function facilitiesCount(count) {
-  $("#facilities-number").text(count);
+function facilitiesCount(big_number) {
+  $("#facilities-number").text(big_number.total);
+  $("#facilities-number-strong").text(big_number.bold_description);
+  $("#facilities-number-description").text(big_number.description);
 }
 
 <!-- http://chartjs.devexpress.com/Demos/VizGallery/#chart/chartslineandpointseriesline -->
@@ -72,18 +77,14 @@ function facilitiesDonut(types) {
   });
 }
 
-<!-- http://chartjs.devexpress.com/Demos/VizGallery/#chart/chartsbarseriessimplestsingle -->
-function facilitiesBar(employees) {
-  $("#facilities-bar").dxChart({
-    dataSource: employees.data,
-    title: employees.title,
-    series: {
-        argumentField: employees.argument,
-        valueField: employees.value,
-        name: employees.value_name,
-        type: "bar",
-        color: 'white'
-    }
-  });
+function facilitiesRetail(retail) {
+    $("#facilities-retail").text(retail.title);
 }
 
+function facilitiesMedical(medical) {
+    $("#facilities-medical").text(medical.title);
+}
+
+function facilitiesGrow(grow) {
+    $("#facilities-grow").text(grow.title);
+}

@@ -1,16 +1,21 @@
 
 $( document ).ready(function() {
-  crimeCount(crime.total);
+  crimeCount(crime.big_number);
   crimeStacked(crime.offenses);
+  crimeHandcuffs(crime.arrests);
+  crimeSpeech(crime.speech);
 });
 
-function crimeCount(count) {
-  $("#crime-number").text(count)
+function crimeCount(big_number) {
+  $("#crime-number").text(big_number.total)
+  $("#crime-number-strong").text(big_number.description_bold)
+  $("#crime-number-description").text(big_number.description)
 }
 
 <!-- To theme: http://chartjs.devexpress.com/Demos/VizGallery/#chart/chartsareaseriesspline -->
 <!-- http://chartjs.devexpress.com/Demos/VizGallery/#chart/chartsbarseriesfullstacked -->
 function crimeStacked(offenses) {
+  $("#crime-stacked-description").text(offenses.description)
   $("#crime-stacked").dxChart({
     dataSource: offenses.data,
     commonSeriesSettings: {
@@ -36,5 +41,13 @@ function crimeStacked(offenses) {
         }
     }
   });
+}
+
+function crimeHandcuffs(handcuffs) {
+    $("#crime-handcuffs").text(handcuffs.title);
+}
+
+function crimeSpeech(speech) {
+    $("#crime-speech").text(speech.title);
 }
 
