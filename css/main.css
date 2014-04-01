@@ -9,6 +9,13 @@ body {
 
 }
 
+
+img.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 #sidebar {
   display:block; 
   float: left;
@@ -69,9 +76,24 @@ body {
 .footer {
   width: 100%;
 	background-color: white;
-	color: black;
-  height: 100%;
+	color: #58595b;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
 
+.footer a {
+  color: #58595b;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.footer a:hover {
+  color:#8CC63F;
+  -o-transition:.2s;
+  -ms-transition:.2s;
+  -moz-transition:.2s;
+  -webkit-transition:.2s;
+  transition:.2s;
 }
 
 .navbar-default {
@@ -81,6 +103,8 @@ body {
   border-radius: 0;
   border:none;
 }
+
+
 
 .navbar-default .navbar-toggle {
   border-color: white;
