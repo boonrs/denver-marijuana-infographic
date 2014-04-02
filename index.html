@@ -45,10 +45,16 @@ title: {{ site.name }}
           </div>
         </div>
 
+	
+
+        <!-- <div class="block" id="blocky" style="height: 400px;">
+        	<div class="centered" id="blocky2">Some text</div>
+        </div> -->
+
 		
 		<!-- Main Content ================================================== -->
 		<div class="col-sm-9 " data-spy="scroll" data-target=".bs-sidebar"> 
-			
+
 			<!-- About ================================================== -->
 			<a id="about" name="about"></a>
 			<div class="jumbotron">
@@ -64,15 +70,10 @@ title: {{ site.name }}
       <!-- Facilities ================================================== -->
 			<a id="facilities" name="facilities"></a>
 			<div class="section-block">
-				<div class="row">
-					<div class="col-sm-4 text-center"><span id="facilities-number" class="big-number"></span></div>
-					<div class="col-sm-8">
-						<div class="block" style="height: 100%;">
-						<div class="centered">
-						  <strong id="facilities-number-strong"></strong>
-              <div id="facilities-number-description"></div>
-						</div>
-						</div>
+				<div class="row block">
+		          	<div class="col-sm-4 big-number" id="facilities-number"></div>     
+					<div class="col-md-8 centered" id="faciliteis-number-strong">
+				        <div id="revenue-number-description"></div>
 					</div>
 				</div>
 
@@ -108,27 +109,20 @@ title: {{ site.name }}
 
 			<!-- Revenue ================================================== -->
 			<a id="revenue" name="revenue"></a>
-			<div class="row">
-				<div class="col-md-6">
-					<div class="block" style="height: 100%;">
-						<div id="revenue-employees" class="centered"></div>
-					</div>
-				</div>
+			
+			<div class="row block">
+				<div id="revenue-employees" class="col-md-6 centered"></div>
+
 				<div class="col-md-6">
 					<div id="revenue-bar" class="full-width-image"></div>
 				</div>
 			</div>
 
 			<div class="section-block">
-				<div class="row">
-          <div class="col-sm-4 text-center"><span id="revenue-number" class="big-number"></span></div>     
-					<div class="col-md-8">
-						<div  class="block" style="height: 100%;">
-              <div class="centered">
-						    <strong id="revenue-number-strong"></strong>
-                <div id="revenue-number-description"></div>
-              </div>
-						</div>
+				<div class="row block">
+		          	<div class="col-sm-4 big-number" id="revenue-number"></div>     
+					<div class="col-md-8 centered" id="revenue-number-strong">
+				        <div id="revenue-number-description"></div>
 					</div>
 				</div>
 
@@ -138,48 +132,47 @@ title: {{ site.name }}
 					</div>
 				</div>
 
-				<div class="row">
+				<div class="row block">
+					<div  class="col-md-6 centered" id="revenue-donut-description"></div>
 					<div class="col-md-6">
 						<div id="revenue-donut" class="full-width-image"></div>
 					</div>
-					<div id="revenue-donut-description" class="col-md-6" style="padding-top:10%;"></div>
 				</div>
 			</div>
 
 			<!-- Crime ================================================== -->
-     	<a id="crime" name="crime"></a>
+     		<a id="crime" name="crime"></a>
 			<div class="section-block">
 				<div class="row">
 					<div id="crime-number" class="col-md-4 text-center big-number"></div>
 						<div class="col-md-8">
 							<div class="block" style="height: 100%;">
-							  <strong id="crime-number-strong"></strong>
-                <div id="crime-number-description"></div>
+							   <strong id="crime-number-strong"></strong>
+                			   <div id="crime-number-description"></div>
 							</div>
 						</div>
 				</div>
-			</div>
 
-			<div class="row">
-				<div class="col-md-8">
-					<div id="crime-stacked" class="full-width-image"></div>
-				</div>
-				<div class="col-md-4" style="padding-top:20%;">
+				<div class="row">
+					<div class="col-md-8">
+						<div id="crime-stacked" class="full-width-image"></div>
+					</div>
+					<div class="col-md-4" style="padding-top:20%;">
+						<img class="img-circle full-width-image" src="http://placehold.it/200&text=Handcuffs">
+						<br><br>
+		          		<div id="crime-handcuffs"></div>					
+						</div>
+					</div>
 
-				<img class="img-circle full-width-image" src="http://placehold.it/200&text=Handcuffs">
-					<br><br>
-          <div id="crime-handcuffs"></div>					
-				</div>
-			</div>
-
-			<div class="row">
-				<div class="col-md-4">
-					<img class="img-circle full-width-image" src="http://placehold.it/200&text=SpeechBubble">
-					<br><br>
-          <div id="crime-speech"></div>					
-				</div>
-				<div class="col-md-8">
-					<img class="full-width-image" src="http://placehold.it/550x400&text=This is a Chart">
+				<div class="row">
+					<div class="col-md-4">
+						<img class="img-circle full-width-image" src="http://placehold.it/200&text=SpeechBubble">
+						<br><br>
+	          			<div id="crime-speech"></div>					
+					</div>
+					<div class="col-md-8">
+						<img class="full-width-image" src="http://placehold.it/550x400&text=This is a Chart">
+					</div>
 				</div>
 			</div>
 

@@ -24,28 +24,62 @@ body {
 
 /*Center Content Vertically*/
 
+.col-sm-4.centered,
+.col-sm-4.centered+.col-sm-8 {
+  float:none;
+  display:inline-block;
+  vertical-align:middle;
+  
+}
+
+.col-sm-4.centered {
+  /*text-align: center;*/
+  margin-right:-.4em;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+
+
+.col-md-6.centered, .col-md-6.centered+.col-md-6 {
+  float:none;
+  display:inline-block;
+  vertical-align:middle;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+.col-md-6.centered {
+  /*text-align: center;*/
+  margin-right:-.8em;
+}
+
+
+
+/* This parent can be any width and height */
 .block {
-  margin-top: 40px;
-  margin-bottom: 40px;
 }
  
+/* The ghost, nudged to maintain perfect centering */
 .block:before {
   content: '';
   display: inline-block;
-  height: 100%; 
+  height: 100%;
   vertical-align: middle;
-  margin-right: -0.25em; /* Adjusts for spacing */
-    
- }
+  margin-right: -0.3em; /* Adjusts for spacing */
+}
 
-
+/* The element to be centered, can also be of any width and height */ 
 .centered {
   display: inline-block;
   vertical-align: middle;
-  padding: 10px 0px;
+}
 
- }
 
+.section-block {
+  padding-bottom: 50px;
+  margin-bottom: 50px;
+  border-bottom: 1px solid rgba(255, 255, 255, .6);
+}
 
 /* Useful Classes */
 
@@ -60,8 +94,9 @@ body {
 
 .big-number {
   font-family: "HelveticaNeue-Bold", "Helvetica Neue Bold", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
-  font-size: 10em;
+  font-size: 1em;
   text-align: center;
+
 }
 
 /* Chrome */
