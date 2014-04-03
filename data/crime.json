@@ -2,7 +2,7 @@ var crime  = {
   "big_number": {
     "total": 160,
     "description_bold": "... marijuana related crimes have been reported this year.",
-    "description": "These crimes can be criminal or non criminal."
+    "description": "This is the sum total of Industry, Non-Industry, and Incidentally Related Crimes."
   },
   "arrests": {
     "title": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
