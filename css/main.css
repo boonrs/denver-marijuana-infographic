@@ -181,6 +181,16 @@ footer a:hover {
   -webkit-transition:.2s;
   transition:.2s;
 }
+.navbar-default .navbar-toggle:focus {
+  background-color: white;
+}
+
+.navbar-default .navbar-toggle:focus .icon-bar{
+  background-color: #8CC63F;
+}
+
+#topbar{border-bottom: 1px solid white;}
+
 /* Title */
 .navbar-default .navbar-brand {
     color: white;
@@ -233,6 +243,8 @@ footer a:hover {
     border-bottom-color: #555;
 }
 
+
+
 /*Pin the top nav to the top while scrolling*/
 .navbar-default {
   position:fixed;
@@ -241,6 +253,8 @@ footer a:hover {
   z-index: 1;
   width: 100%;
 }
+
+
 
 
 /*Accordion*/
