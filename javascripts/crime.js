@@ -1,46 +1,75 @@
 
 $( document ).ready(function() {
   crimeCount(crime.big_number);
-  crimeStacked(crime.offenses);
   crimeHandcuffs(crime.arrests);
   crimeSpeech(crime.speech);
+  crimeOffenses();
 });
+
+function crimeOffenses() {
+  d3.csv("data/offenses.csv", function(error, data) {
+    nv.addGraph(function() {
+      var chart = nv.models.multiBarChart()
+        .transitionDuration(350)
+        .reduceXTicks(true)   //If 'false', every single x-axis tick label will be rendered.
+        .rotateLabels(0)      //Angle to rotate x-axis labels.
+        .showControls(true)   //Allow user to switch between 'Grouped' and 'Stacked' mode.
+        .groupSpacing(0.1)    //Distance between each group of bars.
+      ;
+      
+      chart.yAxis
+          .tickFormat(d3.format(',.1f'));
+
+      d3.select('#crime-stacked')
+        .append("svg")
+          .datum(formatOffenseData(data))
+          .call(chart);
+
+      nv.utils.windowResize(chart.update);
+
+      return chart;
+    });
+  });
+}
+
+function formatOffenseData(data) {
+  var consumption = [];
+  var industry = [];
+  var nonindustry = [];
+  var incidentally = [];
+  
+  data.forEach(function(row) {
+    consumption.push({x:row.quarter, y:row.consumption});
+    industry.push({x:row.quarter, y:row.industry});
+    nonindustry.push({x:row.quarter, y:row.nonindustry});
+    incidentally.push({x:row.quarter, y:row.incidentally});
+  });
+
+  var formatted = [{
+      key: "Public Consumption Tickets",
+      values: consumption
+    },
+    {
+      key: "Industry Related Crimes",
+      values: industry
+    },
+    {
+      key: "Non-Industry Related Crimes",
+      values: nonindustry
+    },
+    {
+      key: "Incidentally Related Crimes",
+      values: incidentally
+    }
+  ];
+
+  return formatted;
+}
 
 function crimeCount(big_number) {
   $("#crime-number").text(big_number.total)
   $("#crime-number-strong").text(big_number.description_bold)
   $("#crime-number-description").text(big_number.description)
-}
-
-<!-- To theme: http://chartjs.devexpress.com/Demos/VizGallery/#chart/chartsareaseriesspline -->
-<!-- http://chartjs.devexpress.com/Demos/VizGallery/#chart/chartsbarseriesfullstacked -->
-function crimeStacked(offenses) {
-  $("#crime-stacked-description").text(offenses.description)
-  $("#crime-stacked").dxChart({
-    dataSource: offenses.data,
-    commonSeriesSettings: {
-        argumentField: offenses.argument,
-        type: "fullStackedBar"
-    },
-    series: [
-        { valueField: offenses.value1, name: offenses.value1_name },
-        { valueField: offenses.value2, name: offenses.value2_name },
-        { valueField: offenses.value3, name: offenses.value3_name },
-        { valueField: offenses.value4, name: offenses.value4_name }
-    ],
-    legend: {
-        verticalAlignment: "top",
-        horizontalAlignment: "center",
-        itemTextPosition: "right"
-    },
-    title: offenses.title,
-    tooltip: {
-        enabled: true,
-        customizeText: function () {
-            return this.percentText + " - " + this.valueText;
-        }
-    }
-  });
 }
 
 function crimeHandcuffs(handcuffs) {
