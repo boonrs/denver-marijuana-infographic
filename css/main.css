@@ -124,20 +124,25 @@ img.center {
 
 }
 
-/* Footer */
-.footer {
+/* footer */
+footer {
   width: 100%;
-	background-color: white;
-	color: #58595b;
+  background-color: #ffffff;
+  color: #58595b;
   padding-top: 50px;
   padding-bottom: 50px;
+  height:200px;
+  clear:both;
 }
-.footer a {
+
+footer a {
   color: #58595b;
   text-decoration: none;
   font-weight: bold;
 }
-.footer a:hover {
+
+footer a:hover {
+  text-decoration: none;
   color:#8CC63F;
   -o-transition:.2s;
   -ms-transition:.2s;
