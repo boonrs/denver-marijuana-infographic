@@ -2,7 +2,7 @@
 $( document ).ready(function() {
   revenueCount(revenue.big_number);
   revenueArea(revenue.over_time);
-  revenueDonut(revenue.types);
+  revenueSource();
   employeesChart();
 });
 
@@ -10,6 +10,31 @@ function revenueCount(big_number) {
   $("#revenue-number").text(big_number.total);
   $("#revenue-number-strong").text(big_number.bold_description);
   $("#revenue-number-description").text(big_number.description);
+}
+
+function revenueSource() {
+  $("#revenue-donut-description").text("Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.");
+  d3.csv("data/revenue-source.csv", function(error, data) {
+    nv.addGraph(function() {
+      var chart = nv.models.pieChart()
+        .x(function(d) { return d.label })
+        .y(function(d) { return d.value })
+        .showLabels(true)     //Display pie labels
+        .labelThreshold(.05)  //Configure the minimum slice size for labels to show up
+        .labelType("percent") //Configure what type of data to show in the label. Can be "key", "value" or "percent"
+        .donut(true)          //Turn on Donut mode. Makes pie chart look tasty!
+        .donutRatio(0.35)     //Configure how big you want the donut hole size to be.
+        ;
+
+      d3.select("#revenue-donut")
+        .append("svg")
+        .datum(data)
+        .transition().duration(350)
+        .call(chart);
+
+      return chart;
+    });
+  });
 }
 
 <!-- http://chartjs.devexpress.com/Demos/VizGallery/#chart/chartsareaseriesarea -->
@@ -37,33 +62,6 @@ function revenueArea(over_time) {
         verticalAlignment: "bottom",
         horizontalAlignment: "center"
     }
-  });
-}
-
-<!-- http://chartjs.devexpress.com/Demos/VizGallery/#chart/piecustomappearancedoughnutwithselection -->
-function revenueDonut(types) {
-  $("#revenue-donut-description").text(types.description);
-
-  $("#revenue-donut").dxPieChart({
-    dataSource: types.data,
-    palette: "Soft Pastel",
-    title: types.title,
-    legend: {
-        horizontalAlignment: "right",
-        verticalAlignment: "top",
-        margin: 0
-    },
-    pointClick: function(point) {
-        point.select();
-    },
-    series: [{
-      type: "doughnut",
-      argumentField: types.argument,
-      valueField: types.value,
-      hoverStyle: {
-        color: "#ffd700" 
-      }
-    }]
   });
 }
 
