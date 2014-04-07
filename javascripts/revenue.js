@@ -3,7 +3,7 @@ $( document ).ready(function() {
   revenueCount(revenue.big_number);
   revenueArea(revenue.over_time);
   revenueDonut(revenue.types);
-  revenueBar(revenue.employees);
+  employeesChart();
 });
 
 function revenueCount(big_number) {
@@ -67,19 +67,31 @@ function revenueDonut(types) {
   });
 }
 
-<!-- http://chartjs.devexpress.com/Demos/VizGallery/#chart/chartsbarseriessimplestsingle -->
-function revenueBar(employees) {
-  $("#revenue-employees").text(employees.description);
+function employeesChart() {
+  d3.csv("data/employees.csv", function(error, data) {
+    nv.addGraph(function() {
+      var chart = nv.models.discreteBarChart()
+        .x(function(d) { return d.quarter })    //Specify the data accessors.
+        .y(function(d) { return d.employees })
+        .staggerLabels(true)    //Too many bars and not enough room? Try staggering labels.
+        .tooltips(true)        //Don't show tooltips
+        .showValues(false)       //...instead, show the bar value right on top of each bar.
+        .transitionDuration(350)
+      ;
 
-  $("#revenue-bar").dxChart({
-    dataSource: employees.data,
-    title: employees.title,
-    series: {
-        argumentField: employees.argument,
-        valueField: employees.value,
-        name: employees.value_name,
-        type: "bar",
-        color: 'white'
-    }
+      var nvd3Formatted = [{
+        key: "Employees",
+        values: data
+      }];
+
+      d3.select('#revenue-bar')
+        .append('svg')
+        .datum(nvd3Formatted)
+        .call(chart);
+
+      nv.utils.windowResize(chart.update);
+
+      return chart;
+    });
   });
 }
