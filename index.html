@@ -8,10 +8,10 @@ title: {{ site.name }}
 
   <div class="row">
       
-    <nav id="potbar" class="navbar navbar-default navbar-static visible-xs visible-sm" role="navigation">
+    <nav class="navbar navbar-default navbar-static visible-xs visible-sm" role="navigation">
 
         <div class="navbar-header">
-          <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".potbar-scrollspy">
+          <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#topbar">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
@@ -20,7 +20,7 @@ title: {{ site.name }}
           <a class="navbar-brand" href="#">{{ site.name }}</a>
         </div>
 
-        <div class="collapse navbar-collapse potbar-scrollspy">
+        <div class="collapse navbar-collapse" id="topbar">
           <ul class="nav navbar-nav navbar-right">
             <li><a href="#facilities">Facilities</a></li>
             <li><a href="#revenue">Revenue</a></li>
@@ -31,26 +31,25 @@ title: {{ site.name }}
     </nav>
 
     <!-- Sidebar ================================================== -->
-    <div class="col-sm-3 visible-md visible-lg">
-      <div id="sidebar" class="bs-sidebar hidden-print affix" role="complementary">
+    <div id="sidebar" class="navbar col-sm-3 visible-md visible-lg" role="complementary">
+      <div class="bs-sidebar hidden-print affix">
         <h3>{{ site.name }}</h3>
-        <ul class="nav bs-sidenav">
-          <li><a href="#about">About</a></li>
-          <li><a href="#facilities">Facilities</a></li>
-          <li><a href="#revenue">Revenue</a></li>
-          <li><a href="#crime">Crime</a></li>
-          <li><a href="#faq">FAQ</a></li>
-        </ul>
+          <ul class="nav bs-sidenav">
+            <li><a href="#about">About</a></li>
+            <li><a href="#facilities">Facilities</a></li>
+            <li><a href="#revenue">Revenue</a></li>
+            <li><a href="#crime">Crime</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
       </div>
     </div>
 
     
     <!-- Main Content ================================================== -->
-    <div class="col-sm-9 " data-spy="scroll" data-target=".bs-sidebar"> 
+    <div class="col-sm-9"> 
 
       <!-- About ================================================== -->
-      <a id="about" name="about"></a>
-      <div class="section-block">
+      <div id="about" class="section-block">
         <div class="jumbotron">
           <div class="row">
             <div class="col-sm-10">                     
@@ -63,8 +62,7 @@ title: {{ site.name }}
       </div>
 
       <!-- Facilities ================================================== -->
-      <a id="facilities" name="facilities"></a>
-      <div class="section-block">
+      <div id="facilities" class="section-block">
         <div class="row block">
           <div class="col-sm-4 big-number" id="facilities-number"></div>     
           <div class="col-md-8 centered" id="faciliteis-number-strong">
@@ -99,44 +97,43 @@ title: {{ site.name }}
       </div>
 
       <!-- Revenue ================================================== -->
-      <a id="revenue" name="revenue"></a>
-      
-      <div class="row block">
-        <!-- <div id="revenue-employees" class="col-md-6 centered"></div> -->
-        <div class="col-md-6 centered">
-          The Marijuana industry has created new jobs in Denver. These numbers represent are self-employed individuals, owners, partners, managers and employees. This does not include employees earning less than $500 per month. This data is derived from occupational privilege tax return information.
-        </div>
-
-        <div class="col-md-6">
-          <div id="revenue-bar" class="full-width-image"></div>
-        </div>
-      </div>
-
-      <div class="section-block">
+      <div id="revenue" class="section-block">
         <div class="row block">
-          <div class="col-sm-4 big-number" id="revenue-number"></div>     
-          <div class="col-md-8 centered" id="revenue-number-strong">
-            <div id="revenue-number-description"></div>
+          <!-- <div id="revenue-employees" class="col-md-6 centered"></div> -->
+          <div class="col-md-6 centered">
+            The Marijuana industry has created new jobs in Denver. These numbers represent are self-employed individuals, owners, partners, managers and employees. This does not include employees earning less than $500 per month. This data is derived from occupational privilege tax return information.
           </div>
-        </div>
 
-        <div class="row">
-          <div class="col-md-12 text-center">
-            <div id="revenue-area" class="full-width-image"></div>
-          </div>
-        </div>
-
-        <div class="row block">
-          <div  class="col-md-6 centered" id="revenue-donut-description"></div>
           <div class="col-md-6">
-            <div id="revenue-donut" class="full-width-image"></div>
+            <div id="revenue-bar" class="full-width-image"></div>
+          </div>
+        </div>
+
+        <div class="section-block">
+          <div class="row block">
+            <div class="col-sm-4 big-number" id="revenue-number"></div>     
+            <div class="col-md-8 centered" id="revenue-number-strong">
+              <div id="revenue-number-description"></div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-12 text-center">
+              <div id="revenue-area" class="full-width-image"></div>
+            </div>
+          </div>
+
+          <div class="row block">
+            <div  class="col-md-6 centered" id="revenue-donut-description"></div>
+            <div class="col-md-6">
+              <div id="revenue-donut" class="full-width-image"></div>
+            </div>
           </div>
         </div>
       </div>
 
       <!-- Crime ================================================== -->
-      <a id="crime" name="crime"></a>
-      <div class="section-block">
+      <div id="crime" class="section-block">
         <div class="row">
           <div id="crime-number" class="col-md-4 text-center big-number"></div>
             <div class="col-md-8">
@@ -146,7 +143,6 @@ title: {{ site.name }}
               </div>
             </div>
         </div>
-
 
         <div class="row">
           <div class="col-md-12">
@@ -178,10 +174,8 @@ title: {{ site.name }}
           </div>
       </div>
 
-
-
       <!-- FAQ ================================================== -->
-      <div class="section-block">
+      <div id="faq" class="section-block">
         <div class="row">
             <div class="col-md-12">
               <a name="faq"></a>

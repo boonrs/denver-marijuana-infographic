@@ -124,20 +124,25 @@ img.center {
 
 }
 
-/* Footer */
-.footer {
+/* footer */
+footer {
   width: 100%;
-	background-color: white;
-	color: #58595b;
+  background-color: #ffffff;
+  color: #58595b;
   padding-top: 50px;
   padding-bottom: 50px;
+  height:100%;
+  clear:both;
 }
-.footer a {
+
+footer a {
   color: #58595b;
   text-decoration: none;
   font-weight: bold;
 }
-.footer a:hover {
+
+footer a:hover {
+  text-decoration: none;
   color:#8CC63F;
   -o-transition:.2s;
   -ms-transition:.2s;
@@ -176,6 +181,16 @@ img.center {
   -webkit-transition:.2s;
   transition:.2s;
 }
+.navbar-default .navbar-toggle:focus {
+  background-color: white;
+}
+
+.navbar-default .navbar-toggle:focus .icon-bar{
+  background-color: #8CC63F;
+}
+
+#topbar{border-bottom: 1px solid white;}
+
 /* Title */
 .navbar-default .navbar-brand {
     color: white;
@@ -228,6 +243,8 @@ img.center {
     border-bottom-color: #555;
 }
 
+
+
 /*Pin the top nav to the top while scrolling*/
 .navbar-default {
   position:fixed;
@@ -236,6 +253,8 @@ img.center {
   z-index: 1;
   width: 100%;
 }
+
+
 
 
 /*Accordion*/

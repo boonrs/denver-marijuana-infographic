@@ -28,25 +28,24 @@
         <script type="text/javascript" src="data/faq.json "></script>
 
     </head>
-
-    <body>
-      <div data-spy="scroll" data-target="#potbar" data-offset="0" class="seeds-of-knowledge">
+    <body data-spy="scroll" data-target=".navbar">
       
-            {{ content }}   
+      {{ content }}  
 
-            <div class="row footer">
-                <div class="col-sm-8 col-sm-offset-2">
-                        
-                        <div class="col-sm-4">
-                            <a href="http://codeforamerica.org/"><img class="center" alt="Code for America" src="images/flag_tag.svg" width="150"></a>
-                        </div>
-                        <div class="col-sm-8"> 
-                            <p>This interactive graphic is by the <a href="http://codeforamerica.org/">2014 Code for America Fellows in Denver</a>. The data represented is taken from open data provided by the <a href="http://www.denvergov.org/">City and County of Denver</a>.</p>
-                            <p>You can find more open data at <a href="http://data.denvergov.org">http://data.denvergov.org</a> and read more about this project <a href="#">here</a>.
-                        </div>
-                </div>
+      <footer class="col-sm-12">
+
+
+            <div class="col-sm-3 col-sm-offset-2 flag-tag">
+              <a href="http://codeforamerica.org/"><img class="center" alt="Code for America" src="images/flag_tag.svg" width="150"></a>
             </div>
+
+            <div class="col-sm-6"> 
+                <p>This interactive graphic is by the <a href="http://codeforamerica.org/">2014 Code for America Fellows in Denver</a>. The data represented is taken from open data provided by the <a href="http://www.denvergov.org/">City and County of Denver</a>.</p>
+                <p>You can find more open data at <a href="http://data.denvergov.org">http://data.denvergov.org</a> and read more about this project <a href="#">here</a>.
+            </div>
+
+      </footer>
                 
-        </div>
+        
     </body>
 </html>
