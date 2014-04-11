@@ -1,4 +1,8 @@
 
+/*Chart Styles*/
+#crime-stacked { height: 500px; }
+#revenue-donut { height: 500px; }
+#revenue-bar { height: 300px; }
 
 
 /* Master Styles */
@@ -394,4 +398,14 @@ footer a:hover {
   }
 }
 
+
+
+/*
+.nv-legendWrap {
+  position: absolute;
+  top: 80px;
+  right: -50px;
+}
+
+*/
 

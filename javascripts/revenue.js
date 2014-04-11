@@ -24,6 +24,10 @@ function revenueSource() {
         .labelType("percent") //Configure what type of data to show in the label. Can be "key", "value" or "percent"
         .donut(true)          //Turn on Donut mode. Makes pie chart look tasty!
         .donutRatio(0.35)     //Configure how big you want the donut hole size to be.
+        .color(["#bce0b0", "#edffe6"])
+        .height (500)
+        chart.legend.rightAlign(false)
+        chart.legend.margin({top: 50, right: 0, bottom: 5, left: 90})
         ;
 
       d3.select("#revenue-donut")
@@ -31,6 +35,7 @@ function revenueSource() {
         .datum(data)
         .transition().duration(350)
         .call(chart);
+
 
       return chart;
     });
@@ -71,11 +76,17 @@ function employeesChart() {
       var chart = nv.models.discreteBarChart()
         .x(function(d) { return d.quarter })    //Specify the data accessors.
         .y(function(d) { return d.employees })
-        .staggerLabels(true)    //Too many bars and not enough room? Try staggering labels.
+        .staggerLabels(false)    //Too many bars and not enough room? Try staggering labels.
         .tooltips(true)        //Don't show tooltips
         .showValues(false)       //...instead, show the bar value right on top of each bar.
         .transitionDuration(350)
+        .color(["#ffffff", "#ddf0d7", "#bce0b0", "#9ad188", "#79c161", "#57b239", "#41852b", "#2c591d", "#162d0e"])
+        .height (300)
+        chart.xAxis.rotateLabels(-45)
+
+
       ;
+
 
       var nvd3Formatted = [{
         key: "Employees",
