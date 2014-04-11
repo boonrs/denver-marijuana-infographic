@@ -31,11 +31,13 @@
   position: absolute;
   background-color: rgba(255,255,255,1.0);
   padding: 1px;
-  border: 1px solid rgba(0,0,0,.2);
+  /*border: 1px solid rgba(0,0,0,.2);*/
+  border-radius: 5px;
   z-index: 10000;
 
-  font-family: Arial;
-  font-size: 13px;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 14px;
+  color: #4D4D4D;
   text-align: left;
   pointer-events: none;
 
@@ -68,6 +70,11 @@
 }
 
 .nvtooltip h3 {
+  color:#8CC63F;
+  font-size: 14px;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  
+  font-weight: 500;
   margin: 0;
   padding: 4px 14px;
   line-height: 18px;
@@ -157,13 +164,17 @@ svg {
 }
 
 
+
 svg text {
-  font: normal 12px Arial;
+  font: normal 12px Helvetica;
+  fill: #ffffff;
+
 }
 
 svg .title {
- font: bold 14px Arial;
-}
+ font: bold 14px Arial;}
+
+
 
 .nvd3 .nv-background {
   fill: white;
@@ -213,7 +224,7 @@ svg .title {
 
 .nvd3 .nv-axis path {
   fill: none;
-  stroke: #000;
+  stroke: #ffffff;
   stroke-opacity: .75;
   shape-rendering: crispEdges;
 }
@@ -298,6 +309,17 @@ svg .title {
 *  Bars
 */
 
+
+/* Make All Lines but Axes Transparent */
+#revenue-bar > svg g.nv-x.nv-axis > g > g > g > line {
+  opacity: 0;
+}
+
+#revenue-bar > svg g.nv-y.nv-axis > g > g > g > line {
+  opacity: 0;
+}
+
+
 .nvd3 .nv-multibar .nv-groups rect,
 .nvd3 .nv-multibarHorizontal .nv-groups rect,
 .nvd3 .nv-discretebar .nv-groups rect {
@@ -325,23 +347,26 @@ svg .title {
 *  Pie Chart
 */
 
+#revenue-donut {
+  fill:white;
+}
+
 .nvd3.nv-pie path {
   stroke-opacity: 0;
   transition: fill-opacity 250ms linear, stroke-width 250ms linear, stroke-opacity 250ms linear;
   -moz-transition: fill-opacity 250ms linear, stroke-width 250ms linear, stroke-opacity 250ms linear;
   -webkit-transition: fill-opacity 250ms linear, stroke-width 250ms linear, stroke-opacity 250ms linear;
-
 }
 
+
 .nvd3.nv-pie .nv-slice text {
-  stroke: #000;
-  stroke-width: 0;
+  fill: #fff;
 }
 
 .nvd3.nv-pie path {
-  stroke: #fff;
-  stroke-width: 1px;
-  stroke-opacity: 1;
+  /*stroke: #fff;
+  stroke-width: 1px;*/
+  stroke-opacity: 0;
 }
 
 .nvd3.nv-pie .hover path {
@@ -354,6 +379,8 @@ svg .title {
   fill-opacity: 0;
   stroke-opacity: 0;
 }
+
+
 
 /**********
 * Lines
@@ -756,6 +783,7 @@ svg .title {
 
 .nvd3 .axis text {
   text-shadow: 0 1px 0 #fff;
+
 }
 
 /****
@@ -767,3 +795,4 @@ Interactive Layer
 .nvd3 line.nv-guideline {
   stroke: #ccc;
 }
+

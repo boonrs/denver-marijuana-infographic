@@ -13,8 +13,10 @@ function crimeOffenses() {
         .transitionDuration(350)
         .reduceXTicks(true)   //If 'false', every single x-axis tick label will be rendered.
         .rotateLabels(0)      //Angle to rotate x-axis labels.
-        .showControls(true)   //Allow user to switch between 'Grouped' and 'Stacked' mode.
+        .showControls(false)   //Allow user to switch between 'Grouped' and 'Stacked' mode.
         .groupSpacing(0.1)    //Distance between each group of bars.
+        .color(["#bce0b0", "#79c161", "#41852b", "#162d0e"])
+        .height( 500)
       ;
       
       chart.yAxis
