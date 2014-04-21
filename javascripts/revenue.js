@@ -3,7 +3,6 @@ $( document ).ready(function() {
   revenueCount(revenue.big_number);
   revenueArea(revenue.over_time);
   revenueSource();
-  employeesChart();
 });
 
 function revenueCount(big_number) {
@@ -67,40 +66,5 @@ function revenueArea(over_time) {
         verticalAlignment: "bottom",
         horizontalAlignment: "center"
     }
-  });
-}
-
-function employeesChart() {
-  d3.csv("data/employees.csv", function(error, data) {
-    nv.addGraph(function() {
-      var chart = nv.models.discreteBarChart()
-        .x(function(d) { return d.quarter })    //Specify the data accessors.
-        .y(function(d) { return d.employees })
-        .staggerLabels(false)    //Too many bars and not enough room? Try staggering labels.
-        .tooltips(true)        //Don't show tooltips
-        .showValues(false)       //...instead, show the bar value right on top of each bar.
-        .transitionDuration(350)
-        .color(["#ffffff", "#ddf0d7", "#bce0b0", "#9ad188", "#79c161", "#57b239", "#41852b", "#2c591d", "#162d0e"])
-        .height (300)
-        chart.xAxis.rotateLabels(-45)
-
-
-      ;
-
-
-      var nvd3Formatted = [{
-        key: "Employees",
-        values: data
-      }];
-
-      d3.select('#revenue-bar')
-        .append('svg')
-        .datum(nvd3Formatted)
-        .call(chart);
-
-      nv.utils.windowResize(chart.update);
-
-      return chart;
-    });
   });
 }
