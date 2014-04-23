@@ -13,6 +13,9 @@ body {
 
 }
 
+.section-title {
+  text-align: center;
+}
 
 img.center {
     display: block;
@@ -25,7 +28,8 @@ img.center {
   float: left;
 }
 
-.jumbotron { background-color: #8CC63F;}
+.jumbotron { background-color: #8CC63F;
+text-align: left;}
 
 .row {margin-bottom: 50px;}
 
@@ -54,7 +58,6 @@ img.center {
   
 }
 .col-md-8.centered {
-  /*text-align: center;*/
   margin-right:-.4em;
   padding-left: 40px;
   padding-right: 40px;
@@ -95,7 +98,7 @@ img.center {
 .section-block {
   padding-bottom: 50px;
   margin-bottom: 50px;
-  border-bottom: 1px solid rgba(255, 255, 255, .6);
+/*  border-bottom: 1px solid rgba(255, 255, 255, .6);*/
 }
 
 /* Useful Classes */
@@ -118,7 +121,6 @@ img.center {
   margin: 0 auto 0 auto;
   width: 80%;
 }
-
 
 
 .big-number {
@@ -248,7 +250,6 @@ footer a:hover {
 }
 
 
-
 /*Pin the top nav to the top while scrolling*/
 .navbar-default {
   position:fixed;
@@ -257,8 +258,6 @@ footer a:hover {
   z-index: 1;
   width: 100%;
 }
-
-
 
 
 /*Accordion*/
@@ -292,7 +291,6 @@ footer a:hover {
   padding-left: 40px;
   padding-right: 40px;
 }
-
 
 
 /*
@@ -399,13 +397,4 @@ footer a:hover {
 }
 
 
-
-/*
-.nv-legendWrap {
-  position: absolute;
-  top: 80px;
-  right: -50px;
-}
-
-*/
 
