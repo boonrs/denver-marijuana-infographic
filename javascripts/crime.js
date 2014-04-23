@@ -15,7 +15,7 @@ function crimeOffenses() {
         .rotateLabels(0)      //Angle to rotate x-axis labels.
         .showControls(false)   //Allow user to switch between 'Grouped' and 'Stacked' mode.
         .groupSpacing(0.1)    //Distance between each group of bars.
-        .color(["#bce0b0", "#79c161", "#41852b", "#162d0e"])
+        .color(["#e5e9ea", "#8eb5bc", "#287f93", "#154651"])
         .height( 500)
       ;
       
