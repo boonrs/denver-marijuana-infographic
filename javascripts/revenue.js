@@ -23,7 +23,7 @@ function revenueSource() {
         .labelType("percent") //Configure what type of data to show in the label. Can be "key", "value" or "percent"
         .donut(true)          //Turn on Donut mode. Makes pie chart look tasty!
         .donutRatio(0.35)     //Configure how big you want the donut hole size to be.
-        .color(["#bce0b0", "#edffe6"])
+        .color(["#4dddff", "#b3eaf4"])
         .height (500)
         chart.legend.rightAlign(false)
         chart.legend.margin({top: 50, right: 0, bottom: 5, left: 90})
