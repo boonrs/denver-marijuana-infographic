@@ -33,14 +33,26 @@ title: {{ site.name }}
     <!-- Sidebar ================================================== -->
     <div id="sidebar" class="navbar col-sm-3 visible-md visible-lg" role="complementary">
       <div class="bs-sidebar hidden-print affix">
-        <h3>{{ site.name }}</h3>
-          <ul class="nav bs-sidenav">
-            <li><a href="#about">About</a></li>
-            <li><a href="#facilities">Facilities</a></li>
-            <li><a href="#revenue">Revenue</a></li>
-            <li><a href="#crime">Crime</a></li>
-            <li><a href="#faq">FAQ</a></li>
-          </ul>
+        <h3 class="site-name">{{ site.name }}</h3>
+        
+        <ul class="nav bs-sidenav">
+          <li><a href="#about">About</a></li>
+          <li><a href="#facilities">Facilities</a></li>
+          <li><a href="#revenue">Revenue</a></li>
+          <li><a href="#crime">Crime</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+        
+         
+        <div class="share_this">
+        Share this: <br>
+
+          <a class="fb" href="javascript:window.open('http://www.facebook.com/share.php?u=https://www.google.com/&title=Marijuana Indicators In Denver' , '_blank', 'width=400,height=500');void(0);"></a>
+
+          <a class="twitter" href="javascript:window.open('http://twitter.com/home?status=Marijuana Indicators In Denver+https://www.google.com/' , '_blank', 'width=400,height=500');void(0);"></a>
+
+          <a class="gplus"  href="javascript:window.open('https://plus.google.com/share?url=https://www.google.com/' , '_blank', 'width=490,height=550');void(0);"></a>
+        </div>
       </div>
     </div>
 
@@ -82,13 +94,13 @@ title: {{ site.name }}
 
         <div class="row">
           <div class="col-md-10 col-md-offset-1 text-center">
-            <p>This chart shows the number of marijuana licenses given to businesses in Denver since January 2012. It’s important to note that businesses can have multiple licenses for each type of activity.</p>
+            <p>This chart shows the number of marijuana licenses given to businesses in Denver since January 2012. It’s important to note that businesses can sell both retail and medical marijuana and so they may have licenses for both.</p>
           </div>
         </div>
 
         <div class="row">
             <div class="col-sm-6 text-center insight-container">
-                <img alt="Money" src="images/money.svg" height="80" width="80">
+                <img alt="Money" src="images/retail.svg" height="80" width="80">
                 <p class="image-description">Retail Marijuana licenses include those for marijuana stores, cultivation facilities, edible manufacturers, and testing facilities.</p>
             </div>
               
@@ -116,6 +128,12 @@ title: {{ site.name }}
         <div class="row">
           <div class="col-md-12 text-center">
             <div id="revenue-area" class="full-width-image"></div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-10 col-md-offset-1 text-center">
+            <p>This chart shows the tax revenue that has been made off of retail and medical marijuana over time.</p>
           </div>
         </div>
 

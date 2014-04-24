@@ -26,9 +26,21 @@
         <script type="text/javascript" src="data/facilities.json"></script>
         <script type="text/javascript" src="data/crime.json "></script>
         <script type="text/javascript" src="data/faq.json "></script>
+        <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+        <script type="text/javascript">stLight.options({publisher: "46e4833a-a8e0-486e-9849-76d8fee2f6fe", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
 
     </head>
     <body data-spy="scroll" data-target=".navbar">
+
+
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
       
       {{ content }}  
 
