@@ -35,6 +35,11 @@ img.center {
 .row {margin-bottom: 50px;}
 
 /* Share Buttons*/
+.share-text {
+  display:inline-block;
+  padding-bottom: 10px;
+}
+
 .share_this {
   margin-top: 10px;
   width: 100%;
@@ -42,30 +47,30 @@ img.center {
 }
 
 .fb {
- margin-top: 5px;
- width: 32px;
- height:32px;
- display:inline-block;
- background:transparent url('/images/fb.svg') center top no-repeat;
- border-radius: 5px;
+  margin-top: 5px;
+  width: 32px;
+  height:32px;
+  display:inline-block;
+  background:transparent url('/images/fb.svg') center top no-repeat;
+  border-radius: 5px;
 }
 
 .twitter {
- margin-top: 5px;
- width: 32px;
- height:32px;
- display:inline-block;
- background:transparent url('/images/twitter.svg') center top no-repeat;
- border-radius: 5px;
+  margin-top: 5px;
+  width: 32px;
+  height:32px;
+  display:inline-block;
+  background:transparent url('/images/twitter.svg') center top no-repeat;
+  border-radius: 5px;
 }
 
 .gplus {
- margin-top: 5px;
- width: 32px;
- height:32px;
- display:inline-block;
- background:transparent url('/images/gplus.svg') center top no-repeat;
- border-radius: 5px;
+  margin-top: 5px;
+  width: 32px;
+  height:32px;
+  display:inline-block;
+  background:transparent url('/images/gplus.svg') center top no-repeat;
+  border-radius: 5px;
 }
 
 .fb:hover { 
