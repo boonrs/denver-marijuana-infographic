@@ -9,7 +9,7 @@
 
 body {
   color: white;
-  background-color: #8CC63F;
+  background-color: #41a8c4;
 
 }
 
@@ -28,8 +28,10 @@ img.center {
   float: left;
 }
 
-.jumbotron { background-color: #8CC63F;
-text-align: left;}
+.jumbotron { 
+  background-color: #41a8c4;
+  text-align: left;
+}
 
 .row {margin-bottom: 50px;}
 
@@ -149,7 +151,7 @@ footer a {
 
 footer a:hover {
   text-decoration: none;
-  color:#8CC63F;
+  color:#41a8c4;
   -o-transition:.2s;
   -ms-transition:.2s;
   -moz-transition:.2s;
@@ -160,7 +162,7 @@ footer a:hover {
 /* Navigation */
 .navbar-default {
   color: white;
-	background-color: #8CC63F;
+	background-color: #41a8c4;
 	margin: 0;
   border-radius: 0;
   border:none;
@@ -180,7 +182,7 @@ footer a:hover {
     transition:.2s;
 }
 .navbar-default .navbar-toggle:hover .icon-bar{
-  background-color: #8CC63F;
+  background-color: #41a8c4;
   -o-transition:.2s;
   -ms-transition:.2s;
   -moz-transition:.2s;
@@ -192,7 +194,7 @@ footer a:hover {
 }
 
 .navbar-default .navbar-toggle:focus .icon-bar{
-  background-color: #8CC63F;
+  background-color: #41a8c4;
 }
 
 #topbar{border-bottom: 1px solid white;}
@@ -223,13 +225,13 @@ footer a:hover {
 .navbar-default .navbar-nav > .active > a, 
 .navbar-default .navbar-nav > .active > a:hover, 
 .navbar-default .navbar-nav > .active > a:focus {
-    color: #8CC63F;
+    color: #41a8c4;
     background-color: white;
 }
 .navbar-default .navbar-nav > .open > a, 
 .navbar-default .navbar-nav > .open > a:hover, 
 .navbar-default .navbar-nav > .open > a:focus {
-    color: #8CC63F;
+    color: #41a8c4;
     background-color: white;
 }
 /* caret */
@@ -273,7 +275,7 @@ footer a:hover {
   padding-right:30px;
 }
 .panel-title > a:hover {
-  color: #8CC63F;
+  color: #41a8c4;
   text-decoration: none;
   -o-transition:.2s;
   -ms-transition:.2s;
@@ -329,7 +331,7 @@ footer a:hover {
 .bs-sidebar .nav > li > a:hover,
 .bs-sidebar .nav > li > a:focus {
   text-decoration: none;
-  background-color: #8CC63F;
+  background-color: #41a8c4;
   color: white;
   text-shadow: none;
 }
@@ -337,9 +339,9 @@ footer a:hover {
 .bs-sidebar .nav > .active:hover > a,
 .bs-sidebar .nav > .active:focus > a {
   font-weight: bold;
-  color: #8CC63F;
+  color: #41a8c4;
   text-shadow: none;
-  border-left: 2px solid #8CC63F;
+  border-left: 2px solid #41a8c4;
 }
 
 .bs-sidebar .nav > .active:hover > a {
