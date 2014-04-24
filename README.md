@@ -15,7 +15,7 @@ if you get an error, make sure you have bundler installed:
 
 2. Get Jekyll to watch your build
 
-` jekyll build --watch ` (or serve the site with `jekyll serve` and copy the server address to a browser to view)
+` jekyll serve --watch `
 
 3. Use git normally, stage changes, commit, pull request, etc.
 
