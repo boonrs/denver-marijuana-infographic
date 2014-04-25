@@ -10,7 +10,6 @@
 body {
   color: white;
   background-color: #41a8c4;
-
 }
 
 .section-title {
@@ -34,6 +33,60 @@ img.center {
 }
 
 .row {margin-bottom: 50px;}
+
+/* Share Buttons*/
+.share-text {
+  display:inline-block;
+  padding-bottom: 10px;
+}
+
+.share_this {
+  margin-top: 10px;
+  width: 100%;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.fb {
+  margin-top: 5px;
+  width: 32px;
+  height:32px;
+  display:inline-block;
+  background:transparent url('/images/fb.svg') center top no-repeat;
+  border-radius: 5px;
+}
+
+.twitter {
+  margin-top: 5px;
+  width: 32px;
+  height:32px;
+  display:inline-block;
+  background:transparent url('/images/twitter.svg') center top no-repeat;
+  border-radius: 5px;
+}
+
+.gplus {
+  margin-top: 5px;
+  width: 32px;
+  height:32px;
+  display:inline-block;
+  background:transparent url('/images/gplus.svg') center top no-repeat;
+  border-radius: 5px;
+}
+
+.fb:hover { 
+  background-image: url('/images/fb_hover.svg'); 
+  border: 1px solid white;
+}
+.twitter:hover { 
+  background-image: url('/images/twitter_hover.svg'); 
+  border: 1px solid white;
+}
+.gplus:hover { 
+  background-image: url('/images/gplus_hover.svg'); 
+  border: 1px solid white;
+}
+
+
 
 /*Add Media Query for Mobile*/
 /*.container {   margin-top: 200px;}*/
@@ -95,7 +148,6 @@ img.center {
   display: inline-block;
   vertical-align: middle;
 }
-
 
 .section-block {
   padding-bottom: 50px;
@@ -303,12 +355,15 @@ footer a:hover {
  */
 
 /* By default it's not affixed in mobile views, so undo that */
+
+
 .bs-sidebar.affix {
   position: static;
 }
 
 #sidebar h3 {
   padding-left: 5px;
+  font-size: 1.2em;
 }
 
 /* First level of nav */
