@@ -51,7 +51,7 @@ img.center {
   width: 32px;
   height:32px;
   display:inline-block;
-  background:transparent url('/images/fb.svg') center top no-repeat;
+  background:transparent url('../images/fb.svg') center top no-repeat;
   border-radius: 5px;
 }
 
@@ -60,7 +60,7 @@ img.center {
   width: 32px;
   height:32px;
   display:inline-block;
-  background:transparent url('/images/twitter.svg') center top no-repeat;
+  background:transparent url('../images/twitter.svg') center top no-repeat;
   border-radius: 5px;
 }
 
@@ -69,20 +69,20 @@ img.center {
   width: 32px;
   height:32px;
   display:inline-block;
-  background:transparent url('/images/gplus.svg') center top no-repeat;
+  background:transparent url('../images/gplus.svg') center top no-repeat;
   border-radius: 5px;
 }
 
 .fb:hover { 
-  background-image: url('/images/fb_hover.svg'); 
+  background-image: url('../images/fb_hover.svg'); 
   border: 1px solid white;
 }
 .twitter:hover { 
-  background-image: url('/images/twitter_hover.svg'); 
+  background-image: url('../images/twitter_hover.svg'); 
   border: 1px solid white;
 }
 .gplus:hover { 
-  background-image: url('/images/gplus_hover.svg'); 
+  background-image: url('../images/gplus_hover.svg'); 
   border: 1px solid white;
 }
 
