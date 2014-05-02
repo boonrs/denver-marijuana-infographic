@@ -23,11 +23,11 @@ img.center {
 }
 
 #sidebar {
-  display:block; 
+  display:block;
   float: left;
 }
 
-.jumbotron { 
+.jumbotron {
   background-color: #41a8c4;
   text-align: left;
 }
@@ -73,16 +73,16 @@ img.center {
   border-radius: 5px;
 }
 
-.fb:hover { 
-  background-image: url('../images/fb_hover.svg'); 
+.fb:hover {
+  background-image: url('../images/fb_hover.svg');
   border: 1px solid white;
 }
-.twitter:hover { 
-  background-image: url('../images/twitter_hover.svg'); 
+.twitter:hover {
+  background-image: url('../images/twitter_hover.svg');
   border: 1px solid white;
 }
-.gplus:hover { 
-  background-image: url('../images/gplus_hover.svg'); 
+.gplus:hover {
+  background-image: url('../images/gplus_hover.svg');
   border: 1px solid white;
 }
 
@@ -98,7 +98,7 @@ img.center {
   float:none;
   display:inline-block;
   vertical-align:middle;
-  
+
 }
 .col-sm-4.centered {
   margin-right:-.4em;
@@ -110,7 +110,7 @@ img.center {
   float:none;
   display:inline-block;
   vertical-align:middle;
-  
+
 }
 .col-md-8.centered {
   margin-right:-.4em;
@@ -133,7 +133,7 @@ img.center {
 /* This parent can be any width and height */
 .block {
 }
- 
+
 /* The ghost, nudged to maintain perfect centering */
 .block:before {
   content: '';
@@ -143,7 +143,7 @@ img.center {
   margin-right: -0.3em; /* Adjusts for spacing */
 }
 
-/* The element to be centered, can also be of any width and height */ 
+/* The element to be centered, can also be of any width and height */
 .centered {
   display: inline-block;
   vertical-align: middle;
@@ -178,8 +178,8 @@ img.center {
 
 
 .big-number {
-  font-family: "HelveticaNeue-Bold", "Helvetica Neue Bold", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
-  font-size: 1em;
+  font-family: "HelveticaNeue-Bold", "Helvetica Neue Bold", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-size: 5em;
   text-align: center;
 
 }
@@ -274,14 +274,14 @@ footer a:hover {
     -webkit-transition:.2s;
     transition:.2s;
 }
-.navbar-default .navbar-nav > .active > a, 
-.navbar-default .navbar-nav > .active > a:hover, 
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus {
     color: #41a8c4;
     background-color: white;
 }
-.navbar-default .navbar-nav > .open > a, 
-.navbar-default .navbar-nav > .open > a:hover, 
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
 .navbar-default .navbar-nav > .open > a:focus {
     color: #41a8c4;
     background-color: white;
@@ -296,8 +296,8 @@ footer a:hover {
     border-top-color: #333;
     border-bottom-color: #333;
 }
-.navbar-default .navbar-nav > .open > a .caret, 
-.navbar-default .navbar-nav > .open > a:hover .caret, 
+.navbar-default .navbar-nav > .open > a .caret,
+.navbar-default .navbar-nav > .open > a:hover .caret,
 .navbar-default .navbar-nav > .open > a:focus .caret {
     border-top-color: #555;
     border-bottom-color: #555;
@@ -424,7 +424,25 @@ footer a:hover {
 
 
 /* Show and affix the side nav when space allows it */
+@media(max-width:767px){
+ .big-number {
+   font-size: 5em;
+ }
+ }
+ @media(min-width:768px){
+   .big-number {
+     font-size: 6em;
+   }
+ }
+
 @media (min-width: 992px) {
+   .big-number {
+     font-size: 5em;
+   }
+    .bs-sidebar .nav > .active > ul {
+      display: block;
+    }
+
   .bs-sidebar .nav > .active > ul {
     display: block;
   }
@@ -451,7 +469,7 @@ footer a:hover {
   .bs-sidebar.affix {
     width: 263px;
   }
+   .big-number {
+     font-size: 6em;
+   }
 }
-
-
-
