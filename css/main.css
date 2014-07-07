@@ -420,7 +420,26 @@ footer a:hover {
   position: static;
 }
 
-
+/* Frequently Asked Questions*/
+.btn-mj {
+  color: #58595b;
+  /*font-weight: 500;*/
+  background-color: white;
+  margin-top: 2em;
+  margin: 2em 2em 2em 0;
+  /*border: 1px solid #ccc;*/
+  
+}
+.btn-mj:hover {
+  color: white;
+  background-color: #41a8c4; 
+  border: 1px solid white;
+  -o-transition:.2s;
+    -ms-transition:.2s;
+    -moz-transition:.2s;
+    -webkit-transition:.2s;
+    transition:.2s;
+}
 
 
 /* Show and affix the side nav when space allows it */
