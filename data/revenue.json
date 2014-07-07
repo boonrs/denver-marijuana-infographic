@@ -1,6 +1,6 @@
 var revenue  = {
   "big_number": {
-    "total":  "$160M",
+    "total":  "$22,793,749",
     "bold_description": "... has been made in tax revenue from marijuana industry since 2010.",
     "description": "This does not represent the ammount of money spent on marijuana in Denver."
   },
@@ -11,25 +11,37 @@ var revenue  = {
     "value1": "recreational",
     "value1_name": "Recreational",
     "value2": "medical",
-    "value_name": "facilities",
-    "value2_name": "Facilities",
+    "value_name": "medical",
+    "value2_name": "Medical",
     "argument": "quarter",
     "data": [
-      { quarter: "Q1 2013", recreational: 0, medical: 120000000 },
-      { quarter: "Q2 2013", recreational: 0, medical: 150000000 },
-      { quarter: "Q3 2013", recreational: 0, medical: 170000000},
-      { quarter: "Q4 2013", recreational: 0, medical: 199000000 },
-      { quarter: "Q1 2014", recreational: 500000000, medical: 400000000 }
+      { quarter: "Q1 2010", recreational: 0, medical: 303861},
+      { quarter: "Q2 2010", recreational: 0, medical: 392545},
+      { quarter: "Q3 2010", recreational: 0, medical: 475078},
+      { quarter: "Q4 2010", recreational: 0, medical: 518044},
+      { quarter: "Q1 2011", recreational: 0, medical: 542661},
+      { quarter: "Q2 2011", recreational: 0, medical: 626904},
+      { quarter: "Q3 2011", recreational: 0, medical: 799404},
+      { quarter: "Q4 2011", recreational: 0, medical: 796136},
+      { quarter: "Q1 2012", recreational: 0, medical: 904886},
+      { quarter: "Q2 2012", recreational: 0, medical: 1079088},
+      { quarter: "Q3 2012", recreational: 0, medical: 1269030},
+      { quarter: "Q4 2012", recreational: 0, medical: 1290688},
+      { quarter: "Q1 2013", recreational: 0, medical: 1403100},
+      { quarter: "Q2 2013", recreational: 0, medical: 1638400},
+      { quarter: "Q3 2013", recreational: 0, medical: 1910021},
+      { quarter: "Q4 2013", recreational: 0, medical: 1854905},
+      { quarter: "Q1 2014", recreational: 1976928, medical: 1612036}
     ]
   },
   "types": {
     "title": "Where Marijuana Revenue Came From",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    "description": "2014 Quarter from the City and County of Denver open data portal. Just search 'marijuana'",
     "argument": "strain",
     "value": "money",
     "data": [
-      { strain: "Medical", money: 109000000 },
-      { strain: "Recreational", money: 19000000}
+      { strain: "Medical", money: 1612036 },
+      { strain: "Recreational", money: 1976928}
     ]
   },
   "employees": {

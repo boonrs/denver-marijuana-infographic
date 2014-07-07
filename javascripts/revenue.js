@@ -2,7 +2,7 @@
 $( document ).ready(function() {
   revenueCount(revenue.big_number);
   revenueArea(revenue.over_time);
-  revenueSource();
+  revenueSource(revenue.types);
 });
 
 function revenueCount(big_number) {
@@ -11,8 +11,8 @@ function revenueCount(big_number) {
   $("#revenue-number-description").text(big_number.description);
 }
 
-function revenueSource() {
-  $("#revenue-donut-description").text("Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.");
+function revenueSource(types) {
+  $("#revenue-donut-description").text(types.description);
   d3.csv("data/revenue-source.csv", function(error, data) {
     nv.addGraph(function() {
       var chart = nv.models.pieChart()
