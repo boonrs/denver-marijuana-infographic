@@ -25,7 +25,6 @@ title: {{ site.name }}
             <li><a href="#facilities">Facilities</a></li>
             <li><a href="#revenue">Revenue</a></li>
             <li><a href="#crime">Crime</a></li>
-            <li><a href="#faq">FAQ</a></li>
           </ul>
         </div>
     </nav>
@@ -40,7 +39,6 @@ title: {{ site.name }}
           <li><a href="#facilities">Facilities</a></li>
           <li><a href="#revenue">Revenue</a></li>
           <li><a href="#crime">Crime</a></li>
-          <li><a href="#faq">FAQ</a></li>
         </ul>
         
          
@@ -198,39 +196,7 @@ title: {{ site.name }}
               <p class="image-description">Incidentally Related Crimes are crimes which involve possession and consumption of marijuana during another crime by offender or victim or both.</p>
             </div>
           </div>
+        </div> 
       </div>
-
-      <!-- FAQ ================================================== -->
-      <div id="faq" class="section-block">
-        <div class="row">
-            <div class="col-md-12">
-              <a name="faq"></a>
-              <div id="faq" class="row">
-
-                <div class="panel-group" id="accordion">
-                  {% for item in site.posts %}
-                  <div class="panel panel-default">
-                    <div class="panel-heading">
-                      <h4 class="panel-title">
-                      <a data-toggle="collapse" data-parent="#accordion" href="#accordion{{forloop.index}}">
-                        {{ item.question }}
-                      </a>
-                      </h4>
-                    </div>
-
-                    <div id="accordion{{forloop.index}}" class="panel-collapse collapse">
-                      <div class="panel-body">
-                        {{ item.content }}
-                      </div>
-                    </div>
-                  </div>
-                  {% endfor %}
-                </div>
-              </div>
-              <div id="faq-area" style="width:100%;"></div>      
-            </div>
-        </div>
-      </div>
-    </div>
   </div>
 </div>
