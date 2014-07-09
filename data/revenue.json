@@ -1,6 +1,7 @@
 var revenue  = {
   "big_number": {
-    "total":  "$22,793,749",
+    "total-alt": "$22,793,749",
+    "total": "$22.79M",
     "bold_description": "... has been made in tax revenue from marijuana industry since 2010.",
     "description": "This does not represent the ammount of money spent on marijuana in Denver."
   },
