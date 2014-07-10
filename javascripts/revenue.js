@@ -47,24 +47,56 @@ function revenueArea(over_time) {
     dataSource: over_time.data,
     commonSeriesSettings: {
         type: "area",
-        argumentField: over_time.argument
+        argumentField: over_time.argument,
     },
     series: [
-        { valueField: over_time.value1, name: over_time.value1_name },
-        { valueField: over_time.value2, name: over_time.value2_name }
+        { valueField: over_time.value1, name: over_time.value1_name, color:'#fff' },
+        { valueField: over_time.value2, name: over_time.value2_name, color:'#b3dce8'  }
     ],
-    title: over_time.title,
+    title: {
+            text: over_time.title,
+            font: {
+                color: 'white',
+                family: 'Helvetica, Arial, sans-serif',
+                opacity: 0.9,
+                size: 25,
+                weight: 400
+            }
+        },
     argumentAxis:{
-        valueMarginsEnabled: false
+        valueMarginsEnabled: false,
+
     },
+    commonAxisSettings: {
+            label: {
+                overlappingBehavior: {
+                    mode: 'rotate',
+                    rotationAngle: 45
+                }, 
+                font: { 
+                  color: 'white', 
+                  family: 'Helvetica, Arial, sans-serif',
+                  size: 12,
+                  weight: 100
+                }
+              
+            }
+        },
   valueAxis:{
     label: {
       format: over_time.value_label
     }
+
   },
     legend: {
         verticalAlignment: "bottom",
-        horizontalAlignment: "center"
+        horizontalAlignment: "center",
+        font: {
+          color: 'white', 
+          family: 'Helvetica, Arial, sans-serif',
+          size: 12,
+          weight: 100
+        }
     }
   });
 }
