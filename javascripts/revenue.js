@@ -46,7 +46,7 @@ function revenueArea(over_time) {
   $("#revenue-area").dxChart({
     dataSource: over_time.data,
     commonSeriesSettings: {
-        type: "area",
+        type: "line",
         argumentField: over_time.argument,
     },
     series: [
@@ -88,15 +88,20 @@ function revenueArea(over_time) {
     }
 
   },
-    legend: {
-        verticalAlignment: "bottom",
-        horizontalAlignment: "center",
-        font: {
-          color: 'white', 
-          family: 'Helvetica, Arial, sans-serif',
-          size: 12,
-          weight: 100
-        }
-    }
+  legend: {
+      verticalAlignment: "bottom",
+      horizontalAlignment: "center",
+      font: {
+        color: 'white', 
+        family: 'Helvetica, Arial, sans-serif',
+        size: 12,
+        weight: 100
+      }
+  },
+  tooltip: {
+    enabled: true,
+    format: 'currency',
+    color: '#5395a5'
+  },
   });
 }
