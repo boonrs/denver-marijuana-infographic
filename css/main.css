@@ -46,50 +46,28 @@ img.center {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
-.fb {
+.btn-share {
   margin-top: 5px;
   width: 32px;
   height:32px;
   display:inline-block;
-  background:transparent url('../images/fb.svg') center top no-repeat;
   border-radius: 5px;
-}
-
-.twitter {
-  margin-top: 5px;
-  width: 32px;
-  height:32px;
-  display:inline-block;
-  background:transparent url('../images/twitter.svg') center top no-repeat;
-  border-radius: 5px;
-}
-
-.gplus {
-  margin-top: 5px;
-  width: 32px;
-  height:32px;
-  display:inline-block;
-  background:transparent url('../images/gplus.svg') center top no-repeat;
-  border-radius: 5px;
-}
-
-.fb:hover {
-  background-image: url('../images/fb_hover.svg');
   border: 1px solid white;
+  background-color: #41a8c4;
 }
-.twitter:hover {
-  background-image: url('../images/twitter_hover.svg');
-  border: 1px solid white;
-}
-.gplus:hover {
-  background-image: url('../images/gplus_hover.svg');
-  border: 1px solid white;
+.btn-share:hover {
+  background-color: white;
 }
 
+.fb { background: url('../images/mj_share-1x.png') no-repeat 0 -134px;}
+.fb:hover { background-position: 0 -167px; }
 
+.twitter { background: url('../images/mj_share-1x.png') no-repeat 0 -68px; }
+.twitter:hover { background-position: 0 -101px; }
 
-/*Add Media Query for Mobile*/
-/*.container {   margin-top: 200px;}*/
+.gplus { background: url('../images/mj_share-1x.png') no-repeat 0 -2px; }
+.gplus:hover { background-position: 0 -35px; }
+
 
 
 /*Center Content Vertically*/
@@ -492,3 +470,14 @@ footer a:hover {
      font-size: 6em;
    }
 }
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
+  .fb, .fb:hover,
+  .twitter, .twitter:hover,
+  .gplus, .gplus:hover {
+    /* Reference the @2x Sprite */
+    background-image: url('../images/mj_share-2x.png');
+    /* Translate the @2x sprite's dimensions back to 1x */
+    background-size: 32px 198px; 
+  }
+
