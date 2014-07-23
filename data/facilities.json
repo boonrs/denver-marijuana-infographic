@@ -1,54 +1,7 @@
 var facilities  = {
   "big_number": {
-    "total": 100,
+    "total": 273,
     "bold_description": "... marijuana facilities are currently running in the City and County of Denver",
     "description": "These include places where marijuana is grown and where it is sold, both recreationally and medically."
-  },
-  "retail": {
-    "title": "Recreational Retail Stores"
-    },
-  "medical": {
-    "title": "Medical Centers"
-   },
-  "grow": {
-    "title": "Grow Facilities"
-  },
-  "over_time": {
-    "title": "Number of Marijuana Facilities in Denver",
-    "argument": "quarter",
-    "value": "number",
-    "value_name": "Number",
-    "data": [
-      {
-          "quarter": "Q1 2013",
-          "number": 12
-      },
-      {
-          "quarter": "Q2 2013",
-          "number": 50
-      },
-      {
-          "quarter": "Q3 2013",
-          "number": 52
-      },
-      {
-          "quarter": "Q4 2013",
-          "number": 54
-      },
-      {
-          "quarter": "Q1 2014",
-          "number": 110
-      }
-    ]
-  },
-  "types": {
-    "title": "Types of Marijuana Facilities",
-    "argument": "type",
-    "value": "val",
-    "data": [
-      {type: "Recreational Retail Stores", val: 28},
-      {type: "Medical Centers", val: 28},
-      {type: "Grow Facilities", val: 28}
-    ]
   }
 };
