@@ -22,7 +22,7 @@ title: {{ site.name }}
 
         <div class="collapse navbar-collapse" id="topbar">
           <ul class="nav navbar-nav navbar-right">
-            <!--<li><a href="#facilities">Facilities</a></li>-->
+            <li><a href="#facilities">Facilities</a></li> 
             <li><a href="#revenue">Revenue</a></li>
             <!--<li><a href="#crime">Crime</a></li>-->
             <li><a href="#faq">FAQ</a></li>
@@ -37,7 +37,7 @@ title: {{ site.name }}
         
         <ul class="nav bs-sidenav">
           <li><a href="#about">About</a></li>
-          <!--<li><a href="#facilities">Facilities</a></li>-->
+          <li><a href="#facilities">Facilities</a></li>
           <li><a href="#revenue">Revenue</a></li>
           <!--<li><a href="#crime">Crime</a></li>-->
           <li><a href="#faq">FAQ</a></li>
@@ -83,42 +83,31 @@ title: {{ site.name }}
       </div>
 
       <!-- Facilities ================================================== -->
-      <!-- <div id="facilities" class="section-block">
+      <div id="facilities" class="section-block">
         <div class="row section-title">
           <h1>Facilities</h1>
         </div>    
 
         <div class="row block">
-          <div class="col-sm-4 big-number" id="facilities-number"></div>     
-          <div class="col-md-8 centered" id="faciliteis-number-strong">
-            <div id="revenue-number-description"></div>
+          <div class="col-sm-4 bigtext">
+            <span id="facilities-number"></span>
+          </div>
+
+          <div class="col-md-8 bigtext-descr" id="facilities-number-strong">
+            <div id="facilities-number-description"></div>
           </div>
         </div>
 
-        <div class="row">
-            <div class="col-md-12 text-center">
-                <div id="facilities-line" class="full-width-image"></div>
-            </div>
-        </div>
 
-        <div class="row">
-          <div class="col-md-10 col-md-offset-1 text-center">
-            <p>This chart shows the number of marijuana licenses given to businesses in Denver since January 2012. It’s important to note that businesses can sell both retail and medical marijuana and so they may have licenses for both.</p>
-          </div>
-        </div>
-
-        <div class="row">
-            <div class="col-sm-6 text-center insight-container">
-                <img alt="Money" src="images/retail.svg" height="80" width="80">
-                <p class="image-description">Retail Marijuana licenses include those for marijuana stores, cultivation facilities, edible manufacturers, and testing facilities.</p>
+          <div class="row block">
+            <div  class="col-md-6 centered" id="facilities-donut-description">
+              Break down of medical and recreational licenses.
             </div>
-              
-            <div class="col-sm-6 text-center insight-container">
-                <img alt="Cadaceus" src="images/cadaceus.svg" height="80" width="80">
-                <p class="image-description">Medical Marijuana licenses include those for dispensaries, cultivation facilities, edible manufacturers, and testing facilities.</p>
+            <div class="col-md-6">
+              <div id="facilities-donut" class="full-width-image"></div>
             </div>
         </div>
-      </div> -->
+      </div>
 
       <!-- Revenue ================================================== -->
       <div id="revenue" class="section-block">
