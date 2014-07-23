@@ -2,8 +2,9 @@
 /*Chart Styles*/
 #crime-stacked { height: 500px; }
 #revenue-donut { height: 500px; }
+#facilities-donut { height: 500px; }
 #revenue-bar { height: 300px; }
-
+#revenue-donut, #facilities-donut { margin-right: 10px }
 
 /* Master Styles */
 
