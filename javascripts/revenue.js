@@ -15,6 +15,7 @@ function revenueSource(types) {
   $("#revenue-donut-description").text(types.description);
   d3.csv("data/revenue-source.csv", function(error, data) {
     nv.addGraph(function() {
+      var width = 300, height = 400;
       var chart = nv.models.pieChart()
         .x(function(d) { return d.label })
         .y(function(d) { return d.value })
@@ -24,9 +25,9 @@ function revenueSource(types) {
         .donut(true)          //Turn on Donut mode. Makes pie chart look tasty!
         .donutRatio(0.35)     //Configure how big you want the donut hole size to be.
         .color(["#4dddff", "#b3eaf4"])
-        .height (500)
-        chart.legend.rightAlign(false)
-        chart.legend.margin({top: 50, right: 0, bottom: 5, left: 90})
+        .width(width).height(height);    //Set the height and width of the chart
+        chart.legend.rightAlign(true)
+        chart.legend.margin({top: 20, right: 20, bottom: 0, left: 0})
         ;
 
       d3.select("#revenue-donut")

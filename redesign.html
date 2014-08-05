@@ -8,9 +8,9 @@ title: {{ site.name }}
 
   <div class="row">
       
-    <nav class="navbar navbar-default navbar-static visible-xs visible-sm" role="navigation">
+<!--     <nav class="navbar navbar-default navbar-static visible-xs visible-sm" role="navigation">
 
-        <div class="navbar-header">
+        <div class="navbar-header ">
           <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#topbar">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
@@ -24,14 +24,14 @@ title: {{ site.name }}
           <ul class="nav navbar-nav navbar-right">
             <li><a href="#facilities">Facilities</a></li> 
             <li><a href="#revenue">Revenue</a></li>
-            <!--<li><a href="#crime">Crime</a></li>-->
+            <li><a href="#crime">Crime</a></li>
             <li><a href="#faq">FAQ</a></li>
           </ul>
         </div>
-    </nav>
+    </nav> -->
 
     <!-- Main Content ================================================== -->
-    <div class="col-lg-8 col-lg-offset-2">
+    <div class="main-content col-lg-8 col-lg-offset-2">
       
       <!-- About ================================================== -->
       <div id="about" class="jumbotron">                    
@@ -55,9 +55,10 @@ title: {{ site.name }}
 
       <div class="infographic clearfix">
 
+        <!-- FACILITIES -->
         <div class="info-group">
 
-          <div class="info-header">
+          <div class="info-header" id="facilities">
             <span class="info-title">Facilities</span>
             <span class="info-date">Updated 7/2014</span>
             <span class="info-data"><a href="" >View Source Data »</a></span>
@@ -78,10 +79,10 @@ title: {{ site.name }}
         </div> <!-- info-group -->
       
        
-
+        <!-- REVENUE -->
         <div class="info-group">
 
-          <div class="info-header">
+          <div class="info-header" id="revenue">
             <span class="info-title">Revenue</span>
             <span class="info-date">Updated 7/2014</span>
             <span class="info-data"><a href="" >View Source Data »</a></span>
@@ -107,25 +108,62 @@ title: {{ site.name }}
           </div> <!-- info-row -->
         </div> <!-- info-group -->
 
+        <!-- CRIME -->
+        <div class="info-group">
+
+          <div class="info-header" id="crime">
+            <span class="info-title">Crime</span>
+          </div>
+
+          <div class="info-full">
+            <div id="crime-stacked"></div>
+          </div>
+
+          <div class="info-row">
+            <div class="info-half"> 
+              <img alt="Public Consumption Tickets" src="images/ticket.svg" height="80" width="80">
+              <p class="image-description">Public Consumption Tickets are non-criminal citations issued for the consumption of marijuana in a public place.</p>
+            </div>
+
+            <div class="info-half"> 
+              <img alt="Industry Related Crimes" src="images/industry.svg" height="80" width="80">
+              <p class="image-description">Industry Related Crimes are crimes related to the licensed marijuana industry and are committed against the industry or by the industry itself.</p>
+            </div>
+
+          </div>
+
+          <div class="info-row">
+            
+            <div class="info-half"> 
+              <img alt="Non-Industry Related Crimes" src="images/thief.svg" height="80">
+              <p class="image-description">Non-Industry Related Crimes are crimes in which Marijuana is the primary target in the commission of these crimes but the marijuana has no readily apparent tie to a licensed operation.</p>
+            </div>
+
+            <div class="info-half"> 
+              <img alt="Incidentally Related Crimes" src="images/handcuffs.svg" height="80" width="80">
+              <p class="image-description">Incidentally Related Crimes are crimes which involve possession and consumption of marijuana during another crime by offender or victim or both.</p>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- FAQ -->
         <div class="info-group center">
 
-          <div class="info-header ">
+          <div class="info-header" id="faq">
             <span class="info-title">Frequently Asked Questions</span>
           </div>
 
           <div class="info-full">
 
-              If you'd like to learn more about Denver's Marijuana Policy for residents and businesses, visit the links below. <br>
+            If you'd like to learn more about Denver's Marijuana Policy for residents and businesses, visit the links below. <br>
 
+            <a target="_blank" href="https://www.colorado.gov/marijuanainfodenver"><button class="btn btn-mj">Marijuana Policy for Residents</button></a>
 
-              <a target="_blank" href="https://www.colorado.gov/marijuanainfodenver"><button class="btn btn-mj">Marijuana Policy for Residents</button></a>
+            <a target="_blank" href="http://www.denvergov.org/businesslicensing/DenverBusiness%20ngCenter/RetailMarijuana/tabid/445028/Default.aspx"><button class="btn btn-mj" >Marijuana Policy for Businesses</button></a>
 
-
-              <a target="_blank" href="http://www.denvergov.org/businesslicensing/DenverBusiness%20ngCenter/RetailMarijuana/tabid/445028/Default.aspx"><button class="btn btn-mj" >Marijuana Policy for Businesses</button></a>
-
-
-
-              </div>
+          </div>
 
           </div>
 
@@ -133,106 +171,10 @@ title: {{ site.name }}
 
       </div> <!-- infographic -->
 
-    </div>  <!-- Main Content --> 
+    </div>  <!-- main-content --> 
 
 
 
-
-      <!--   <div class="info-group parent">
-          <div class="info-header">
-            <span class="info-title">Facilities</span>
-            <span class="info-date">Updated 7/2014</span>
-            <span class="info-data"><a href="" >View Source Data »</a></span>
-          </div> -->
-          
-          <!-- <div class="info-full">Full</div> -->
-          
-          <!-- <div class="block" style="height:800px;"> -->
-
-            <!-- <div class="centered"> -->
-<!--               <div class="col-lg-6 info-half">
-                <div class=" ">
-                  <div class="bigtext">
-                    <span id="facilities-number"></span>
-                  </div>
-                   Marijuana facilities that are currently running in the City and County of Denver.
-                 </div>
-              </div> -->
-              <!-- </div> -->
-
-            <!-- <div class="centered"> -->
-<!--               <div class="col-lg-6 info-half">
-                <div id="facilities-donut"></div>
-              </div> -->
-            <!-- </div> -->
-
-          <!-- </div> block -->
-        
-        <!-- </div> info-group -->
-      
-
-      <!-- About ================================================== -->
-      <!-- Facilities ================================================== -->
-      <!-- Revenue ================================================== -->
-      <!-- Crime ================================================== -->
-      <!-- FAQ ================================================== -->
-    
-    <!-- Main Content ================================================== -->
-    <div class="col-md-9"> 
-
-
-
-
-      <!-- Crime ================================================== -->
-      <!-- <div id="crime" class="section-block">
-        <div class="row section-title">
-          <h1>Crime</h1>
-        </div>        
-
-        <div class="row">
-          <div id="crime-number" class="col-md-4 text-center big-number"></div>
-            <div class="col-md-8">
-              <div class="block" style="height: 100%;">
-                <strong id="crime-number-strong"></strong>
-                <div id="crime-number-description"></div>
-              </div>
-            </div>
-        </div>
-
-        <div class="row">
-          <div class="col-md-12">
-            <div id="crime-stacked" class="full-width-image"></div>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-md-6 text-center insight-container">
-            <img alt="Public Consumption Tickets" src="images/ticket.svg" height="80" width="80">
-            <p class="image-description">Public Consumption Tickets are non-criminal citations issued for the consumption of marijuana in a public place.</p>
-          </div>
-          
-          <div class="col-md-6 text-center insight-container">
-            <img alt="Industry Related Crimes" src="images/industry.svg" height="80" width="80">
-            <p class="image-description">Industry Related Crimes are crimes related to the licensed marijuana industry and are committed against the industry or by the industry itself.</p>
-          </div>
-        </div>
-
-          <div class="row">
-            <div class="col-md-6 text-center insight-container">
-              <img alt="Non-Industry Related Crimes" src="images/thief.svg" height="80">
-              <p class="image-description">Non-Industry Related Crimes are crimes in which Marijuana is the primary target in the commission of these crimes but the marijuana has no readily apparent tie to a licensed operation.</p>
-            </div>
-            <div class="col-md-6 text-center insight-container">
-              <img alt="Incidentally Related Crimes" src="images/handcuffs.svg" height="80" width="80">
-              <p class="image-description">Incidentally Related Crimes are crimes which involve possession and consumption of marijuana during another crime by offender or victim or both.</p>
-            </div>
-          </div>
-
-        </div> 
-
-      <!-- FAQ ================================================== -->
-
-    </div> 
   </div>
 </div>
 
