@@ -2,8 +2,7 @@ var revenue  = {
   "big_number": {
     "total-alt": "$22,793,749",
     "total": "$22.79M",
-    "bold_description": "... has been made in tax revenue from marijuana industry since 2010.",
-    "description": "This does not represent the ammount of money spent on marijuana in Denver."
+    "bold_description": "Tax revenue from marijuana industry since 2010."
   },
   "over_time": {
     "title": "Marijuana Revenue in Denver",
@@ -37,7 +36,7 @@ var revenue  = {
   },
   "types": {
     "title": "Where Marijuana Revenue Came From",
-    "description": "2014 Quarter from the City and County of Denver open data portal. Just search 'marijuana'",
+    "description": "Sources of marijuana revenue in Q1 2014",
     "argument": "strain",
     "value": "money",
     "data": [

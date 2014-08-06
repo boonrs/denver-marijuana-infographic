@@ -1,7 +1,6 @@
 var facilities  = {
   "big_number": {
     "total": 273,
-    "bold_description": "... marijuana facilities are currently running in the City and County of Denver",
-    "description": "These include places where marijuana is grown and where it is sold, both recreationally and medically."
+    "bold_description": "Marijuana facilities that are currently running in the City and County of Denver.",
   }
 };
