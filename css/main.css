@@ -11,12 +11,10 @@ a:hover {color:white;}
 
 /*Chart Styles*/
 #crime-stacked { height: 500px; }
-/*#revenue-donut { height: 100px; }*/
 #facilities-donut, #revenue-donut { height: 400px;}
 #revenue-area { width: 100%;}
  { height: 400px;}
 #revenue-bar { height: 300px; }
-/*#revenue-donut, #facilities-donut { margin-right: 10px }*/
 
 /* Master Styles */
 body {
@@ -72,24 +70,19 @@ img.center {
 
 /* Infographic */
 .infographic {
-  /*border: 1px solid #8dcbdc;*/
-  /*border-radius: 3px;*/
   -webkit-box-shadow: 0px 0px 4px 0px rgba(50, 50, 50, 0.5);
   -moz-box-shadow:    0px 0px 4px 0px rgba(50, 50, 50, 0.5);
   box-shadow:         0px 0px 4px 0px rgba(50, 50, 50, 0.5);
   margin-bottom: 80px;
-  /*padding: 0 40px 40px 40px;*/
 }
 
 
 
 .info-group {
-  /*padding-bottom: 3em;*/
 }
 .info-header {
   background-color: #8dcbdc;
   padding: 20px 40px 20px 40px;
-  /*font-size: 2em;*/
 }
 
 .info-title {
