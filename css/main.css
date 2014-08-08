@@ -177,13 +177,13 @@ footer a:hover {
 }
 .main-nav {
   background: #41a8c4;
-  height: 80px;
+  height: 60px;
   z-index: 150;
-  margin-bottom: -80px;
+  margin-bottom: -60px;
   position: fixed;
   width: 100%;
   top: 0;
-  padding-top: 20px;
+  padding-top: 10px;
 }
 
 .nav-shadow {
@@ -333,6 +333,7 @@ footer a:hover {
     padding-top: 2em;
   }
   .footer-content {margin-top: 2em;}
+  .main-nav {display: none;}
 }
 @media(min-width:768px){}
 @media (min-width: 992px) {}
