@@ -3,7 +3,7 @@ $( document ).ready(function() {
   revenuesSource("http://data.denvergov.org/dataset/city-and-county-of-denver-marijuana-sales-tax");
   revenueCount(revenue.big_number);
   revenueArea(revenue.over_time);
-  revenueSource(revenue.types);
+  revenueDonut(revenue.types);
 });
 
 function revenuesSource(url) {
@@ -16,34 +16,25 @@ function revenueCount(big_number) {
   $("#revenue-number-description").text(big_number.description);
 }
 
-function revenueSource(types) {
+function revenueDonut(types) {
   $("#revenue-donut-description").text(types.description);
-  d3.csv("data/revenue-source.csv", function(error, data) {
-    nv.addGraph(function() {
-      var width = 300, height = 400;
-      var chart = nv.models.pieChart()
-        .x(function(d) { return d.label })
-        .y(function(d) { return d.value })
-        .showLabels(true)     //Display pie labels
-        .labelThreshold(.05)  //Configure the minimum slice size for labels to show up
-        .labelType("percent") //Configure what type of data to show in the label. Can be "key", "value" or "percent"
-        .donut(true)          //Turn on Donut mode. Makes pie chart look tasty!
-        .donutRatio(0.35)     //Configure how big you want the donut hole size to be.
-        .color(["#4dddff", "#b3eaf4"])
-        .width(width).height(height);    //Set the height and width of the chart
-        chart.legend.rightAlign(true)
-        chart.legend.margin({top: 20, right: 20, bottom: 0, left: 0})
-        ;
+  var svg = dimple.newSvg("#revenue-donut", 590, 400);
+  d3.csv("/data/revenue-current-quarter.csv", function (data) {
+    var myChart = new dimple.chart(svg, data);
+    myChart.addMeasureAxis("p", "value");
+    var ring = myChart.addSeries("label", dimple.plot.pie);
+    ring.getTooltipText = function (e) {
+      return [ e.aggField[0], formatPercent(e.piePct) ];
+    };
 
-      d3.select("#revenue-donut")
-        .append("svg")
-        .datum(data)
-        .transition().duration(350)
-        .call(chart);
-
-
-      return chart;
-    });
+    // Styling: Change this Kavi!
+    ring.innerRadius = "50%";
+    myChart.defaultColors = [
+      new dimple.color("#4dddff"),
+      new dimple.color("#b3eaf4")
+    ];
+    myChart.addLegend("20%,20px","1%,20px","10%,20px","10%,20px");
+    myChart.draw();
   });
 }
 

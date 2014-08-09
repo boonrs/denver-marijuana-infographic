@@ -2,7 +2,7 @@
 $( document ).ready(function() {
   facilitiesSource("http://data.denvergov.org/dataset/city-and-county-of-denver-marijuana-facilities");
   facilitiesCount(facilities.big_number);
-  facilitiesDonut(facilities.types);
+  facilitiesDonut();
 });
 
 function facilitiesSource(url) {
@@ -15,30 +15,78 @@ function facilitiesCount(big_number) {
   $("#facilities-number-description").text(big_number.description);
 }
 
-function facilitiesDonut(types) {
-  d3.csv("data/facilities-source.csv", function(error, data) {
-    nv.addGraph(function() {
-      var width = 300, height = 400;
-      var chart = nv.models.pieChart()
-        .x(function(d) { return d.label })
-        .y(function(d) { return d.value })
-        .showLabels(true)     //Display pie labels
-        .labelThreshold(.05)  //Configure the minimum slice size for labels to show up
-        .labelType("percent") //Configure what type of data to show in the label. Can be "key", "value" or "percent"
-        .donut(true)          //Turn on Donut mode. Makes pie chart look tasty!
-        .donutRatio(0.35)     //Configure how big you want the donut hole size to be.
-        .color(["#4dddff", "#b3eaf4"])
-        .width(width).height(height);    //Set the height and width of the chart
-        chart.legend.rightAlign(true)
-        chart.legend.margin({top: 20, right: 20, bottom: 0, left: 0})
-        ;
+function facilitiesDonut() {
+    var svg = dimple.newSvg("#facilities-donut", 590, 400);
+    d3.csv("/data/facilities-licenses.csv", function (data) {
+      var myChart = new dimple.chart(svg, data);
+      myChart.addMeasureAxis("p", "value");
+      var ring = myChart.addSeries("label", dimple.plot.pie);
+      ring.getTooltipText = function (e) {
+        return [ e.aggField[0], formatPercent(e.piePct) ];
+      };
 
-      d3.select("#facilities-donut")
-        .append("svg")
-        .datum(data)
-        .transition().duration(350)
-        .call(chart);
-      return chart;
+      // Styling: Change this Kavi!
+      ring.innerRadius = "50%";
+      myChart.defaultColors = [
+        new dimple.color("#4dddff"),
+        new dimple.color("#b3eaf4")
+      ];
+      myChart.addLegend("20%,20px","1%,20px","10%,20px","10%,20px");
+      myChart.draw();
     });
-  });
+}
+
+// Closure
+(function(){
+
+  /**
+   * Decimal adjustment of a number.
+   *
+   * @param {String}  type  The type of adjustment.
+   * @param {Number}  value The number.
+   * @param {Integer} exp   The exponent (the 10 logarithm of the adjustment base).
+   * @returns {Number}      The adjusted value.
+   */
+  function decimalAdjust(type, value, exp) {
+    // If the exp is undefined or zero...
+    if (typeof exp === 'undefined' || +exp === 0) {
+      return Math[type](value);
+    }
+    value = +value;
+    exp = +exp;
+    // If the value is not a number or the exp is not an integer...
+    if (isNaN(value) || !(typeof exp === 'number' && exp % 1 === 0)) {
+      return NaN;
+    }
+    // Shift
+    value = value.toString().split('e');
+    value = Math[type](+(value[0] + 'e' + (value[1] ? (+value[1] - exp) : -exp)));
+    // Shift back
+    value = value.toString().split('e');
+    return +(value[0] + 'e' + (value[1] ? (+value[1] + exp) : exp));
+  }
+
+  // Decimal round
+  if (!Math.round10) {
+    Math.round10 = function(value, exp) {
+      return decimalAdjust('round', value, exp);
+    };
+  }
+  // Decimal floor
+  if (!Math.floor10) {
+    Math.floor10 = function(value, exp) {
+      return decimalAdjust('floor', value, exp);
+    };
+  }
+  // Decimal ceil
+  if (!Math.ceil10) {
+    Math.ceil10 = function(value, exp) {
+      return decimalAdjust('ceil', value, exp);
+    };
+  }
+
+})();
+
+function formatPercent(number){
+  return (Math.round10(number * 100, -1)) + '%';
 }
