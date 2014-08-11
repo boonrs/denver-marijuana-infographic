@@ -1,9 +1,17 @@
 
 $( document ).ready(function() {
+  var big_number = {
+    "total-alt": "$22,793,749",
+    "total": "$22.79M",
+    "bold_description": "Tax revenue from marijuana industry since 2010."
+  };
+
+  var description = "Sources of marijuana revenue in Q1 2014";
+
   revenuesSource("http://data.denvergov.org/dataset/city-and-county-of-denver-marijuana-sales-tax");
-  revenueCount(revenue.big_number);
-  revenueArea(revenue.over_time);
-  revenueDonut(revenue.types);
+  revenueCount(big_number);
+  revenueArea();
+  revenueDonut(description);
 });
 
 function revenuesSource(url) {
@@ -16,13 +24,15 @@ function revenueCount(big_number) {
   $("#revenue-number-description").text(big_number.description);
 }
 
-function revenueDonut(types) {
-  $("#revenue-donut-description").text(types.description);
+function revenueDonut(description) {
+  $("#revenue-donut-description").text(description);
   var svg = dimple.newSvg("#revenue-donut", 590, 400);
   d3.csv("/data/revenue-current-quarter.csv", function (data) {
     var myChart = new dimple.chart(svg, data);
     myChart.addMeasureAxis("p", "value");
     var ring = myChart.addSeries("label", dimple.plot.pie);
+
+    // Tooltip
     ring.getTooltipText = function (e) {
       return [ e.aggField[0], formatPercent(e.piePct) ];
     };
@@ -38,67 +48,29 @@ function revenueDonut(types) {
   });
 }
 
-<!-- http://chartjs.devexpress.com/Demos/VizGallery/#chart/chartsareaseriesarea -->
-function revenueArea(over_time) {
-  $("#revenue-area").dxChart({
-    dataSource: over_time.data,
-    commonSeriesSettings: {
-        type: "line",
-        argumentField: over_time.argument,
-    },
-    series: [
-        { valueField: over_time.value1, name: over_time.value1_name, color:'#fff' },
-        { valueField: over_time.value2, name: over_time.value2_name, color:'#b3dce8'  }
-    ],
-    title: {
-            text: over_time.title,
-            font: {
-                color: 'white',
-                family: 'Helvetica, Arial, sans-serif',
-                opacity: 0.9,
-                size: 25,
-                weight: 400
-            }
-        },
-    argumentAxis:{
-        valueMarginsEnabled: false,
+function revenueArea(){
+  var svg = dimple.newSvg("#revenue-area", 590, 400);
 
-    },
-    commonAxisSettings: {
-            label: {
-                overlappingBehavior: {
-                    mode: 'rotate',
-                    rotationAngle: 45
-                }, 
-                font: { 
-                  color: 'white', 
-                  family: 'Helvetica, Arial, sans-serif',
-                  size: 12,
-                  weight: 100
-                }
-              
-            }
-        },
-  valueAxis:{
-    label: {
-      format: over_time.value_label
-    }
+  d3.csv("/data/revenue-over-time.csv", function(data) {
+    var myChart = new dimple.chart(svg, data);
+    myChart.setBounds(60, 30, 505, 305);
+    var x = myChart.addCategoryAxis("x", "quarter");
+    x.addOrderRule("year");
+    x.addOrderRule("q");
+    myChart.addMeasureAxis("y", "revenue");
+    var lines = myChart.addSeries("type", dimple.plot.line);
 
-  },
-  legend: {
-      verticalAlignment: "bottom",
-      horizontalAlignment: "center",
-      font: {
-        color: 'white', 
-        family: 'Helvetica, Arial, sans-serif',
-        size: 12,
-        weight: 100
-      }
-  },
-  tooltip: {
-    enabled: true,
-    format: 'currency',
-    color: '#5395a5'
-  },
+    // Tooltip
+    lines.getTooltipText = function (e) {
+      return [e.aggField[0] + ' ' + e.cx, e.cy];
+    };
+
+    // Styling: Change this Kavi!
+    myChart.defaultColors = [
+      new dimple.color("#fff"),
+      new dimple.color("#b3dce8")
+    ];
+    myChart.addLegend("10%,150px","1%,400px","10%,150px","10%,20px");
+    myChart.draw();
   });
 }
