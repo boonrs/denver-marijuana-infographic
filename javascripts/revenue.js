@@ -26,7 +26,7 @@ function revenueCount(big_number) {
 
 function revenueDonut(description) {
   $("#revenue-donut-description").text(description);
-  var svg = dimple.newSvg("#revenue-donut", 590, 400);
+  var svg = dimple.newSvg("#revenue-donut", '100%', '100%');
   d3.csv("/data/revenue-current-quarter.csv", function (data) {
     var myChart = new dimple.chart(svg, data);
     myChart.addMeasureAxis("p", "value");
