@@ -22,7 +22,7 @@ function facilitiesCount(big_number) {
 
 function facilitiesDonut() {
     var svg = dimple.newSvg("#facilities-donut", '100%', '100%');
-    d3.csv("/data/facilities-licenses.csv", function (data) {
+    d3.csv("data/facilities-licenses.csv", function (data) {
       var myChart = new dimple.chart(svg, data);
       myChart.addMeasureAxis("p", "value");
       var ring = myChart.addSeries("label", dimple.plot.pie);

@@ -27,7 +27,7 @@ function revenueCount(big_number) {
 function revenueDonut(description) {
   $("#revenue-donut-description").text(description);
   var svg = dimple.newSvg("#revenue-donut", '100%', '100%');
-  d3.csv("/data/revenue-current-quarter.csv", function (data) {
+  d3.csv("data/revenue-current-quarter.csv", function (data) {
     var myChart = new dimple.chart(svg, data);
     myChart.addMeasureAxis("p", "value");
     var ring = myChart.addSeries("label", dimple.plot.pie);
@@ -51,7 +51,7 @@ function revenueDonut(description) {
 function revenueArea(){
   var svg = dimple.newSvg("#revenue-area", 590, 400);
 
-  d3.csv("/data/revenue-over-time.csv", function(data) {
+  d3.csv("data/revenue-over-time.csv", function(data) {
     var myChart = new dimple.chart(svg, data);
     myChart.setBounds(60, 30, 505, 305);
     var x = myChart.addCategoryAxis("x", "quarter");
