@@ -1,8 +1,13 @@
 
 $( document ).ready(function() {
+  facilitiesSource("http://data.denvergov.org/dataset/city-and-county-of-denver-marijuana-facilities");
   facilitiesCount(facilities.big_number);
   facilitiesDonut(facilities.types);
 });
+
+function facilitiesSource(url) {
+  $("#facilities-source").attr('href', url);
+}
 
 function facilitiesCount(big_number) {
   $("#facilities-number").text(big_number.total);

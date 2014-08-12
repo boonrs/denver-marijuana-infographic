@@ -1,9 +1,14 @@
 
 $( document ).ready(function() {
+  revenuesSource("http://data.denvergov.org/dataset/city-and-county-of-denver-marijuana-sales-tax");
   revenueCount(revenue.big_number);
   revenueArea(revenue.over_time);
   revenueSource(revenue.types);
 });
+
+function revenuesSource(url) {
+  $("#revenue-source").attr('href', url);
+}
 
 function revenueCount(big_number) {
   $("#revenue-number").text(big_number.total);
