@@ -1,6 +1,0 @@
-var facilities  = {
-  "big_number": {
-    "total": 273,
-    "bold_description": "Marijuana facilities that are currently running in the City and County of Denver.",
-  }
-};
