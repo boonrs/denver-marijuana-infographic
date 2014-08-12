@@ -1,7 +1,12 @@
 
 $( document ).ready(function() {
+  var big_number = {
+    "total": 273,
+    "bold_description": "Marijuana facilities that are currently running in the City and County of Denver.",
+  };
+
   facilitiesSource("http://data.denvergov.org/dataset/city-and-county-of-denver-marijuana-facilities");
-  facilitiesCount(facilities.big_number);
+  facilitiesCount(big_number);
   facilitiesDonut();
 });
 

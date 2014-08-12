@@ -20,6 +20,10 @@ a:hover {color:white;}
 #revenue-area { width: 100%;}
 #revenue-bar { height: 300px; }
 
+svg text {
+  font: normal 12px Helvetica;
+  fill: #ffffff;
+}
 /* Master Styles */
 body {
   color: white;
