@@ -16,7 +16,7 @@ function crimeSource(url) {
 }
 
 function crimePossession() {
-  var svg = dimple.newSvg("#crime-possession", 590, 600);
+  var svg = dimple.newSvg("#crime-possession", 590, 450);
   d3.csv("data/open-crime.csv", function (data) {
     var myChart = new dimple.chart(svg, data);
     myChart.setBounds(60, 30, 510, 330)
@@ -76,4 +76,3 @@ function crimeCount(big_number) {
   $("#crime-number-strong").text(big_number.description_bold)
   $("#crime-number-description").text(big_number.description)
 }
-
