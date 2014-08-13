@@ -57,7 +57,7 @@ function revenueArea(){
     var x = myChart.addCategoryAxis("x", "quarter");
     x.addOrderRule("year");
     x.addOrderRule("q");
-    myChart.addMeasureAxis("y", "revenue");
+    var y = myChart.addMeasureAxis("y", "revenue");
     var lines = myChart.addSeries("type", dimple.plot.line);
 
     // Tooltip
@@ -66,6 +66,8 @@ function revenueArea(){
     };
 
     // Styling: Change this Kavi!
+    x.title = "Quarter";
+    y.title = "Revenue";
     myChart.defaultColors = [
       new dimple.color("#fff"),
       new dimple.color("#b3dce8")

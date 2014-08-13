@@ -19,11 +19,11 @@ function crimePossession() {
   var svg = dimple.newSvg("#crime-possession", 590, 450);
   d3.csv("data/open-crime.csv", function (data) {
     var myChart = new dimple.chart(svg, data);
-    myChart.setBounds(60, 30, 510, 330)
+    myChart.setBounds(60, 30, 510, 330);
     var x = myChart.addCategoryAxis("x", "Quarter" );
     x.addOrderRule("year");
     x.addOrderRule("q");
-    myChart.addMeasureAxis("y", "Total");
+    var y = myChart.addMeasureAxis("y", "Total");
     var bars = myChart.addSeries("Series", dimple.plot.bar);
 
     // Tooltip
@@ -32,6 +32,7 @@ function crimePossession() {
     };
 
     // Styling: Change this Kavi!
+    y.title = "Number of Criminal Incidents";
     myChart.defaultColors = [
       new dimple.color("#e5e9ea"),
       new dimple.color("#8eb5bc"),
