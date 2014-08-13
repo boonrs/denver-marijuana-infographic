@@ -1,4 +1,4 @@
-Quarter,q,years,Series,Total
+Quarter,q,year,Series,Total
 Q1 2009,1,2009,Cultivation,6
 Q1 2009,1,2009,Sale,47
 Q1 2009,1,2009,Possession,28
@@ -49,6 +49,7 @@ Q4 2012,4,2012,Possession,10
 Q4 2012,4,2012,Sale,31
 Q1 2013,1,2013,Possession,12
 Q1 2013,1,2013,Sale,19
+Q1 2013,1,2013,Cultivation,0
 Q2 2013,2,2013,Cultivation,2
 Q2 2013,2,2013,Sale,18
 Q2 2013,2,2013,Possession,67
@@ -57,6 +58,7 @@ Q3 2013,3,2013,Possession,157
 Q3 2013,3,2013,Sale,16
 Q4 2013,4,2013,Sale,13
 Q4 2013,4,2013,Possession,180
+Q4 2013,4,2013,Cultivation,0
 Q1 2014,1,2014,Cultivation,6
 Q1 2014,1,2014,Possession,151
 Q1 2014,1,2014,Sale,18
