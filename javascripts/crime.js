@@ -5,10 +5,15 @@ $( document ).ready(function() {
     "description_bold": "... marijuana related crimes have been reported this year.",
     "description": "This is the sum total of Industry and Nonindustry."
   };
+  crimeSource("http://data.denvergov.org/dataset/city-and-county-of-denver-crime");
   // crimeCount(big_number);
   // crimeOffenses();
   crimePossession();
 });
+
+function crimeSource(url) {
+  $("#crime-source").attr('href', url);
+}
 
 function crimePossession() {
   var svg = dimple.newSvg("#crime-possession", 590, 600);
