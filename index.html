@@ -3,35 +3,30 @@ layout: default
 title: {{ site.name }}
 ---
 
-      
+
 <!-- NAV ================================================== -->
 <nav class="main-nav">
   <div class="nav-links">
     <a href="#facilities">Facilities</a>
     <a href="#revenue">Revenue</a>
-    <!-- <a href="#crime">Crime</a> -->
+    <a href="#crime">Crime</a>
     <a href="#faq">FAQ</a>
   </div>
 </nav>
 
 <div class="container" role="main">
-
-
   <div class="row">
-
 
     <!-- Main Content ================================================== -->
     <div class="main-content col-lg-8 col-lg-offset-2" >
-      
-
 
       <!-- About ================================================== -->
       <span class="anchor" id="about"></span>
-      <div class="jumbotron">                    
+      <div class="jumbotron">
         <h1>{{ site.name }}</h1>
         <p class="lead">{{ site.about.description }}</p>
         <p class="small">{{ site.about.label }}: {{ site.timestamp }}</p>
-        
+
         <!-- <div>
           <div class="share-text">Share this:</div>
           <a class="fb btn-share" href="javascript:window.open('http://www.facebook.com/share.php?u=https://www.google.com/&title=Marijuana Indicators In Denver' , '_blank', 'width=400,height=500');void(0);"></a>
@@ -40,11 +35,7 @@ title: {{ site.name }}
 
           <a class="gplus btn-share"  href="javascript:window.open('https://plus.google.com/share?url=https://www.google.com/' , '_blank', 'width=490,height=550');void(0);"></a>
         </div> -->
-      
       </div> <!-- About -->
-
-
- 
 
       <div class="infographic clearfix">
 
@@ -58,21 +49,21 @@ title: {{ site.name }}
           </div>
           
           <div class="info-row">
-            <div class="info-half" > 
+            <div class="info-half" >
               <div class="bigtext">
                 <span id="facilities-number"></span>
               </div>
                <div id="facilities-number-strong" class="info-description"></div>
              </div>
-            
+
             <div class="info-half">
               <div id="facilities-donut"></div>
               <div class="info-description">Types of marijuana licenses</div>
             </div>
           </div> <!-- info-row -->
         </div> <!-- info-group -->
-      
-       
+
+
         <!-- REVENUE ============================= -->
         <span class="anchor" id="revenue"></span>
         <div class="info-group">
@@ -87,15 +78,15 @@ title: {{ site.name }}
             <div id="revenue-area"></div>
             <div class="info-description">This chart shows the tax revenue that has been made off of retail and medical marijuana over time.</div>
           </div>
-          
+
           <div class="info-row">
-            <div class="info-half"> 
+            <div class="info-half">
               <div class="bigtext">
                 <span id="revenue-number"></span>
               </div>
                <div id="revenue-number-strong" class="info-description"></div>
              </div>
-            
+
             <div class="info-half">
               <div id="revenue-donut" ></div>
               <div id="revenue-donut-description" class="info-description"></div>
@@ -105,33 +96,35 @@ title: {{ site.name }}
         </div> <!-- info-group -->
 
         <!-- CRIME ============================= -->
-        <!--<span class="anchor" id="crime"></span>
+        <span class="anchor" id="crime"></span>
         <div class="info-group">
 
           <div class="info-header">
             <span class="info-title">Crime</span>
+            <span class="info-date">Updated 7/2014</span>
+            <span class="info-data"><a id="crime-source" href="" >View Source Data »</a></span>
           </div>
 
-          
           <div class="info-full">
+            <div id="crime-possession"></div>
+            <div id="crime-possession-description" class="info-description">This chart shows the number of criminal incidents of marijuana sale, possession and cultivation over time.</div>
+          </div>
+          <!-- <div class="info-full">
             <div id="crime-stacked"></div>
           </div>
 
           <div class="info-row">
 
-            <div class="info-half"> 
+            <div class="info-half">
               <img alt="Industry Related Crimes" src="images/industry.svg" height="80" width="80">
               <p class="info-description">Industry Related Crimes are crimes related to the licensed marijuana industry and are committed against the industry or by the industry itself.</p>
             </div>
 
-            <div class="info-half"> 
+            <div class="info-half">
               <img alt="Non-Industry Related Crimes" src="images/thief.svg" height="80">
               <p class="info-description">Non-Industry Related Crimes are crimes in which Marijuana is the primary target in the commission of these crimes but the marijuana has no readily apparent tie to a licensed operation.</p>
-            </div>
-
-          </div>
-
-        </div> -->
+            </div> -->
+        </div> <!-- info-group -->
 
         <!-- FAQ ============================= -->
         <span class="anchor" id="faq"></span>
@@ -150,18 +143,9 @@ title: {{ site.name }}
             <a target="_blank" href="http://www.denvergov.org/businesslicensing/DenverBusiness%20ngCenter/RetailMarijuana/tabid/445028/Default.aspx"><button class="btn btn-mj" >Marijuana Policy for Businesses</button></a>
 
           </div>
-
-          </div>
-
         </div> <!-- info-group -->
 
       </div> <!-- infographic -->
-
-    </div>  <!-- main-content --> 
-
-
-
-  </div>
-</div>
-
-
+    </div> <!-- main-content -->
+  </div> <!-- row -->
+</div> <!-- container -->
