@@ -49,7 +49,7 @@ function revenueDonut(description) {
 }
 
 function revenueArea(){
-  var svg = dimple.newSvg("#revenue-area", 590, 400);
+  var svg = dimple.newSvg("#revenue-area", 590, 450);
 
   d3.csv("data/revenue-over-time.csv", function(data) {
     var myChart = new dimple.chart(svg, data);
