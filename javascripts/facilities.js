@@ -21,24 +21,26 @@ function facilitiesCount(big_number) {
 }
 
 function facilitiesDonut() {
-    var svg = dimple.newSvg("#facilities-donut", '100%', '100%');
-    d3.csv("data/facilities-licenses.csv", function (data) {
-      var myChart = new dimple.chart(svg, data);
-      myChart.addMeasureAxis("p", "value");
-      var ring = myChart.addSeries("label", dimple.plot.pie);
-      ring.getTooltipText = function (e) {
-        return [ e.aggField[0], formatPercent(e.piePct) ];
-      };
+  var svg = dimple.newSvg("#facilities-donut", '100%', '100%');
+  d3.csv("data/facilities-licenses.csv", function (data) {
+    var myChart = new dimple.chart(svg, data);
+    myChart.addMeasureAxis("p", "value");
+    var ring = myChart.addSeries("label", dimple.plot.pie);
+    
+    // Tooltip
+    ring.getTooltipText = function (e) {
+      return [ e.aggField[0], formatPercent(e.piePct) ];
+    };
 
-      // Styling: Change this Kavi!
-      ring.innerRadius = "50%";
-      myChart.defaultColors = [
-        new dimple.color("#4dddff"),
-        new dimple.color("#b3eaf4")
-      ];
-      myChart.addLegend(0,20,"50%",10,"left");
-      myChart.draw();
-    });
+
+    ring.innerRadius = "50%";
+    myChart.defaultColors = [
+      new dimple.color("#4dddff"),
+      new dimple.color("#b3eaf4")
+    ]; 
+    myChart.addLegend("0",20,"50%","100%","left");
+    myChart.draw();
+  });
 }
 
 // Closure
