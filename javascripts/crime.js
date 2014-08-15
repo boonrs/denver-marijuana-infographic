@@ -6,8 +6,8 @@ $( document ).ready(function() {
     "description": "This is the sum total of Industry and Nonindustry."
   };
   crimeSource("http://data.denvergov.org/dataset/city-and-county-of-denver-crime");
-  // crimeCount(big_number);
-  // crimeOffenses();
+  crimeCount(big_number);
+  crimeOffenses();
   crimePossession();
 });
 
@@ -45,11 +45,9 @@ function crimePossession() {
     
     // Create a legend
     var myLegend = myChart.addLegend("25%", "1%", "290px", "12px", "right");
-    // var myLegend = myChart.addLegend("-100px", "30px", "100px", "-70px");
 
     // Draw the chart
     myChart.draw();
-    
 
     // Rotate the X-axis labels
     x.shapes.selectAll("text").attr("transform",
@@ -69,13 +67,16 @@ function crimePossession() {
 }
 
 function crimeOffenses() {
-  var svg = dimple.newSvg("#crime-stacked", 590, 400);
+  var svg = dimple.newSvg("#crime-stacked", "100%", "100%");
   d3.csv("/data/offenses.csv", function (data) {
     var myChart = new dimple.chart(svg, data);
-    myChart.setBounds(60, 30, 510, 330)
+    myChart.setBounds(60, 30, "85%", "70%");
+
+    // Create axis
     var x = myChart.addCategoryAxis("x", ["Quarter", "Type"]);
     x.addOrderRule("year");
     x.addOrderRule("q");
+    x.title = "Quarter";
     myChart.addMeasureAxis("y", "Total");
     var bars = myChart.addSeries("Type", dimple.plot.bar);
 
@@ -91,11 +92,24 @@ function crimeOffenses() {
       new dimple.color("#287f93"),
       new dimple.color("#154651")
     ];
-    myChart.addLegend("20%,20px","1%,20px","10%,20px","10%,20px");
+    myChart.addLegend("25%", "1%", "290px", "12px", "right");
     myChart.draw();
+
+    // Rotate the X-axis labels
+    x.shapes.selectAll("text").attr("transform",
+    function (d) {
+      return d3.select(this).attr("transform") + "rotate(45)";
+    });
+
+    // Add a method to draw the chart on resize of the window.
+    // Needs to be an anonymous to avoid conflicts with other resize functions
+    $(window).resize(function(){
+      // As of 1.1.0 the second parameter here allows you to draw
+      // without reprocessing data.  This saves a lot on performance
+      // when you know the data won't have changed.
+      myChart.draw(0, true);
+    });
   });
-
-
 }
 
 function crimeCount(big_number) {

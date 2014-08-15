@@ -18,6 +18,7 @@ a:hover {color:white;}
 /*Chart Styles*/
 #crime-possession { height: 500px; width: 100%; }
 #revenue-area { height: 500px; width: 100%; }
+#crime-bar { height: 500px; width: 100%; }
 
 #crime-stacked { height: 500px; }
 #facilities-donut, #revenue-donut { height: 400px;}
