@@ -36,7 +36,7 @@ function facilitiesDonut() {
         new dimple.color("#4dddff"),
         new dimple.color("#b3eaf4")
       ];
-      myChart.addLegend("20%,20px","1%,20px","10%,20px","10%,20px");
+      myChart.addLegend(0,20,"50%",10,"left");
       myChart.draw();
     });
 }

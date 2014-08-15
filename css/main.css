@@ -1,4 +1,5 @@
 
+
 .center {
   text-align: center;
   margin:0 auto;
@@ -15,15 +16,49 @@ a:hover {color:white;}
 
 
 /*Chart Styles*/
+#crime-possession { height: 500px; width: 100%; }
+#revenue-area { height: 500px; width: 100%; }
+
 #crime-stacked { height: 500px; }
 #facilities-donut, #revenue-donut { height: 400px;}
-#revenue-area { width: 100%;}
 #revenue-bar { height: 300px; }
 
-svg text {
-  font: normal 12px Helvetica;
-  fill: #ffffff;
+
+.dimple-axis text, text.dimple-title, text.dimple-legend  {
+  fill: #fff !important;
+  font-size: 12px !important;
 }
+
+
+text.dimple-title { font-weight: 500 !important; }
+.dimple-marker { opacity: 1 !important; }
+
+
+.dimple-tooltip { 
+  font-size: 14px !important;
+  fill: #fff !important;
+  stroke: 1px !important;
+  text-align: center !important;
+}
+text.dimple-tooltip {
+  fill: #3ba8c6 !important;
+  padding: 10px !important;
+  margin: 0 auto !important;
+  text-align: center !important;
+  visibility: visible !important;
+}
+
+.domain { 
+  stroke: white !important;
+  opacity: .3  !important;
+}
+
+line {
+  stroke: white !important;
+  opacity: .3  !important;
+}
+
+
 /* Master Styles */
 body {
   color: white;
@@ -130,7 +165,11 @@ img.center {
   border-top: 1px solid #8dcbdc;
 }
 
-.info-description {padding-top: 20px;}
+.info-description {
+  text-align: center;
+  max-width: 400px;
+  margin: 0 auto;
+}
 
 
 
