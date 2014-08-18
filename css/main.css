@@ -20,7 +20,7 @@ a:hover {color:white;}
 #revenue-area { height: 500px; width: 100%; }
 #crime-bar { height: 500px; width: 100%; }
 
-#crime-stacked { height: 500px; }
+#crime-stacked { height: 500px; width: 100%;}
 #facilities-donut, #revenue-donut { height: 400px;}
 #revenue-bar { height: 300px; }
 
@@ -33,6 +33,7 @@ a:hover {color:white;}
 
 text.dimple-title { font-weight: 500 !important; }
 .dimple-marker { opacity: 1 !important; }
+
 
 
 .dimple-tooltip { 
@@ -58,6 +59,8 @@ line {
   stroke: white !important;
   opacity: .3  !important;
 }
+
+
 
 
 /* Master Styles */
@@ -170,6 +173,7 @@ img.center {
   text-align: center;
   max-width: 400px;
   margin: 0 auto;
+  padding-top: 2em;
 }
 
 
