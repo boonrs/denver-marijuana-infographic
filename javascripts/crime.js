@@ -1,13 +1,13 @@
 
 $( document ).ready(function() {
   var big_number = {
-    "total": 160,
+    "total": 657,
     "description_bold": "... marijuana related crimes have been reported this year.",
     "description": "This is the sum total of Industry and Nonindustry."
   };
   crimeSource("http://data.denvergov.org/dataset/city-and-county-of-denver-crime");
-  // crimeCount(big_number);
-  // crimeOffenses();
+  crimeCount(big_number);
+  crimeOffenses();
   crimePossession();
 });
 
@@ -98,8 +98,6 @@ function crimeOffenses() {
     // Rotate the X-axis labels
     x.shapes.selectAll("text").attr("transform", "translate(0, 35) rotate(-45)");
     x.titleShape.attr("transform", "translate(0, 35)");
-
-
 
     // Add a method to draw the chart on resize of the window.
     // Needs to be an anonymous to avoid conflicts with other resize functions
