@@ -6,8 +6,8 @@ $( document ).ready(function() {
     "description": "This is the sum total of Industry and Nonindustry."
   };
   crimeSource("http://data.denvergov.org/dataset/city-and-county-of-denver-crime");
-  crimeCount(big_number);
-  crimeOffenses();
+  // crimeCount(big_number);
+  // crimeOffenses();
   crimePossession();
 });
 
