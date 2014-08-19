@@ -145,6 +145,9 @@ img.center {
 .info-full {
   max-width: 100%;
   padding: 40px;
+}
+
+.info-top {
   border-top: 1px solid #8dcbdc;
 }
 
@@ -154,8 +157,6 @@ img.center {
   margin: 0 auto;
   padding-top: 2em;
 }
-
-
 
 /* BIGTEXT STYLES */
 .bigtext {
