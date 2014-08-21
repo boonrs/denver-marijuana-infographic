@@ -35,17 +35,16 @@ function crimePossession() {
       return [e.aggField[0] + ' ' + e.cx, e.cy];
     };
 
-    // Styling: Change this Kavi!
+    // Styling
     myChart.defaultColors = [
-      new dimple.color("#e5e9ea"),
-      new dimple.color("#8eb5bc"),
-      new dimple.color("#287f93"),
-      new dimple.color("#154651")
-    ];
+      new dimple.color("#b1dce8"),
+      new dimple.color("#62b9d1"),
+      new dimple.color("#2c7e95"),
+      new dimple.color("#0f2a31")
+    ]; 
     
     // Create a legend
     var myLegend = myChart.addLegend("25%", "1%", "290px", "12px", "right");
-    // var myLegend = myChart.addLegend("-100px", "30px", "100px", "-70px");
 
     // Draw the chart
     myChart.draw();
@@ -86,11 +85,12 @@ function crimeOffenses() {
 
     // Styling: Change this Kavi!
     myChart.defaultColors = [
-      new dimple.color("#e5e9ea"),
-      new dimple.color("#8eb5bc"),
-      new dimple.color("#287f93"),
-      new dimple.color("#154651")
-    ];
+      new dimple.color("#b1dce8"),
+      new dimple.color("#62b9d1"),
+      new dimple.color("#2c7e95"),
+      new dimple.color("#0f2a31")
+      
+    ]; 
     myChart.addLegend("20%,20px","1%,20px","10%,20px","10%,20px");
     myChart.draw();
   });

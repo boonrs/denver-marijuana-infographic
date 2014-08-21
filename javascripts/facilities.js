@@ -32,11 +32,12 @@ function facilitiesDonut() {
       return [ e.aggField[0], formatPercent(e.piePct) ];
     };
 
-
-    ring.innerRadius = "50%";
     myChart.defaultColors = [
-      new dimple.color("#4dddff"),
-      new dimple.color("#b3eaf4")
+      new dimple.color("#b1dce8"),
+      new dimple.color("#62b9d1"),
+      new dimple.color("#2c7e95"),
+      new dimple.color("#0f2a31")
+
     ]; 
     myChart.addLegend("0",20,"50%","100%","left");
     myChart.draw();

@@ -37,12 +37,12 @@ function revenueDonut(description) {
       return [ e.aggField[0], formatPercent(e.piePct) ];
     };
 
-
-    ring.innerRadius = "50%";
     myChart.defaultColors = [
-      new dimple.color("#4dddff"),
-      new dimple.color("#b3eaf4")
-    ];
+      new dimple.color("#b1dce8"),
+      new dimple.color("#62b9d1"),
+      new dimple.color("#2c7e95"),
+      new dimple.color("#0f2a31")
+    ]; 
     myChart.addLegend("0",20,"50%","100%","left");
     myChart.draw();
   });
@@ -72,13 +72,23 @@ function revenueArea(){
 
     x.title = "Quarter";
     y.title = "Revenue";
+    
+    // Styling
     myChart.defaultColors = [
-      new dimple.color("#fff"),
-      new dimple.color("#b3dce8")
-    ];
+      new dimple.color("#b1dce8"),
+      new dimple.color("#62b9d1"),
+      new dimple.color("#2c7e95"),
+      new dimple.color("#0f2a31")
+    ]; 
+    
+    // Create a legend
     var myLegend = myChart.addLegend("25%", "1%", "290px", "12px", "right");
-    myChart.draw();
 
+    // Draw the chart
+    myChart.draw();
+    
+
+    // Rotate the X-axis labels
     x.shapes.selectAll("text").attr("transform",
     function (d) {
       return d3.select(this).attr("transform") + " translate(0, 20) rotate(-45)";
