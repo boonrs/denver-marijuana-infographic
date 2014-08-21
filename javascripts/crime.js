@@ -19,7 +19,7 @@ function crimePossession() {
   var svg = dimple.newSvg("#crime-possession", "100%", "100%");
   d3.csv("data/open-crime.csv", function (data) {
     var myChart = new dimple.chart(svg, data);
-    myChart.setBounds(60, 30, "85%", "70%");
+    myChart.setBounds(60, 30, "85%", "78%");
     
     // Create Axes
     var x = myChart.addCategoryAxis("x", "Quarter" );
@@ -48,13 +48,11 @@ function crimePossession() {
 
     // Draw the chart
     myChart.draw();
-    
 
     // Rotate the X-axis labels
-    x.shapes.selectAll("text").attr("transform",
-    function (d) {
-      return d3.select(this).attr("transform") + " translate(0, 20) rotate(-45)";
-    });
+    x.shapes.selectAll("text").attr("transform", "translate(-30, 45) rotate(-45)");
+
+
 
     // Add a method to draw the chart on resize of the window.
     // Needs to be an anonymous to avoid conflicts with other resize functions
@@ -68,13 +66,17 @@ function crimePossession() {
 }
 
 function crimeOffenses() {
-  var svg = dimple.newSvg("#crime-stacked", 590, 400);
+  var svg = dimple.newSvg("#crime-stacked", "100%", "100%");
   d3.csv("/data/offenses.csv", function (data) {
     var myChart = new dimple.chart(svg, data);
-    myChart.setBounds(60, 30, 510, 330)
+    myChart.setBounds(60, 30, "85%", "78%");
+
+    // Create axis
     var x = myChart.addCategoryAxis("x", ["Quarter", "Type"]);
     x.addOrderRule("year");
     x.addOrderRule("q");
+    x.title = "Quarter";
+    
     myChart.addMeasureAxis("y", "Total");
     var bars = myChart.addSeries("Type", dimple.plot.bar);
 
@@ -83,7 +85,6 @@ function crimeOffenses() {
       return [e.aggField[0] + ' ' + e.cx, e.cy];
     };
 
-    // Styling: Change this Kavi!
     myChart.defaultColors = [
       new dimple.color("#b1dce8"),
       new dimple.color("#62b9d1"),
@@ -93,9 +94,22 @@ function crimeOffenses() {
     ]; 
     myChart.addLegend("20%,20px","1%,20px","10%,20px","10%,20px");
     myChart.draw();
+
+    // Rotate the X-axis labels
+    x.shapes.selectAll("text").attr("transform", "translate(0, 35) rotate(-45)");
+    x.titleShape.attr("transform", "translate(0, 35)");
+
+
+
+    // Add a method to draw the chart on resize of the window.
+    // Needs to be an anonymous to avoid conflicts with other resize functions
+    $(window).resize(function(){
+      // As of 1.1.0 the second parameter here allows you to draw
+      // without reprocessing data.  This saves a lot on performance
+      // when you know the data won't have changed.
+      myChart.draw(0, true);
+    });
   });
-
-
 }
 
 function crimeCount(big_number) {
