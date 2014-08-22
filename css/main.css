@@ -81,38 +81,46 @@ img.center {
 }
 
 /* Share Buttons*/
-.share-text {
-  display:inline-block;
-  padding-bottom: 20px;
-}
 
-.share_this {
-  margin-top: 10px;
-  width: 100%;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-}
 
+.share-text {}
 .btn-share {
+  margin-right: 10px;
   margin-top: 5px;
-  width: 32px;
-  height:32px;
+  width: 49px;
+  height:50px;
   display:inline-block;
-  border-radius: 5px;
-  border: 1px solid white;
   background-color: #41a8c4;
+  -o-transition:.1s;
+  -ms-transition:.1s;
+  -moz-transition:.1s;
+  -webkit-transition:.1s;
+  transition:.1s;
+  -webkit-transition-timing-function: ease-out;
+  -moz-transition-timing-function: ease-out;
+  -o-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
 }
 .btn-share:hover {
-  background-color: white;
+  -o-transition:.1s;
+  -ms-transition:.1s;
+  -moz-transition:.1s;
+  -webkit-transition:.1s;
+  transition:.1s;
+  -webkit-transition-timing-function: ease-out;
+  -moz-transition-timing-function: ease-out;
+  -o-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
 }
 
-.fb { background: url('../images/mj_share-1x.png') no-repeat 0 -134px;}
-.fb:hover { background-position: 0 -167px; }
+.fb { background: url('../images/share-1x.png') no-repeat 0 -1px;}
+.fb:hover { background-position: 0 -52px; }
 
-.twitter { background: url('../images/mj_share-1x.png') no-repeat 0 -68px; }
-.twitter:hover { background-position: 0 -101px; }
+.twitter { background: url('../images/share-1x.png') no-repeat 0 -103px; }
+.twitter:hover { background-position: 0 -154px; }
 
-.gplus { background: url('../images/mj_share-1x.png') no-repeat 0 -2px; }
-.gplus:hover { background-position: 0 -35px; }
+.gplus { background: url('../images/share-1x.png') no-repeat 0 -205px; }
+.gplus:hover { background-position: 0 -256px; }
 
 
 /* Infographic */
@@ -393,9 +401,9 @@ footer a:hover {
   .twitter, .twitter:hover,
   .gplus, .gplus:hover {
     /* Reference the @2x Sprite */
-    background-image: url('../images/mj_share-2x.png');
+    background-image: url('../images/share-2x.png');
     /* Translate the @2x sprite's dimensions back to 1x */
-    background-size: 32px 198px; 
+    /*background-size: 32px 198px; */
   }
 
 
