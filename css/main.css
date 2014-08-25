@@ -1,10 +1,7 @@
-
-
 .center {
   text-align: center;
   margin:0 auto;
 }
-
 
 a { color:white; }
 a:hover {color:white;}
@@ -12,8 +9,6 @@ a:hover {color:white;}
   position: relative;
   padding-top: 80px;
 }
-
-
 
 /*Chart Styles*/
 #crime-possession { height: 500px; width: 100%; }
@@ -30,12 +25,8 @@ a:hover {color:white;}
   font-size: 12px !important;
 }
 
-
 text.dimple-title { font-weight: 500 !important; }
 .dimple-marker { opacity: 1 !important; }
-
-
-
 .dimple-tooltip { 
   font-size: 14px !important;
   fill: #fff !important;
@@ -61,8 +52,6 @@ line {
 }
 
 
-
-
 /* Master Styles */
 body {
   color: white;
@@ -81,15 +70,14 @@ img.center {
 }
 
 /* Share Buttons*/
-
-
 .share-text {}
 .btn-share {
   margin-right: 10px;
   margin-top: 5px;
-  width: 49px;
+  width: 48px;
   height:50px;
   display:inline-block;
+  border-radius: 6px;
   background-color: #41a8c4;
   -o-transition:.1s;
   -ms-transition:.1s;
@@ -102,6 +90,8 @@ img.center {
   transition-timing-function: ease-out;
 }
 .btn-share:hover {
+  border: 1px solid white;
+  border-radius: 6px;
   -o-transition:.1s;
   -ms-transition:.1s;
   -moz-transition:.1s;
@@ -113,14 +103,14 @@ img.center {
   transition-timing-function: ease-out;
 }
 
-.fb { background: url('../images/share-1x.png') no-repeat 0 -1px;}
-.fb:hover { background-position: 0 -52px; }
+.fb { background: url('../images/share-1x.png') no-repeat -1px -1px;}
+.fb:hover { background-position: -1px -53px; }
 
-.twitter { background: url('../images/share-1x.png') no-repeat 0 -103px; }
-.twitter:hover { background-position: 0 -154px; }
+.twitter { background: url('../images/share-1x.png') no-repeat -1px -103px; }
+.twitter:hover { background-position: -1px -155px; }
 
-.gplus { background: url('../images/share-1x.png') no-repeat 0 -205px; }
-.gplus:hover { background-position: 0 -256px; }
+.gplus { background: url('../images/share-1x.png') no-repeat -1px -206px; }
+.gplus:hover { background-position: -1px -258px; }
 
 
 /* Infographic */
@@ -132,8 +122,6 @@ img.center {
   margin-bottom: 80px;
 
 }
-
-
 
 .info-group {
 }
@@ -395,7 +383,6 @@ footer a:hover {
 @media(min-width:768px){}
 @media (min-width: 992px) {}
 @media (min-width: 1200px) {}
-
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
   .fb, .fb:hover,
   .twitter, .twitter:hover,
@@ -403,7 +390,7 @@ footer a:hover {
     /* Reference the @2x Sprite */
     background-image: url('../images/share-2x.png');
     /* Translate the @2x sprite's dimensions back to 1x */
-    /*background-size: 32px 198px; */
+    background-size: 50px 307px; 
   }
 
 
