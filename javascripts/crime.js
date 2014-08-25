@@ -35,13 +35,13 @@ function crimePossession() {
       return [e.aggField[0] + ' ' + e.cx, e.cy];
     };
 
-    // Styling: Change this Kavi!
+    // Styling
     myChart.defaultColors = [
-      new dimple.color("#e5e9ea"),
-      new dimple.color("#8eb5bc"),
-      new dimple.color("#287f93"),
-      new dimple.color("#154651")
-    ];
+      new dimple.color("#b1dce8"),
+      new dimple.color("#62b9d1"),
+      new dimple.color("#2c7e95"),
+      new dimple.color("#0f2a31")
+    ]; 
     
     // Create a legend
     var myLegend = myChart.addLegend("25%", "1%", "290px", "12px", "right");
@@ -86,12 +86,13 @@ function crimeOffenses() {
     };
 
     myChart.defaultColors = [
-      new dimple.color("#e5e9ea"),
-      new dimple.color("#8eb5bc"),
-      new dimple.color("#287f93"),
-      new dimple.color("#154651")
-    ];
-    myChart.addLegend("25%", "1%", "290px", "12px", "right");
+      new dimple.color("#b1dce8"),
+      new dimple.color("#62b9d1"),
+      new dimple.color("#2c7e95"),
+      new dimple.color("#0f2a31")
+      
+    ]; 
+    myChart.addLegend("20%,20px","1%,20px","10%,20px","10%,20px");
     myChart.draw();
 
     // Rotate the X-axis labels
