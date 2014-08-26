@@ -79,28 +79,11 @@ img.center {
   display:inline-block;
   border-radius: 6px;
   background-color: #41a8c4;
-  -o-transition:.1s;
-  -ms-transition:.1s;
-  -moz-transition:.1s;
-  -webkit-transition:.1s;
-  transition:.1s;
-  -webkit-transition-timing-function: ease-out;
-  -moz-transition-timing-function: ease-out;
-  -o-transition-timing-function: ease-out;
-  transition-timing-function: ease-out;
 }
+
 .btn-share:hover {
   border: 1px solid white;
   border-radius: 6px;
-  -o-transition:.1s;
-  -ms-transition:.1s;
-  -moz-transition:.1s;
-  -webkit-transition:.1s;
-  transition:.1s;
-  -webkit-transition-timing-function: ease-out;
-  -moz-transition-timing-function: ease-out;
-  -o-transition-timing-function: ease-out;
-  transition-timing-function: ease-out;
 }
 
 .fb { background: url('../images/share-1x.png') no-repeat -1px -1px;}
@@ -383,7 +366,7 @@ footer a:hover {
 @media(min-width:768px){}
 @media (min-width: 992px) {}
 @media (min-width: 1200px) {}
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (   min--moz-device-pixel-ratio: 2), only screen and (     -o-min-device-pixel-ratio: 2/1), only screen and (        min-device-pixel-ratio: 2), only screen and (                min-resolution: 192dpi), only screen and (                min-resolution: 2dppx) { 
   .fb, .fb:hover,
   .twitter, .twitter:hover,
   .gplus, .gplus:hover {
