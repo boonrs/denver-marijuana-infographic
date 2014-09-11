@@ -1,9 +1,9 @@
 
 $( document ).ready(function() {
   var big_number = {
-    "total-alt": "$22,793,749",
-    "total": "$22.79M",
-    "bold_description": "Tax revenue from marijuana industry since 2010."
+    "total-alt": "$3,588,964",
+    "total": "$3.59M",
+    "bold_description": "Tax revenue from marijuana industry for Q1 2014."
   };
 
   var description = "Sources of marijuana revenue in Q1 2014";
