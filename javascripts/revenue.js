@@ -25,7 +25,27 @@ function revenueCount(big_number) {
 }
 
 function revenueMonthly(){
+  var svg = dimple.newSvg("#revenue-monthly", 590, 400);
+  d3.csv("data/revenue-monthly.csv", function (data) {
+    var myChart = new dimple.chart(svg, data);
+    myChart.setBounds(80, 30, 480, 330)
+    var x = myChart.addMeasureAxis("x", "revenue");
+    var y = myChart.addCategoryAxis("y", "month");
+    x.title = "Revenue";
+    y.title = "Month";
+    y.addOrderRule(["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]);
+    var plotBar = myChart.addSeries("type", dimple.plot.bar);
+    myChart.addLegend(73, 10, 560, 20, "left");
+    plotBar.barGap = .5;
+    myChart.defaultColors = [
+      new dimple.color("#b1dce8"),
+      new dimple.color("#62b9d1"),
+      new dimple.color("#2c7e95"),
+      new dimple.color("#0f2a31")
+    ];
 
+    myChart.draw();
+  });
 }
 
 function revenueQuarterly(){
