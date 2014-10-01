@@ -10,8 +10,8 @@ $( document ).ready(function() {
 
   revenuesSource("http://data.denvergov.org/dataset/city-and-county-of-denver-marijuana-sales-tax");
   revenueCount(big_number);
-  revenueArea();
-  revenueDonut(description);
+  revenueQuarterly();
+  revenueCurrentQuarter(description);
 });
 
 function revenuesSource(url) {
@@ -24,7 +24,7 @@ function revenueCount(big_number) {
   $("#revenue-number-description").text(big_number.description);
 }
 
-function revenueDonut(description) {
+function revenueCurrentQuarter(description) {
   $("#revenue-donut-description").text(description);
   var svg = dimple.newSvg("#revenue-donut", '100%', '100%');
   d3.csv("data/revenue-current-quarter.csv", function (data) {
@@ -48,10 +48,10 @@ function revenueDonut(description) {
   });
 }
 
-function revenueArea(){
+function revenueQuarterly(){
   var svg = dimple.newSvg("#revenue-area", "100%", "100%");
 
-  d3.csv("data/revenue-over-time.csv", function(data) {
+  d3.csv("data/revenue-quarterly.csv", function(data) {
     var myChart = new dimple.chart(svg, data);
     myChart.setBounds(60, 30, "85%", "70%");
     
