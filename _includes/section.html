@@ -1,0 +1,21 @@
+<div class="info-header">
+  <span class="info-title">{{post.title}}</span>
+  <span class="info-date">Updated: {{post.updated}}</span>
+  <span class="info-data"><a href="{{post.href}}" >View Source Data »</a></span>
+</div>
+
+{% for big in site.big_numbers %}
+  {% if big.section == post.section %}
+    <div class="info-full">
+      {% include big.html %}
+    </div>
+  {% endif %}
+{% endfor %}
+
+{% for graph in site.graphs %}
+  {% if graph.section == post.section %}
+    <div class="info-full">
+      {% include graph.html %}
+    </div>
+  {% endif %}
+{% endfor %}

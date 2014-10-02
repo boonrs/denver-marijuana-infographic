@@ -1,144 +1,26 @@
 ---
 layout: default
-title: {{ site.name }}
 ---
 
+<!-- About ================================================== -->
+<span class="anchor" id="about"></span>
+<div class="jumbotron">
+  <h1>{{ site.title }}</h1>
+  <p class="lead">{{ site.about.description }}</p>
+  <p class="small">{{ site.about.label }}: {{ site.timestamp }}</p>
+  {% include social.html %}
+</div> <!-- About -->
 
-<!-- NAV ================================================== -->
-<nav class="main-nav">
-  <div class="nav-links">
-    <a href="#facilities">Facilities</a>
-    <a href="#revenue">Revenue</a>
-    <a href="#crime">Crime</a>
-    <a href="#faq">FAQ</a>
+<div class="infographic clearfix">
+  {% for post in site.posts %}
+    <span class="anchor" id="{{post.section}}"></span>
+    <div class="info-group">
+      {% include section.html %}
+    </div>
+  {% endfor %}
+
+  <span class="anchor" id="faq"></span>
+  <div class="info-group">
+    {% include faq.html %}
   </div>
-</nav>
-
-<div class="container" role="main">
-  <div class="row">
-
-    <!-- Main Content ================================================== -->
-    <div class="main-content col-lg-8 col-lg-offset-2" >
-
-      <!-- About ================================================== -->
-      <span class="anchor" id="about"></span>
-      <div class="jumbotron">
-        <h1>{{ site.name }}</h1>
-        <p class="lead">{{ site.about.description }}</p>
-        <p class="small">{{ site.about.label }}: {{ site.timestamp }}</p>
-
-        <div>
-          <div class="lead share-text">Share this:</div>
-          <a class="fb btn-share" href="javascript:window.open('http://www.facebook.com/share.php?u=' + document.URL + '&title=Marijuana Indicators In Denver' , '_blank', 'width=400,height=500');void(0);" alt="Share on Facebook"></a>
-
-          <a class="twitter btn-share" href="javascript:window.open('http://twitter.com/home?status=Marijuana Indicators In Denver+' + document.URL, '_blank', 'width=400,height=500');void(0);" alt="Share on Twitter"></a>
-
-          <a class="gplus btn-share"  href="javascript:window.open('https://plus.google.com/share?url=' + document.URL, '_blank', 'width=490,height=550');void(0);" alt="Share on Google+"></a>
-        </div>
-      </div> <!-- About -->
-
-      <div class="infographic clearfix">
-
-        <!-- FACILITIES ============================= -->
-        <span class="anchor" id="facilities"></span>
-        <div class="info-group">
-          <div class="info-header">
-            <span class="info-title">Facilities</span>
-            <span class="info-date">Updated 7/2014</span>
-            <span class="info-data"><a id="facilities-source" href="" >View Source Data »</a></span>
-          </div>
-          
-          <div class="info-row">
-            <div class="info-half" >
-              <div class="bigtext">
-                <span id="facilities-number"></span>
-              </div>
-               <div id="facilities-number-strong" class="info-description"></div>
-             </div>
-
-            <div class="info-half">
-              <div id="facilities-donut"></div>
-              <div class="info-description">Types of marijuana licenses</div>
-            </div>
-          </div> <!-- info-row -->
-        </div> <!-- info-group -->
-
-
-        <!-- REVENUE ============================= -->
-        <span class="anchor" id="revenue"></span>
-        <div class="info-group">
-
-          <div class="info-header">
-            <span class="info-title">Revenue</span>
-            <span class="info-date">Updated 7/2014</span>
-            <span class="info-data"><a id="revenue-source" href="" >View Source Data »</a></span>
-          </div>
-
-          <div class="info-full">
-             <div class="chart-title">Quarterly Marijuana Revenue</div>
-            <div id="revenue-area"></div>
-            <div class="info-description">This chart shows the tax revenue that has been made from retail and medical marijuana over time. The city started collecting retail marijuana revenue in Q1 2014.</div>
-          </div>
-
-          <div class="info-full">
-            <div class="chart-title">2014 Revenue Breakdown</div>
-            <div id="revenue-monthly"></div>
-          </div>
-
-        </div> <!-- info-group -->
-
-        <!-- CRIME ============================= -->
-        <span class="anchor" id="crime"></span>
-        <div class="info-group">
-
-          <div class="info-header">
-            <span class="info-title">Crime</span>
-            <span class="info-date">Updated 7/2014</span>
-            <span class="info-data"><a id="crime-source" href="" >View Source Data »</a></span>
-          </div>
-
-          <div class="info-full">
-            <div class="chart-title">Reported Marijuana Violations</div>
-            <div id="crime-possession"></div>
-            <div id="crime-possession-description" class="info-description">This chart shows reported violations of state or municipal codes restricting the possession, sale, manufacture and/or cultivation of marijuana over time.</div>
-          </div>
-
-<!--           <div class="info-full">
-            <div id="crime-stacked"></div>
-          </div>
-
-          <div class="info-row">
-            <div class="info-half">
-              <img alt="Industry Related Crimes" src="images/industry.svg" height="80" width="80">
-              <p class="info-description">Industry Related Crimes are crimes related to the licensed marijuana industry and are committed against the industry or by the industry itself. An example is theft directly from a licensed marijuana retailer.</p>
-            </div>
-
-            <div class="info-half">
-              <img alt="Non-Industry Related Crimes" src="images/nonindustry.svg" height="80">
-              <p class="info-description">Non-Industry Related Crimes are crimes in which Marijuana is the primary target in the commission of these crimes but the marijuana has no readily apparent tie to a licensed operation. Examples include robbery committed under the guise of buying/selling marijuana and stolen marijuana from vehicles or residences.</p>
-            </div>
-          </div>  -->
-        </div> <!-- info-group -->
-
-        <!-- FAQ ============================= -->
-        <span class="anchor" id="faq"></span>
-        <div class="info-group center">
-
-          <div class="info-header">
-            <span class="info-title">Frequently Asked Questions</span>
-          </div>
-
-          <div class="info-full">
-
-            If you'd like to learn more about Denver's Marijuana Policy for residents and businesses, visit the links below. <br>
-
-            <a target="_blank" href="https://www.colorado.gov/marijuanainfodenver"><button class="btn btn-mj">Marijuana Policy for Residents</button></a>
-
-            <a target="_blank" href="http://www.denvergov.org/businesslicensing/DenverBusiness%20ngCenter/RetailMarijuana/tabid/445028/Default.aspx"><button class="btn btn-mj" >Marijuana Policy for Businesses</button></a>
-          </div> <!-- info-full -->
-        </div> <!-- info-group -->
-
-      </div> <!-- infographic -->
-    </div> <!-- main-content -->
-  </div> <!-- row -->
-</div> <!-- container -->
+</div>
