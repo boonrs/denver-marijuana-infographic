@@ -11,12 +11,16 @@ class FetchRevenue
   RECREATIONAL_SPECIAL_HEADER = "Recreational Special Tax"
 
   def self.execute
-    previous = fetch_csv_previous
-    now = fetch_csv_2014
+    begin
+      previous = fetch_csv_previous
+      now = fetch_csv_2014
 
-    create_quarterly_csv(previous + now)
-    create_monthly_csv(now)
-    ETLHelper.set_last_updated("revenue")
+      create_quarterly_csv(previous + now)
+      create_monthly_csv(now)
+      ETLHelper.set_last_updated("revenue")
+    rescue
+      puts "Error fetching revenue data: #{$!}"
+    end
   end
 
   private

@@ -7,10 +7,14 @@ class FetchCrime
   FOLDER = "data/"
 
   def self.execute
-    crimes = fetch_csv
-    create_csv(crimes)
+    begin
+      crimes = fetch_csv
+      create_csv(crimes)
 
-    ETLHelper.set_last_updated("crime")
+      ETLHelper.set_last_updated("crime")
+    rescue
+      puts "Error fetching crime data: #{$!}"
+    end
   end
 
   private

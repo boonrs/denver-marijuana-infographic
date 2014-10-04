@@ -6,10 +6,14 @@ class FetchFacilities
   FOLDER = "data/"
 
   def self.execute
-    facilities = fetch_csv
-    create_csvs(facilities)
+    begin
+      facilities = fetch_csv
+      create_csvs(facilities)
 
-    ETLHelper.set_last_updated("facilities")
+      ETLHelper.set_last_updated("facilities")
+    rescue
+      puts "Error fetching facilities data: #{$!}"
+    end
   end
 
   private
