@@ -1,10 +1,12 @@
 require "csv"
 require "open-uri"
+require "fileutils"
 require_relative "etl_helper"
 
 class FetchCrime
-  URL = "http://data.denvergov.org/dataset/city-and-county-of-denver-crime"
+  URL = "http://data.denvergov.org/download/gis/crime/csv/crime.csv"
   FOLDER = "data/"
+  LOCAL = FOLDER + "crime.csv"
 
   def self.execute
     begin
@@ -38,13 +40,13 @@ class FetchCrime
     crimes
   end
 
-  def self.local_fetch
+  def self.fetch_local_csv
     crimes = Array.new
     headers = ["INCIDENT_ID","OFFENSE_ID","OFFENSE_CODE","OFFENSE_CODE_EXTENSION","OFFENSE_TYPE_ID","OFFENSE_CATEGORY_ID",
       "FIRST_OCCURRENCE_DATE","LAST_OCCURRENCE_DATE","REPORTED_DATE","INCIDENT_ADDRESS","GEO_X","GEO_Y","GEO_LON","GEO_LAT",
       "DISTRICT_ID","PRECINCT_ID","NEIGHBORHOOD_ID"]
 
-    CSV.open("data/crime.csv", :headers => true).each do |line|
+    CSV.open(LOCAL, :headers => true).each do |line|
       offense_types = {"drug-marijuana-cultivation" => "Cultivation", "drug-marijuana-possess" => "Possession", "drug-marijuana-sell" => "Sale"}
       offense_type = line["OFFENSE_TYPE_ID"]
 
