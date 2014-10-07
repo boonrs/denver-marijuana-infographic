@@ -1,24 +1,34 @@
-Denver Marijuana Infographic
+Denver Marijuana Data Visualization
 ============================
 
 ## Overview
-A simple overview of Denver marijuana data.
+A simple visual overview of Denver marijuana data. Based off of the [Denver Data Visualization Template][template].
+
+[template]: https://github.com/codeforamerica/denver-data-visualization-template
+
+## Prerequisite
+1. Ruby 2.1.1
+1. Bundler In the command line: `gem install bundler`
 
 ## Installation, Usage
+* **Downlad dependencies** In the command line: `bundle`
 
-1. Check if there are new libraries, using this syntax:
+### Local Development
+1. Jekyll compiles everything into a static site in the _site folder. In order to get the latest changes and start the server, use the following command: `jekyll serve --watch`
+1. Navigate to [localhost:4000][local] to preview the site. Most changes will update immediately. The exception is changes to *_config.yml*. The server will need to be restarted in that case.
 
-` bundle `
+[local]: http://localhost:4000	
 
-if you get an error, make sure you have bundler installed:
-` gem install bundler `
+### Deployment
+1. Compile the site: `jekyll build`
+1. Deploy contents of */_site* to server.
 
-2. Get Jekyll to watch your build
+## ETL Scripts
+[Rake][] tasks exist for each section of the data visualization. These tasks query the open data portal and update the csv files located in /data with the latest data. These can be set to run on a schedule through task scheduler (windows), a cron job (others), or heroku scheduler (heroku). Errors output to the console.
+* List all tasks: `rake -T`
+* Run all tasks: `rake`
 
-` jekyll serve --watch `
-
-3. Use git normally, stage changes, commit, pull request, etc.
-
+[rake]: https://github.com/jimweirich/rake
 
 
 ## Submitting an Issue
@@ -37,4 +47,5 @@ We use the GitHub issue tracker to track bugs and features. Before submitting a 
 
 # License
 See the [LICENSE][] for details.
-[license]: https://github.com/boonrs/denver-marijuana-data/blob/master/LICENSE
+
+[license]: https://github.com/boonrs/denver-marijuana-infographic/blob/master/LICENSE
