@@ -25,7 +25,7 @@ function revenueCount(big_number) {
 }
 
 function revenueMonthly(){
-  var svg = dimple.newSvg("#revenue-monthly", "100%", 500);
+  var svg = dimple.newSvg("#revenue-monthly", "100%", 400);
   d3.csv("data/revenue-monthly.csv", function (data) {
     var myChart = new dimple.chart(svg, data);
     myChart.setBounds(60, 30, "85%", "70%")
