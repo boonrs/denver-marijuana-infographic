@@ -1,12 +1,8 @@
 
 $( document ).ready(function() {
-  var big_number = {
-    "total": 273,
-    "bold_description": "Active retail or medical store licenses issued.",
-  };
-
+  var big_number_description = "Active retail or medical store licenses issued."
   facilitiesSource("http://data.denvergov.org/dataset/city-and-county-of-denver-marijuana-facilities");
-  facilitiesCount(big_number);
+  facilitiesCount(big_number_description);
   facilitiesDonut();
 });
 
@@ -14,10 +10,11 @@ function facilitiesSource(url) {
   $("#facilities-source").attr('href', url);
 }
 
-function facilitiesCount(big_number) {
-  $("#facilities-number").text(big_number.total);
-  $("#facilities-number-strong").text(big_number.bold_description);
-  $("#facilities-number-description").text(big_number.description);
+function facilitiesCount(description) {
+  d3.csv("data/facilities-big.csv", function(data) {
+    $("#facilities-number").text(data[0].big);
+    $("#facilities-number-strong").text(description);
+  });
 }
 
 function facilitiesDonut() {
