@@ -25,17 +25,18 @@ function revenueCount(big_number) {
 }
 
 function revenueMonthly(){
-  var svg = dimple.newSvg("#revenue-monthly", 590, 400);
+  var svg = dimple.newSvg("#revenue-monthly", "100%", 500);
   d3.csv("data/revenue-monthly.csv", function (data) {
     var myChart = new dimple.chart(svg, data);
-    myChart.setBounds(80, 30, 480, 330)
+    myChart.setBounds(60, 30, "85%", "70%")
     var x = myChart.addMeasureAxis("x", "revenue");
     var y = myChart.addCategoryAxis("y", "month");
     x.title = "Revenue";
     y.title = "Month";
     y.addOrderRule(["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]);
     var plotBar = myChart.addSeries("type", dimple.plot.bar);
-    myChart.addLegend(73, 10, 560, 20, "left");
+    myChart.addLegend(60, 2, 560, 20, "left");
+    //  var myLegend = myChart.addLegend("25%", "1%", "290px", "12px", "right");
     plotBar.barGap = .5;
     myChart.defaultColors = [
       new dimple.color("#b1dce8"),
@@ -45,11 +46,18 @@ function revenueMonthly(){
     ];
 
     myChart.draw();
+
+    // Add a method to draw the chart on resize of the window.
+    // Needs to be an anonymous to avoid conflicts with other resize functions
+    $(window).resize(function(){
+      myChart.draw(0, true);
+    });
+
   });
 }
 
 function revenueQuarterly(){
-  var svg = dimple.newSvg("#revenue-area", "100%", "100%");
+  var svg = dimple.newSvg("#revenue-area", "100%", 500);
 
   d3.csv("data/revenue-quarterly.csv", function(data) {
     var myChart = new dimple.chart(svg, data);

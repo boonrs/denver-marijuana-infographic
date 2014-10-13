@@ -11,15 +11,6 @@ a:hover {color:white;}
 }
 
 /*Chart Styles*/
-#crime-possession { height: 500px; width: 100%; }
-#revenue-area { height: 500px; width: 100%; }
-#crime-bar { height: 500px; width: 100%; }
-
-#crime-stacked { height: 500px; width: 100%;}
-#facilities-donut, #revenue-donut { height: 400px;}
-#revenue-bar { height: 300px; }
-
-
 .dimple-axis text, text.dimple-title, text.dimple-legend  {
   fill: #fff !important;
   font-size: 12px !important;

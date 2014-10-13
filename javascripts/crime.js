@@ -16,7 +16,7 @@ function crimeSource(url) {
 }
 
 function crimePossession() {
-  var svg = dimple.newSvg("#crime-possession", "100%", "100%");
+  var svg = dimple.newSvg("#crime-possession", "100%", 500);
   d3.csv("data/open-crime.csv", function (data) {
     var myChart = new dimple.chart(svg, data);
     myChart.setBounds(60, 30, "85%", "78%");
@@ -66,7 +66,7 @@ function crimePossession() {
 }
 
 function crimeOffenses() {
-  var svg = dimple.newSvg("#crime-stacked", "100%", "100%");
+  var svg = dimple.newSvg("#crime-stacked", "100%", 500);
   d3.csv("/data/offenses.csv", function (data) {
     var myChart = new dimple.chart(svg, data);
     myChart.setBounds(60, 30, "85%", "78%");
