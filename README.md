@@ -57,7 +57,7 @@ This is the repo for the Denver Marijuana Data Visualization.
 * [Code][code]
 * [Staging][staging]
 
-[code]: https://github.com/codeforamerica/denver-data-visualization-template
+[code]: https://github.com/boonrs/denver-marijuana-infographic
 [staging]: http://mj.denvervisualizations.com
 
 **Download dependencies** in the command line: ` bundle `
