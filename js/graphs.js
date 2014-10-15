@@ -27,7 +27,7 @@ function populatePieGraph(id) {
 function populateLineGraph(id) {
   var csvFile = "data/" + id + ".csv";
   var selector = "#" + id;
-  var svg = dimple.newSvg(selector, "100%", "100%");
+  var svg = dimple.newSvg(selector, "100%", 500);
   d3.csv(csvFile, function(data) {
 
     var myChart = new dimple.chart(svg, data);
@@ -78,7 +78,7 @@ function populateLineGraph(id) {
 function populateHorizontalStackedBarGraph(id) {
   var csvFile = "data/" + id + ".csv";
   var selector = "#" + id;
-  var svg = dimple.newSvg(selector, "100%", 400);
+  var svg = dimple.newSvg(selector, "100%", 500);
   d3.csv(csvFile, function (data) {
     var myChart = new dimple.chart(svg, data);
     myChart.setBounds(60, 30, "85%", "70%")
@@ -90,7 +90,7 @@ function populateHorizontalStackedBarGraph(id) {
     y.addOrderRule(["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]);
 
     var plotBar = myChart.addSeries("type", dimple.plot.bar);
-    myChart.addLegend(60, 2, 560, 20, "left");
+    myChart.addLegend(60, 2, '80%', 50, "left");
     // var myLegend = myChart.addLegend("25%", "1%", "290px", "12px", "right");
     plotBar.barGap = .5;
 
@@ -107,6 +107,7 @@ function populateHorizontalStackedBarGraph(id) {
     // Needs to be an anonymous to avoid conflicts with other resize functions
     $(window).resize(function(){
       myChart.draw(0, true);
+      myChart.addLegend(60, 2, '80%', 50, "left");
     });
   });
 }
