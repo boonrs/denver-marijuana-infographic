@@ -12,8 +12,10 @@ Denver Marijuana Data Visualization
 ##What is the Denver Marijuana Data Visualization?
 
 A simple visual overview of marijuana data from the City and County of Denver. This project is based off of the [Denver Data Visualization Template][template]. To learn more about the project visit the template repo.
+* [Staging Website][staging]
 
 [template]: https://github.com/codeforamerica/denver-data-visualization-template
+[staging]: (http://mj.denvervisualizations.com
 
 ##Technical Details
 
@@ -51,15 +53,6 @@ A simple visual overview of marijuana data from the City and County of Denver. T
 
 
 ### Installation, Usage
-
-This is the repo for the Denver Marijuana Data Visualization.
-
-* [Code][code]
-* [Staging][staging]
-
-[code]: https://github.com/boonrs/denver-marijuana-infographic
-[staging]: http://mj.denvervisualizations.com
-
 **Download dependencies** in the command line: ` bundle `
 
 #### Local Development
@@ -104,8 +97,3 @@ Issues and feature backlog are tracked through [GitHub issues][ghissues].
 See the [LICENSE][] for details.
 
 [license]: https://github.com/boonrs/denver-marijuana-infographic/blob/master/LICENSE
-
-
-
-
-
