@@ -18,7 +18,7 @@ footer:
   link: "http://codeforamerica.org/"
 
 # Build settings
-markdown: kramdown
+markdown: redcarpet
 permalink: pretty
 
 # Custom collections
