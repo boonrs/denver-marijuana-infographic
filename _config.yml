@@ -23,5 +23,4 @@ permalink: pretty
 
 # Custom collections
 collections:
-- big_numbers
-- graphs
+- subsections

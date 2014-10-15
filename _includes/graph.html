@@ -1,5 +1,5 @@
-<div id="{{graph.type}}"></div>
+<div id="{{include.subsection.section}}-{{include.subsection.type}}"></div>
 
-{% if graph.description %}
-<div class="info-description">{{graph.description}}</div>
+{% if include.subsection.description %}
+<div class="info-description">{{include.subsection.description}}</div>
 {% endif %}

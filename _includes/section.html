@@ -4,18 +4,25 @@
   <span class="info-data"><a href="{{post.href}}" >View Source Data »</a></span>
 </div>
 
-{% for big in site.big_numbers %}
-  {% if big.section == post.section %}
-    <div class="info-full">
-      {% include big.html %}
+<div>
+  {% assign section = post.section %}
+  {% subsections_for subsection in site.subsections filter:section %}
+    {% if subsection.layout == "half" %}
+    <div class="info-row">
+      <div class="info-half">
+        {% assign data = subsection.data[0] %}
+        {% include subsection.html subsection = data %}
+      </div>
+      <div class="info-half">
+        {% assign data = subsection.data[1] %}
+        {% include subsection.html subsection = data %}
+      </div>
     </div>
-  {% endif %}
-{% endfor %}
-
-{% for graph in site.graphs %}
-  {% if graph.section == post.section %}
+    {% else %}
     <div class="info-full">
-      {% include graph.html %}
+      {% assign data = subsection.data[0] %}
+      {% include subsection.html subsection = data %}
     </div>
-  {% endif %}
-{% endfor %}
+    {% endif %}
+  {% endsubsections_for %}
+</div>
