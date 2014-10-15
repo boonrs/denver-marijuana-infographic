@@ -18,9 +18,10 @@ function facilitiesCount(description) {
 }
 
 function facilitiesDonut() {
-  var svg = dimple.newSvg("#facilities-donut", '100%', '100%');
+  var svg = dimple.newSvg("#facilities-donut", '100%', 500);
   d3.csv("data/facilities-licenses.csv", function (data) {
     var myChart = new dimple.chart(svg, data);
+    myChart.setBounds (0, 60, "80%", "80%");
     myChart.addMeasureAxis("p", "value");
     var ring = myChart.addSeries("label", dimple.plot.pie);
     
