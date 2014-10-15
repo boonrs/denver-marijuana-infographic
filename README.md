@@ -15,7 +15,7 @@ A simple visual overview of marijuana data from the City and County of Denver. T
 * [Staging Website][staging]
 
 [template]: https://github.com/codeforamerica/denver-data-visualization-template
-[staging]: (http://mj.denvervisualizations.com
+[staging]: http://mj.denvervisualizations.com
 
 ##Technical Details
 
