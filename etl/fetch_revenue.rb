@@ -10,7 +10,7 @@ class FetchRevenue
   RECREATIONAL_HEADER = "Recreational"
   RECREATIONAL_SPECIAL_HEADER = "Recreational Special Tax"
   QUARTERLY_PATH = FOLDER + "revenue-quarterly-line-graph.csv"
-  MONTHLY_PATH = FOLDER + "revenue-monthly-line-graph.csv"
+  MONTHLY_PATH = FOLDER + "revenue-monthly-horizontal-stacked-bar-graph.csv"
 
   def self.execute
     begin

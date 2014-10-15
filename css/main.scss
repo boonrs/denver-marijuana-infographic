@@ -118,7 +118,7 @@ text.dimple-tooltip {
   height: 400px;
 }
 
-.line-graph {
+.horizontal-stacked-bar-graph, .line-graph {
   height: 500px; width: 100%;
 }
 
@@ -126,7 +126,6 @@ text.dimple-tooltip {
 .infographic {
   border: 1px solid $tertiary-color;
   margin-bottom: 80px;
-
 }
 
 /* Sections */
@@ -179,6 +178,15 @@ text.dimple-tooltip {
   margin: 0 auto;
   padding-top: 2em;
   padding-bottom: 2em;
+}
+
+.chart-title {
+  font-size: 1.3em;
+  text-align: center;
+  max-width: 500px;
+  margin: 0 auto;
+  font-weight: bold;
+  padding-bottom: 1.3em;
 }
 
 .chart-title {

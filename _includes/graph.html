@@ -1,3 +1,7 @@
+{% if include.subsection.title %}
+<div class="chart-title">{{include.subsection.title}}</div>
+{% endif %}
+
 <div id="{{include.subsection.section}}-{{include.subsection.name}}-{{include.subsection.type}}" class="{{include.subsection.type}}"></div>
 
 {% if include.subsection.description %}
