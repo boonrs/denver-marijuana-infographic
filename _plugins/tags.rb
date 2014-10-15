@@ -51,7 +51,7 @@ module Jekyll
         layout = is_two_column ? "half" : "whole"
         left = get_side(row, LEFT_SIDE)
         right = get_side(row, RIGHT_SIDE)
-        whole = row.first
+        whole = row[1].first
         data = (left || right)? [left, right] : [whole]
         subsections << {"layout" => layout, "data"  => data}
       }

@@ -1,4 +1,5 @@
 $( document ).ready(function() {
-  populateBigNumber("facilities");
-  populatePieGraph("facilities-pie-graph");
+  var id = "facilities-licenses";
+  populateBigNumber(id + "-big");
+  populatePieGraph(id + "-pie-graph");
 });

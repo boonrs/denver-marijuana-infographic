@@ -9,6 +9,8 @@ class FetchRevenue
   MEDICAL_HEADER = "Medical"
   RECREATIONAL_HEADER = "Recreational"
   RECREATIONAL_SPECIAL_HEADER = "Recreational Special Tax"
+  QUARTERLY_PATH = FOLDER + "revenue-quarterly-line-graph.csv"
+  MONTHLY_PATH = FOLDER + "revenue-monthly-line-graph.csv"
 
   def self.execute
     begin
@@ -72,13 +74,11 @@ class FetchRevenue
   end
 
   def self.create_quarterly_csv(revenue)
-    title = "revenue-quarterly"
-    path = FOLDER + title + ".csv"
     headers = ["quarter", "q", "year", "type", "revenue"]
    
     data = QuarterlyRevenue.new(revenue).rollup
 
-    CSV.open(path, "wb") do |csv|
+    CSV.open(QUARTERLY_PATH, "wb") do |csv|
       csv << headers
       data.each do |rev|
         if current_quarter(rev[:year], rev[:quarter]) # If the quarter hasn't closed, the data is incomplete
@@ -96,11 +96,9 @@ class FetchRevenue
   end
 
   def self.create_monthly_csv(revenue)
-    title = "revenue-monthly"
-    path = FOLDER + title + ".csv"
     headers = ["month", "year", "type", "revenue"]
 
-    CSV.open(path, "wb") do |csv|
+    CSV.open(MONTHLY_PATH, "wb") do |csv|
       csv << headers
       revenue.each do |rev|
         if current_month(rev[:month], rev[:year]) # If the month hasn't closed, the data is incomplete

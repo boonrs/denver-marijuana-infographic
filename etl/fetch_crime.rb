@@ -7,6 +7,7 @@ class FetchCrime
   URL = "http://data.denvergov.org/download/gis/crime/csv/crime.csv"
   FOLDER = "data/"
   LOCAL = FOLDER + "crime.csv"
+  OPEN_PATH = FOLDER + "crime-all.csv"
 
   def self.execute
     begin
@@ -61,12 +62,10 @@ class FetchCrime
   end
 
   def self.create_csv(crimes)
-    title = "open-crime"
-    path = FOLDER + title + ".csv"
     headers = ["Quarter","q","year","Series","Total"]
 
     data = QuarterlyCrime.new(crimes).rollup
-    CSV.open(path, "wb") do |csv|
+    CSV.open(OPEN_PATH, "wb") do |csv|
       csv << headers
       data.each do |crime|
         quarter = "Q" + crime[0].to_s

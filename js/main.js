@@ -7,8 +7,8 @@ $(document).ready(function(){
 })
 
 function populateBigNumber(id) {
-  var csvFile = "data/" + id + "-big.csv";
-  var selector = "#" + id + "-number";
+  var csvFile = "data/" + id + ".csv";
+  var selector = "#" + id;
   d3.csv(csvFile, function(error, data) {
     if(error){
       console.log(error);
@@ -17,31 +17,6 @@ function populateBigNumber(id) {
       $(selector).text(data[0].big);
       $(".bigtext").bigtext();
     }
-  });
-}
-
-function populatePieGraph(id) {
-  var csvFile = "data/" + id + ".csv";
-  var selector = "#" + id;
-  var svg = dimple.newSvg(selector, '100%', '100%');
-  d3.csv(csvFile, function (data) {
-    var myChart = new dimple.chart(svg, data);
-    myChart.addMeasureAxis("p", "value");
-    var ring = myChart.addSeries("label", dimple.plot.pie);
-
-    // Tooltip
-    ring.getTooltipText = function (e) {
-      return [ e.aggField[0], formatPercent(e.piePct) ];
-    };
-
-    myChart.defaultColors = [
-      new dimple.color("#b1dce8"),
-      new dimple.color("#62b9d1"),
-      new dimple.color("#2c7e95"),
-      new dimple.color("#0f2a31")
-    ];
-    myChart.addLegend("0",20,"50%","100%","left");
-    myChart.draw();
   });
 }
 
