@@ -1,11 +1,6 @@
-{% case include.subsection.type %}
+{% assign type = include.subsection.type | split:"-" | last %}
+{% case type %}
 {% when 'graph' %}
-  {% include graph.html subsection = include.subsection %}
-{% when 'line-graph' %}
-  {% include graph.html subsection = include.subsection %}
-{% when 'pie-graph' %}
-  {% include graph.html subsection = include.subsection %}
-{% when 'horizontal-stacked-bar-graph' %}
   {% include graph.html subsection = include.subsection %}
 {% when 'big' %}
   {% include big.html subsection = include.subsection %}

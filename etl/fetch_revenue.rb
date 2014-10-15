@@ -59,13 +59,6 @@ class FetchRevenue
     previous
   end
 
-  def self.current_quarter(year, quarter)
-    today = Date.today
-    this_year = today.year
-    this_quarter = ETLHelper.get_quarter(today.month)
-    return (year == this_year && quarter == this_quarter)
-  end
-
   def self.current_month(year, month)
     today = Date.today
     this_year = today.year
@@ -81,16 +74,15 @@ class FetchRevenue
     CSV.open(QUARTERLY_PATH, "wb") do |csv|
       csv << headers
       data.each do |rev|
-        if current_quarter(rev[:year], rev[:quarter]) # If the quarter hasn't closed, the data is incomplete
-          next
+        if ETLHelper.is_quarter_closed(rev[:year], rev[:quarter]) # If the quarter is closed, add the data
+          quarter = "Q" + rev[:quarter].to_s
+          quarter_and_year = quarter + ' ' + rev[:year].to_s
+          shared = [quarter_and_year, quarter, rev[:year]]
+          medical = shared.dup << MEDICAL_HEADER << rev[:medical]
+          recreational = shared.dup << RECREATIONAL_HEADER << rev[:retail]
+          csv << recreational
+          csv << medical
         end
-        quarter = "Q" + rev[:quarter].to_s
-        quarter_and_year = quarter + ' ' + rev[:year].to_s
-        shared = [quarter_and_year, quarter, rev[:year]]
-        medical = shared.dup << MEDICAL_HEADER << rev[:medical]
-        recreational = shared.dup << RECREATIONAL_HEADER << rev[:retail]
-        csv << recreational
-        csv << medical
       end
     end
   end

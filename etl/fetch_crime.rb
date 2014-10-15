@@ -7,11 +7,11 @@ class FetchCrime
   URL = "http://data.denvergov.org/download/gis/crime/csv/crime.csv"
   FOLDER = "data/"
   LOCAL = FOLDER + "crime.csv"
-  OPEN_PATH = FOLDER + "crime-all.csv"
+  OPEN_PATH = FOLDER + "crime-violations-stacked-bar-graph.csv"
 
   def self.execute
     begin
-      crimes = fetch_csv
+      crimes = fetch_local_csv
       create_csv(crimes)
 
       ETLHelper.set_last_updated("crime")
@@ -68,9 +68,11 @@ class FetchCrime
     CSV.open(OPEN_PATH, "wb") do |csv|
       csv << headers
       data.each do |crime|
-        quarter = "Q" + crime[0].to_s
-        quarter_and_year = quarter + ' ' + crime[1].to_s
-        csv << [quarter_and_year, quarter, crime[1], crime[2], crime[3]]
+        if ETLHelper.is_quarter_closed(crime[1], crime[0])
+          quarter = "Q" + crime[0].to_s
+          quarter_and_year = quarter + ' ' + crime[1].to_s
+          csv << [quarter_and_year, quarter, crime[1], crime[2], crime[3]]
+        end
       end
     end
   end
