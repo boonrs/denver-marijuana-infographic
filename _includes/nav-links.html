@@ -1,0 +1,5 @@
+<a href="#about">About</a>
+{% for post in site.posts %}
+  <a href="#{{post.section}}">{{post.title}}</a>
+{% endfor %}
+<a href="#faq">FAQ</a>

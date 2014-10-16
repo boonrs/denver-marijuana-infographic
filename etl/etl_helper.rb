@@ -19,4 +19,11 @@ class ETLHelper
   def self.set_last_updated(type)
     LastUpdated.Set("crime")
   end
+
+  def self.is_quarter_closed(year, quarter)
+    today = Date.today
+    this_year = today.year
+    this_quarter = get_quarter(today.month)
+    return ( year < this_year || (year == this_year && quarter < this_quarter) )
+  end
 end

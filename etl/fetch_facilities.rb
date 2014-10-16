@@ -4,6 +4,8 @@ require "open-uri"
 class FetchFacilities
   URL = "http://data.denvergov.org/download/gis/marijuana_facilities/csv/marijuana_facilities.csv"
   FOLDER = "data/"
+  BIG_PATH = FOLDER + "facilities-licenses-big.csv"
+  LICENSES_PATH = FOLDER + "facilities-licenses-pie-graph.csv"
 
   def self.execute
     begin
@@ -33,10 +35,8 @@ class FetchFacilities
   end
 
   def self.create_big_number_csv(facilities)
-    title = "facilities-big"
-    path = FOLDER + title + ".csv"
     headers = ["big"]
-    CSV.open(path, "wb") do |csv|
+    CSV.open(BIG_PATH, "wb") do |csv|
       csv << headers
       csv << [sum_facilities(facilities)]
     end
@@ -47,11 +47,9 @@ class FetchFacilities
   end
 
   def self.create_licenses_csv(facilities)
-    title = "facilities-licenses"
-    path = FOLDER + title + ".csv"
     headers = ["label", "value"]
 
-    CSV.open(path, "wb") do |csv|
+    CSV.open(LICENSES_PATH, "wb") do |csv|
       csv << headers
       facilities.each do |f|
         csv << f

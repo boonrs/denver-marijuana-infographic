@@ -9,6 +9,8 @@ class FetchRevenue
   MEDICAL_HEADER = "Medical"
   RECREATIONAL_HEADER = "Recreational"
   RECREATIONAL_SPECIAL_HEADER = "Recreational Special Tax"
+  QUARTERLY_PATH = FOLDER + "revenue-quarterly-line-graph.csv"
+  MONTHLY_PATH = FOLDER + "revenue-monthly-horizontal-stacked-bar-graph.csv"
 
   def self.execute
     begin
@@ -57,13 +59,6 @@ class FetchRevenue
     previous
   end
 
-  def self.current_quarter(year, quarter)
-    today = Date.today
-    this_year = today.year
-    this_quarter = ETLHelper.get_quarter(today.month)
-    return (year == this_year && quarter == this_quarter)
-  end
-
   def self.current_month(year, month)
     today = Date.today
     this_year = today.year
@@ -72,35 +67,30 @@ class FetchRevenue
   end
 
   def self.create_quarterly_csv(revenue)
-    title = "revenue-quarterly"
-    path = FOLDER + title + ".csv"
     headers = ["quarter", "q", "year", "type", "revenue"]
    
     data = QuarterlyRevenue.new(revenue).rollup
 
-    CSV.open(path, "wb") do |csv|
+    CSV.open(QUARTERLY_PATH, "wb") do |csv|
       csv << headers
       data.each do |rev|
-        if current_quarter(rev[:year], rev[:quarter]) # If the quarter hasn't closed, the data is incomplete
-          next
+        if ETLHelper.is_quarter_closed(rev[:year], rev[:quarter]) # If the quarter is closed, add the data
+          quarter = "Q" + rev[:quarter].to_s
+          quarter_and_year = quarter + ' ' + rev[:year].to_s
+          shared = [quarter_and_year, quarter, rev[:year]]
+          medical = shared.dup << MEDICAL_HEADER << rev[:medical]
+          recreational = shared.dup << RECREATIONAL_HEADER << rev[:retail]
+          csv << recreational
+          csv << medical
         end
-        quarter = "Q" + rev[:quarter].to_s
-        quarter_and_year = quarter + ' ' + rev[:year].to_s
-        shared = [quarter_and_year, quarter, rev[:year]]
-        medical = shared.dup << MEDICAL_HEADER << rev[:medical]
-        recreational = shared.dup << RECREATIONAL_HEADER << rev[:retail]
-        csv << recreational
-        csv << medical
       end
     end
   end
 
   def self.create_monthly_csv(revenue)
-    title = "revenue-monthly"
-    path = FOLDER + title + ".csv"
     headers = ["month", "year", "type", "revenue"]
 
-    CSV.open(path, "wb") do |csv|
+    CSV.open(MONTHLY_PATH, "wb") do |csv|
       csv << headers
       revenue.each do |rev|
         if current_month(rev[:month], rev[:year]) # If the month hasn't closed, the data is incomplete

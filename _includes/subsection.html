@@ -1,0 +1,10 @@
+{% assign type = include.subsection.type | split:"-" | last %}
+{% case type %}
+{% when 'graph' %}
+  {% include graph.html subsection = include.subsection %}
+{% when 'big' %}
+  {% include big.html subsection = include.subsection %}
+{% else %}
+  <p><strong><em>Warning:</strong></em> Unable to display this type of subsection: {{include.subsection.type}}.</p>
+  <p>It is not defined in the <strong>_includes</strong> folder and/or the <strong>_includes/subsection.html</strong> file.</p>
+{% endcase %}

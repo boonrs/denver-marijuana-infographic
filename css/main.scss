@@ -1,0 +1,315 @@
+---
+---
+/* These lines are necessary for jekyll to recognize a sass file
+    http://jekyllrb.com/docs/assets/
+*/
+
+/* Theme Colors */
+$primary-color: #41a8c4;
+$secondary-color: #8dcbdc;
+$tertiary-color: #2F98B4;
+$text-color: white;
+$text-color-dark: #58595b;
+$light-background-text-color: #555;
+$tooltip-color: #3ba8c6;
+$dimple-fill: #fff;
+
+/* Theme Fonts */
+$font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+/* Master Styles */
+a { color: $text-color; }
+
+a:hover {color: $text-color;}
+
+.main-content {
+  position: relative;
+  padding-top: 80px;
+}
+
+.center {
+  text-align: center;
+  margin:0 auto;
+}
+
+body {
+  color: white;
+  background-color: $primary-color;
+}
+
+img.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.jumbotron {
+  background-color: $primary-color;
+  text-align: left;
+}
+
+/* Frequently Asked Questions*/
+.btn-faq {
+  color: $text-color-dark;
+  background-color: $text-color;
+  margin: 2em 1em 1em 1em;
+}
+.btn-faq:hover {
+  color: white;
+  background-color: $primary-color; 
+  border: 1px solid $text-color;
+  -o-transition:.2s;
+    -ms-transition:.2s;
+    -moz-transition:.2s;
+    -webkit-transition:.2s;
+    transition:.2s;
+}
+
+/* Share Buttons*/
+.share-text {}
+.btn-share {
+  margin-right: 10px;
+  margin-top: 5px;
+  width: 48px;
+  height:50px;
+  display:inline-block;
+  border-radius: 6px;
+  background-color: $primary-color;
+}
+
+.btn-share:hover {
+  border: 1px solid white;
+  border-radius: 6px;
+}
+
+.fb { background: url('../images/share-1x.png') no-repeat -1px -1px;}
+.fb:hover { background-position: -1px -53px; }
+
+.twitter { background: url('../images/share-1x.png') no-repeat -1px -103px; }
+.twitter:hover { background-position: -1px -155px; }
+
+.gplus { background: url('../images/share-1x.png') no-repeat -1px -206px; }
+.gplus:hover { background-position: -1px -258px; }
+
+/* Dimple */
+.dimple-axis text, text.dimple-title, text.dimple-legend  {
+  fill: $dimple-fill !important;
+  font-size: 12px !important;
+}
+
+text.dimple-title { font-weight: 500 !important; }
+.dimple-marker { opacity: 1 !important; }
+.dimple-tooltip { 
+  font-size: 14px !important;
+  fill: $dimple-fill !important;
+  stroke: 1px !important;
+  text-align: center !important;
+}
+
+text.dimple-tooltip {
+  fill: $tooltip-color !important;
+  padding: 10px !important;
+  margin: 0 auto !important;
+  text-align: center !important;
+  visibility: visible !important;
+}
+
+.pie-graph {
+  height: 400px;
+}
+
+/* Infographic */
+.infographic {
+  border: 1px solid $tertiary-color;
+  margin-bottom: 80px;
+}
+
+/* Sections */
+.info-header {
+  background-color: $secondary-color;
+  padding: 20px 40px 20px 40px;
+}
+
+.info-title {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.info-date {
+  font-size: 1em;
+  padding-left:  20px;
+}
+
+.info-data {
+  float: right;
+  text-align: right;
+  padding-top: 13px;
+}
+
+.info-row {
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row ;
+  justify-content: space-around;
+  align-items:center;
+  flex-wrap: wrap;
+}
+
+.info-half {
+  max-width: 50%;
+  padding: 40px;
+  text-align: center;
+  min-width:370px;
+}
+
+.info-full {
+  max-width: 100%;
+  padding: 40px;
+  border-top: 1px solid $tertiary-color;
+}
+
+.info-description{
+  text-align: center;
+  max-width: 500px;
+  margin: 0 auto;
+  padding-top: 2em;
+  padding-bottom: 2em;
+}
+
+.chart-title {
+  font-size: 1.3em;
+  text-align: center;
+  max-width: 500px;
+  margin: 0 auto;
+  font-weight: bold;
+  padding-bottom: 1.3em;
+}
+
+.chart-title {
+  font-size: 1.3em;
+  text-align: center;
+  max-width: 500px;
+  margin: 0 auto;
+  font-weight: bold;
+  padding-bottom: 1.3em;
+}
+
+/* Navigation */
+.nav-full {
+  border-bottom: 1px solid $text-color;
+}
+
+.main-nav {
+  background: $primary-color;
+  height: 60px;
+  z-index: 150;
+  margin-bottom: -60px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  padding-top: 10px;
+}
+
+.nav-shadow {
+  -webkit-box-shadow: 0 -4px 0px 4px $primary-color,0 2px 4px 0 rgba(0,0,0,0.1);
+  -moz-box-shadow: 0 -4px 0px 4px $primary-color,0 2px 4px 0 rgba(0,0,0,0.1);
+  box-shadow: 0 -4px 0px 4px $primary-color,0 2px 4px 0 rgba(0,0,0,0.1);
+}
+
+.nav-links {
+  font-size: 1em;
+  text-align: center;
+  padding-top: 10px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.nav-links > a {
+  padding: 30px;
+}
+
+.anchor{
+  display: block;
+  height: 80px; /*same height as header*/
+  margin-top: -80px; /*same height as header*/
+  visibility: hidden;
+}
+
+/*Pin the top nav to the top while scrolling*/
+.navbar-default {
+  position:fixed;
+  left:0px;
+  top:0px;
+  z-index: 1;
+  width: 100%;
+}
+
+/* BIGTEXT STYLES */
+.bigtext {
+    font-family: $font-family;
+    font-weight: 700;
+    text-align: center;
+}
+
+.bigtext > span {
+    line-height: 0.95em;
+}
+
+.bigtext-descr {
+  padding-top: 1.5em;
+  text-align: center;
+}
+
+/* footer */
+footer {
+  width: 100%;
+  background-color: $text-color;
+  color: $light-background-text-color;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  height:100%;
+  clear:both;
+}
+
+footer a {
+  color: $light-background-text-color;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+footer a:hover {
+  text-decoration: none;
+  color: $primary-color;
+  -o-transition:.2s;
+  -ms-transition:.2s;
+  -moz-transition:.2s;
+  -webkit-transition:.2s;
+  transition:.2s;
+}
+
+/* Show and affix the side nav when space allows it */
+@media(max-width:767px){
+  .info-date, .info-data {display:none;}
+  .info-header {text-align: center;}
+  .infographic {border: none;}
+  .main-content {padding:0;}
+  .btn-faq {margin-top:1em;}
+  footer {
+    padding-top: 2em;
+  }
+  .footer-content {margin-top: 2em;}
+  .main-nav {display: none;}
+}
+@media(min-width:768px){}
+@media (min-width: 992px) {}
+@media (min-width: 1200px) {}
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) { 
+  .fb, .fb:hover,
+  .twitter, .twitter:hover,
+  .gplus, .gplus:hover {
+    /* Reference the @2x Sprite */
+    background-image: url('../images/share-2x.png');
+    /* Translate the @2x sprite's dimensions back to 1x */
+    background-size: 50px 307px; 
+  }
+}
