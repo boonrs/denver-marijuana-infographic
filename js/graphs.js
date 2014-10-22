@@ -15,10 +15,11 @@ function populatePieGraph(id) {
 
     // TODO: Investigate moving these colors to css
     myChart.defaultColors = [
-      new dimple.color("#b1dce8"),
-      new dimple.color("#62b9d1"),
-      new dimple.color("#2c7e95"),
-      new dimple.color("#0f2a31")
+      new dimple.color("#06191e"),
+      new dimple.color("#124b5b"),
+      new dimple.color("#468394"),
+      new dimple.color("#a3c1ca")
+
     ];
     myChart.addLegend("0",20,"50%","100%","left");
     myChart.draw();
@@ -51,10 +52,10 @@ function populateLineGraph(id) {
 
     // TODO: 
     myChart.defaultColors = [
-    new dimple.color("#b1dce8"),
-    new dimple.color("#62b9d1"),
-    new dimple.color("#2c7e95"),
-    new dimple.color("#0f2a31")
+      new dimple.color("#06191e"),
+      new dimple.color("#124b5b"),
+      new dimple.color("#468394"),
+      new dimple.color("#a3c1ca")
     ];
 
     var myLegend = myChart.addLegend("25%", "1%", "290px", "12px", "right");
@@ -97,10 +98,10 @@ function populateHorizontalStackedBarGraph(id) {
 
     // TODO: Investigate pulling this from css
     myChart.defaultColors = [
-      new dimple.color("#b1dce8"),
-      new dimple.color("#62b9d1"),
-      new dimple.color("#2c7e95"),
-      new dimple.color("#0f2a31")
+      new dimple.color("#06191e"),
+      new dimple.color("#124b5b"),
+      new dimple.color("#468394"),
+      new dimple.color("#a3c1ca")
     ];
 
     myChart.draw();
@@ -135,10 +136,10 @@ function populateStackedBarGraph(id) {
     };
     // TODO: Investigate moving to css
     myChart.defaultColors = [
-      new dimple.color("#b1dce8"),
-      new dimple.color("#62b9d1"),
-      new dimple.color("#2c7e95"),
-      new dimple.color("#0f2a31")
+      new dimple.color("#06191e"),
+      new dimple.color("#124b5b"),
+      new dimple.color("#468394"),
+      new dimple.color("#a3c1ca")
     ];
 
     var myLegend = myChart.addLegend("25%", "1%", "290px", "12px", "right");

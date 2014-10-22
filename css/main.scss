@@ -97,13 +97,20 @@ img.center {
   font-size: 12px !important;
 }
 
+path.domain, g.dimple-axis > g.tick > line {
+  fill: none !important;
+  stroke: white !important;
+  opacity: .3;
+}
+
 text.dimple-title { font-weight: 500 !important; }
 .dimple-marker { opacity: 1 !important; }
 .dimple-tooltip { 
   font-size: 14px !important;
   fill: $dimple-fill !important;
-  stroke: 1px !important;
+  stroke-width: 1px !important;
   text-align: center !important;
+  text-transform: capitalize;
 }
 
 text.dimple-tooltip {
@@ -193,6 +200,7 @@ text.dimple-tooltip {
   font-weight: bold;
   padding-bottom: 1.3em;
 }
+
 
 /* Navigation */
 .nav-full {
