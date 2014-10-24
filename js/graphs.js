@@ -19,14 +19,13 @@ function populatePieGraph(id) {
       new dimple.color("#468394"),
       new dimple.color("#124b5b"),
       new dimple.color("#a3c1ca")
-
     ];
     myChart.addLegend("0",20,"50%","100%","left");
     myChart.draw();
   });
 }
 
-function populateLineGraph(id) {
+function populateLineGraph(id, xTitle, yTitle, series) {
   var csvFile = "data/" + id + ".csv";
   var selector = "#" + id;
   var svg = dimple.newSvg(selector, "100%", 500);
@@ -35,15 +34,15 @@ function populateLineGraph(id) {
     var myChart = new dimple.chart(svg, data);
     myChart.setBounds(60, 30, "85%", "70%");
 
-    var x = myChart.addCategoryAxis("x", "quarter");
+    var x = myChart.addCategoryAxis("x", xTitle);
     x.addOrderRule("year");
     x.addOrderRule("q");
-    x.title = "Quarter";
+    x.title = xTitle.toUpperCase();
 
-    var y = myChart.addMeasureAxis("y", "revenue");
-    y.title = "Revenue";
+    var y = myChart.addMeasureAxis("y", yTitle);
+    y.title = yTitle.toUpperCase();
 
-    var lines = myChart.addSeries("type", dimple.plot.line);
+    var lines = myChart.addSeries(series, dimple.plot.line);
 
     // Tooltip
     lines.getTooltipText = function (e) {
