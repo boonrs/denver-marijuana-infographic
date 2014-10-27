@@ -12,7 +12,7 @@ class FetchCrime
 
   def self.execute
     begin
-      crimes = fetch_local_csv
+      crimes = fetch_csv
       create_csv(crimes)
 
       ETLHelper.set_last_updated("crime")
