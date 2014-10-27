@@ -7,8 +7,10 @@ class FetchCrime
   URL = "http://data.denvergov.org/download/gis/crime/csv/crime.csv"
   FOLDER = "data/"
   LOCAL = FOLDER + "crime.csv"
-  #OPEN_PATH = FOLDER + "crime-violations-stacked-bar-graph.csv"
-  OPEN_PATH = FOLDER + "crime-mj-vs-all-stacked-bar-graph.csv"
+  MJ = "Marijuana"
+  ALL = "All Other Crime"
+  ALL_PATH = FOLDER + "crime-all-line-graph.csv"
+  MJ_PATH = FOLDER + "crime-mj-line-graph.csv"
 
   def self.execute
     begin
@@ -55,9 +57,9 @@ class FetchCrime
     quarter = ETLHelper.get_quarter(dt.month)
 
     if offense_types.keys.include?(offense_type) # We only want mj data
-      crimes << {:quarter => quarter, :year => dt.year, :series => "Marijuana"}
+      crimes << {:quarter => quarter, :year => dt.year, :series => MJ}
     else
-      crimes << {:quarter => quarter, :year => dt.year, :series => "All Other Crime"}
+      crimes << {:quarter => quarter, :year => dt.year, :series => ALL}
     end
   end
 
@@ -77,10 +79,24 @@ class FetchCrime
     headers = ["Quarter","q","year","Series","Total"]
 
     data = QuarterlyCrime.new(crimes).rollup
-    CSV.open(OPEN_PATH, "wb") do |csv|
+    # All data
+    CSV.open(ALL_PATH, "wb") do |csv|
       csv << headers
       data.each do |crime|
         if ETLHelper.is_quarter_closed(crime[1], crime[0])
+          quarter = "Q" + crime[0].to_s
+          quarter_and_year = quarter + ' ' + crime[1].to_s
+          csv << [quarter_and_year, quarter, crime[1], crime[2], crime[3]]
+        end
+      end
+    end
+
+    # Just MJ
+    CSV.open(MJ_PATH, "wb") do |csv|
+      csv << headers
+      data.each do |crime|
+        is_mj = crime[2] == MJ
+        if is_mj && ETLHelper.is_quarter_closed(crime[1], crime[0])
           quarter = "Q" + crime[0].to_s
           quarter_and_year = quarter + ' ' + crime[1].to_s
           csv << [quarter_and_year, quarter, crime[1], crime[2], crime[3]]
