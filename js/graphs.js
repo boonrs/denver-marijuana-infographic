@@ -16,8 +16,8 @@ function populatePieGraph(id) {
     // TODO: Investigate moving these colors to css
     myChart.defaultColors = [
       new dimple.color("#06191e"),
-      new dimple.color("#124b5b"),
       new dimple.color("#468394"),
+      new dimple.color("#124b5b"),
       new dimple.color("#a3c1ca")
 
     ];
@@ -53,8 +53,8 @@ function populateLineGraph(id) {
     // TODO: 
     myChart.defaultColors = [
       new dimple.color("#06191e"),
-      new dimple.color("#124b5b"),
       new dimple.color("#468394"),
+      new dimple.color("#124b5b"),
       new dimple.color("#a3c1ca")
     ];
 
@@ -99,8 +99,8 @@ function populateHorizontalStackedBarGraph(id) {
     // TODO: Investigate pulling this from css
     myChart.defaultColors = [
       new dimple.color("#06191e"),
-      new dimple.color("#124b5b"),
       new dimple.color("#468394"),
+      new dimple.color("#124b5b"),
       new dimple.color("#a3c1ca")
     ];
 
@@ -137,8 +137,8 @@ function populateStackedBarGraph(id) {
     // TODO: Investigate moving to css
     myChart.defaultColors = [
       new dimple.color("#06191e"),
-      new dimple.color("#124b5b"),
       new dimple.color("#468394"),
+      new dimple.color("#124b5b"),
       new dimple.color("#a3c1ca")
     ];
 
