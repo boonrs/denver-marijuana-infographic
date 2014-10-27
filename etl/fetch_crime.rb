@@ -7,11 +7,14 @@ class FetchCrime
   URL = "http://data.denvergov.org/download/gis/crime/csv/crime.csv"
   FOLDER = "data/"
   LOCAL = FOLDER + "crime.csv"
-  OPEN_PATH = FOLDER + "crime-violations-stacked-bar-graph.csv"
+  MJ = "Marijuana"
+  ALL = "All Other Crime"
+  ALL_PATH = FOLDER + "crime-all-line-graph.csv"
+  MJ_PATH = FOLDER + "crime-mj-line-graph.csv"
 
   def self.execute
     begin
-      crimes = fetch_local_csv
+      crimes = fetch_csv
       create_csv(crimes)
 
       ETLHelper.set_last_updated("crime")
@@ -28,14 +31,7 @@ class FetchCrime
       "DISTRICT_ID","PRECINCT_ID","NEIGHBORHOOD_ID"]
 
     CSV.new(open(URL), :headers => :true).each do |line|
-      offense_types = {"drug-marijuana-cultivation" => "Cultivation", "drug-marijuana-possess" => "Possession", "drug-marijuana-sell" => "Sale"}
-      offense_type = line["OFFENSE_TYPE_ID"]
-
-      if offense_types.keys.include?(offense_type) # We only want mj data
-        dt = Date.strptime(line["REPORTED_DATE"].strip, '%Y-%m-%d')
-        quarter = ETLHelper.get_quarter(dt.month)
-        crimes << {:quarter => quarter, :year => dt.year, :series => offense_types[offense_type]}
-      end
+      process_mj_vs_all_violations(crimes, line)
     end
 
     crimes
@@ -48,27 +44,59 @@ class FetchCrime
       "DISTRICT_ID","PRECINCT_ID","NEIGHBORHOOD_ID"]
 
     CSV.open(LOCAL, :headers => true).each do |line|
-      offense_types = {"drug-marijuana-cultivation" => "Cultivation", "drug-marijuana-possess" => "Possession", "drug-marijuana-sell" => "Sale"}
-      offense_type = line["OFFENSE_TYPE_ID"]
-
-      if offense_types.keys.include?(offense_type) # We only want mj data
-        dt = Date.strptime(line["REPORTED_DATE"].strip, '%Y-%m-%d')
-        quarter = ETLHelper.get_quarter(dt.month)
-        crimes << {:quarter => quarter, :year => dt.year, :series => offense_types[offense_type]}
-      end
+      process_mj_vs_all_violations(crimes, line)
     end
 
     crimes
+  end
+
+  def self.process_mj_vs_all_violations(crimes, line)
+    offense_types = {"drug-marijuana-cultivation" => "Cultivation", "drug-marijuana-possess" => "Possession", "drug-marijuana-sell" => "Sale"}
+    offense_type = line["OFFENSE_TYPE_ID"]
+    dt = Date.strptime(line["REPORTED_DATE"].strip, '%Y-%m-%d')
+    quarter = ETLHelper.get_quarter(dt.month)
+
+    if offense_types.keys.include?(offense_type) # We only want mj data
+      crimes << {:quarter => quarter, :year => dt.year, :series => MJ}
+    else
+      crimes << {:quarter => quarter, :year => dt.year, :series => ALL}
+    end
+  end
+
+  # Deprecated report
+  def self.process_marijuana_violations(crimes, line)
+    offense_types = {"drug-marijuana-cultivation" => "Cultivation", "drug-marijuana-possess" => "Possession", "drug-marijuana-sell" => "Sale"}
+    offense_type = line["OFFENSE_TYPE_ID"]
+
+    if offense_types.keys.include?(offense_type) # We only want mj data
+      dt = Date.strptime(line["REPORTED_DATE"].strip, '%Y-%m-%d')
+      quarter = ETLHelper.get_quarter(dt.month)
+      crimes << {:quarter => quarter, :year => dt.year, :series => offense_types[offense_type]}
+    end
   end
 
   def self.create_csv(crimes)
     headers = ["Quarter","q","year","Series","Total"]
 
     data = QuarterlyCrime.new(crimes).rollup
-    CSV.open(OPEN_PATH, "wb") do |csv|
+    # All data
+    CSV.open(ALL_PATH, "wb") do |csv|
       csv << headers
       data.each do |crime|
         if ETLHelper.is_quarter_closed(crime[1], crime[0])
+          quarter = "Q" + crime[0].to_s
+          quarter_and_year = quarter + ' ' + crime[1].to_s
+          csv << [quarter_and_year, quarter, crime[1], crime[2], crime[3]]
+        end
+      end
+    end
+
+    # Just MJ
+    CSV.open(MJ_PATH, "wb") do |csv|
+      csv << headers
+      data.each do |crime|
+        is_mj = crime[2] == MJ
+        if is_mj && ETLHelper.is_quarter_closed(crime[1], crime[0])
           quarter = "Q" + crime[0].to_s
           quarter_and_year = quarter + ' ' + crime[1].to_s
           csv << [quarter_and_year, quarter, crime[1], crime[2], crime[3]]
@@ -103,9 +131,8 @@ class QuarterlyCrime
   def find_gaps_in_collection
     # graphs display wonky if data doesn't exist for each quarter
     sorted = sort(sum_by_quarter.map{|a| a.flatten})
-    fill_in_the_blanks(sorted, "Possession")
-    fill_in_the_blanks(sorted, "Cultivation")
-    fill_in_the_blanks(sorted, "Sale")
+    series = sorted.map{|s| s[2] }.uniq
+    series.each {|s| fill_in_the_blanks(sorted, s)}
     sorted
   end
 
