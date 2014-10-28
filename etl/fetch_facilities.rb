@@ -6,6 +6,7 @@ class FetchFacilities
   FOLDER = "data/"
   BIG_PATH = FOLDER + "facilities-licenses-big.csv"
   LICENSES_PATH = FOLDER + "facilities-licenses-pie-graph.csv"
+  LOCATIONS_PATH = FOLDER + "facilities-locations-venn-graph.csv"
 
   def self.execute
     begin
@@ -32,6 +33,18 @@ class FetchFacilities
     data = FacilitiesCount.new(facilities).rollup
     create_big_number_csv(data)
     create_licenses_csv(data)
+    create_locations()
+  end
+
+  def self.create_locations()
+    headers = ["label", "size"]
+    CSV.open(LOCATIONS_PATH, "wb") do |csv|
+      csv << headers
+      # Hard coded for now
+      csv << ["Recreational", 100]
+      csv << ["Medical", 120]
+      csv << ["Medical and Recreational", 95]
+    end
   end
 
   def self.create_big_number_csv(facilities)

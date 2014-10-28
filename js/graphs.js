@@ -1,3 +1,45 @@
+function populateVenn(id){
+  var csvFile = "data/" + id + ".csv"
+  var selector = "#" + id
+  d3.csv(csvFile, function(data){
+    // define sets and set set intersections
+    var formatted = formatSets(data);
+
+    // // get positions for each set
+    var sets = venn.venn(formatted.sets, formatted.overlaps);
+
+    venn.drawD3Diagram(d3.select(selector), sets, "100%", "100%");
+  });
+}
+
+function formatSets(data) {
+  var sets = [];
+  var overlaps = [];
+  var setMap = {};
+  // By getting sets seperately from overlaps we ensure we have all data to calculate overlaps
+  // if the data isn't ordered appropriately
+  $.each(data, function(index, value){
+    var set = value.label.split('and');
+    if(set.length == 1){
+      sets.push(value);
+      setMap[value.label.trim()] = sets.length - 1;
+    }
+  });
+
+  $.each(data, function(index, value){
+    var set = value.label.split('and');
+    if(set.length > 1){
+      var setIndexes = [];
+      $.each(set, function(index, setName){
+        setIndexes.push(setMap[setName.trim()]);
+      });
+      overlaps.push({"sets": setIndexes, "size": value.size})
+    }
+  });
+
+  return {"sets" : sets, "overlaps" : overlaps};
+}
+
 function populatePieGraph(id) {
   var csvFile = "data/" + id + ".csv";
   var selector = "#" + id;
