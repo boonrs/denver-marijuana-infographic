@@ -8,8 +8,15 @@ function populateVenn(id){
     // // get positions for each set
     var sets = venn.venn(formatted.sets, formatted.overlaps);
 
-    venn.drawD3Diagram(d3.select(selector), sets, "100%", "100%");
-  });
+    var diagram = venn.drawD3Diagram(d3.select(selector), sets, 500, 500);
+
+    // change the colours, add a thick border, remove fill
+    var colors = ['#06191e', '#468394', '#124b5b', '#a3c1ca']
+    diagram.circles.style("fill-opacity", .8)
+      .style("stroke-opacity", 0)
+      .style("fill", function(d,i) { return colors[i]; })
+      .style("stroke", function(d,i) { return colors[i]; });
+    diagram.text.style("fill", "white");
 }
 
 function formatSets(data) {
@@ -28,12 +35,10 @@ function formatSets(data) {
 
   $.each(data, function(index, value){
     var set = value.label.split('and');
-    if(set.length > 1){
-      var setIndexes = [];
-      $.each(set, function(index, setName){
-        setIndexes.push(setMap[setName.trim()]);
-      });
-      overlaps.push({"sets": setIndexes, "size": value.size})
+    if(set.length == 2){
+      var first = setMap[set[0].trim()];
+      var second = setMap[set[1].trim()];
+      overlaps.push({"sets": [first, second], "size": value.size})
     }
   });
 
