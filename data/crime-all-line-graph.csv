@@ -1,47 +1,58 @@
 Quarter,q,year,Series,Total
-Q1 2009,Q1,2009,Marijuana,81
-Q1 2009,Q1,2009,All Other Crime,7604
-Q2 2009,Q2,2009,Marijuana,82
-Q2 2009,Q2,2009,All Other Crime,9079
-Q3 2009,Q3,2009,Marijuana,98
-Q3 2009,Q3,2009,All Other Crime,11201
-Q4 2009,Q4,2009,All Other Crime,9437
-Q4 2009,Q4,2009,Marijuana,49
-Q1 2010,Q1,2010,All Other Crime,9868
-Q1 2010,Q1,2010,Marijuana,83
-Q2 2010,Q2,2010,Marijuana,56
-Q2 2010,Q2,2010,All Other Crime,13257
-Q3 2010,Q3,2010,All Other Crime,14825
-Q3 2010,Q3,2010,Marijuana,44
-Q4 2010,Q4,2010,Marijuana,63
-Q4 2010,Q4,2010,All Other Crime,14484
-Q1 2011,Q1,2011,All Other Crime,13853
-Q1 2011,Q1,2011,Marijuana,62
-Q2 2011,Q2,2011,All Other Crime,14699
-Q2 2011,Q2,2011,Marijuana,53
-Q3 2011,Q3,2011,All Other Crime,15714
-Q3 2011,Q3,2011,Marijuana,41
-Q4 2011,Q4,2011,All Other Crime,13738
-Q4 2011,Q4,2011,Marijuana,29
-Q1 2012,Q1,2012,Marijuana,49
-Q1 2012,Q1,2012,All Other Crime,12953
-Q2 2012,Q2,2012,All Other Crime,14652
-Q2 2012,Q2,2012,Marijuana,45
-Q3 2012,Q3,2012,All Other Crime,15245
-Q3 2012,Q3,2012,Marijuana,41
-Q4 2012,Q4,2012,Marijuana,43
-Q4 2012,Q4,2012,All Other Crime,13726
-Q1 2013,Q1,2013,Marijuana,29
-Q1 2013,Q1,2013,All Other Crime,13067
-Q2 2013,Q2,2013,All Other Crime,18028
-Q2 2013,Q2,2013,Marijuana,87
-Q3 2013,Q3,2013,Marijuana,177
-Q3 2013,Q3,2013,All Other Crime,22342
-Q4 2013,Q4,2013,Marijuana,193
-Q4 2013,Q4,2013,All Other Crime,20310
-Q1 2014,Q1,2014,All Other Crime,19690
-Q1 2014,Q1,2014,Marijuana,174
-Q2 2014,Q2,2014,All Other Crime,20537
-Q2 2014,Q2,2014,Marijuana,152
-Q3 2014,Q3,2014,All Other Crime,22537
-Q3 2014,Q3,2014,Marijuana,211
+Q1 2009,Q1,2009,Marijuana Law Violations,81
+Q1 2009,Q1,2009,All Other Crime,7685
+Q2 2009,Q2,2009,Marijuana Law Violations,82
+Q2 2009,Q2,2009,All Other Crime,9161
+Q3 2009,Q3,2009,Marijuana Law Violations,98
+Q3 2009,Q3,2009,All Other Crime,11299
+Q4 2009,Q4,2009,All Other Crime,9486
+Q4 2009,Q4,2009,Marijuana Law Violations,49
+Q1 2010,Q1,2010,Marijuana Law Violations,83
+Q1 2010,Q1,2010,All Other Crime,9951
+Q2 2010,Q2,2010,All Other Crime,13293
+Q2 2010,Q2,2010,Marijuana Law Violations,56
+Q3 2010,Q3,2010,Marijuana Law Violations,44
+Q3 2010,Q3,2010,All Other Crime,14868
+Q4 2010,Q4,2010,Marijuana Law Violations,63
+Q4 2010,Q4,2010,All Other Crime,14545
+Q1 2011,Q1,2011,All Other Crime,13915
+Q1 2011,Q1,2011,Marijuana Law Violations,62
+Q2 2011,Q2,2011,All Other Crime,14752
+Q2 2011,Q2,2011,Marijuana Law Violations,53
+Q3 2011,Q3,2011,Marijuana Law Violations,41
+Q3 2011,Q3,2011,All Other Crime,15754
+Q4 2011,Q4,2011,Marijuana Law Violations,29
+Q4 2011,Q4,2011,All Other Crime,13765
+Q1 2012,Q1,2012,Crimes Related to Marijuana,51
+Q1 2012,Q1,2012,All Other Crime,12997
+Q1 2012,Q1,2012,Marijuana Law Violations,49
+Q2 2012,Q2,2012,All Other Crime,14693
+Q2 2012,Q2,2012,Crimes Related to Marijuana,66
+Q2 2012,Q2,2012,Marijuana Law Violations,45
+Q3 2012,Q3,2012,All Other Crime,15283
+Q3 2012,Q3,2012,Marijuana Law Violations,41
+Q3 2012,Q3,2012,Crimes Related to Marijuana,61
+Q4 2012,Q4,2012,All Other Crime,13769
+Q4 2012,Q4,2012,Marijuana Law Violations,43
+Q4 2012,Q4,2012,Crimes Related to Marijuana,42
+Q1 2013,Q1,2013,All Other Crime,12992
+Q1 2013,Q1,2013,Marijuana Law Violations,29
+Q1 2013,Q1,2013,Crimes Related to Marijuana,49
+Q2 2013,Q2,2013,Crimes Related to Marijuana,62
+Q2 2013,Q2,2013,Marijuana Law Violations,87
+Q2 2013,Q2,2013,All Other Crime,18115
+Q3 2013,Q3,2013,Crimes Related to Marijuana,72
+Q3 2013,Q3,2013,Marijuana Law Violations,177
+Q3 2013,Q3,2013,All Other Crime,22519
+Q4 2013,Q4,2013,All Other Crime,20503
+Q4 2013,Q4,2013,Marijuana Law Violations,193
+Q4 2013,Q4,2013,Crimes Related to Marijuana,67
+Q1 2014,Q1,2014,All Other Crime,19866
+Q1 2014,Q1,2014,Crimes Related to Marijuana,66
+Q1 2014,Q1,2014,Marijuana Law Violations,174
+Q2 2014,Q2,2014,All Other Crime,20687
+Q2 2014,Q2,2014,Marijuana Law Violations,152
+Q2 2014,Q2,2014,Crimes Related to Marijuana,70
+Q3 2014,Q3,2014,All Other Crime,22741
+Q3 2014,Q3,2014,Crimes Related to Marijuana,68
+Q3 2014,Q3,2014,Marijuana Law Violations,211
