@@ -1,0 +1,17 @@
+Quarter,q,year,Type,Total
+Q1 2012,1,2012,Industry,937
+Q1 2012,1,2012,Nonindustry,582
+Q2 2012,2,2012,Industry,308
+Q2 2012,2,2012,Nonindustry,35
+Q3 2012,3,2012,Industry,128
+Q3 2012,3,2012,Nonindustry,361
+Q4 2012,4,2012,Industry,241
+Q4 2012,4,2012,Nonindustry,64
+Q1 2013,1,2013,Industry,119
+Q1 2013,1,2013,Nonindustry,28
+Q2 2013,2,2013,Industry,123
+Q2 2013,2,2013,Nonindustry,77
+Q3 2013,3,2013,Industry,119
+Q3 2013,3,2013,Nonindustry,28
+Q4 2013,4,2013,Industry,123
+Q4 2013,4,2013,Nonindustry,77
