@@ -43,7 +43,12 @@ function populateLineGraph(id, xTitle, yTitle, series) {
     y.title = yTitle.toUpperCase();
 
     var lines = myChart.addSeries(series, dimple.plot.line);
-
+    // debugger;
+    // var s3 = myChart.addSeries("Laws", dimple.plot.line);
+    // s3.data = [
+    //     { "Laws" : "Now legal to possess and use up to 2 oz of marijuana.", "total" : 0, "Quarter" : "Q1 2013" }, 
+    //     { "Laws" : "Now legal to possess and use up to 2 oz of marijuana.", "total" : 500, "Quarter" : "Q1 2013" }
+    // ];
     // Tooltip
     lines.getTooltipText = function (e) {
     return [e.aggField[0] + ' ' + e.cx, e.cy];
@@ -65,6 +70,15 @@ function populateLineGraph(id, xTitle, yTitle, series) {
         return d3.select(this).attr("transform") + " translate(0, 20) rotate(-45)";
       });
 
+    myChart.svg.selectAll('divide').data(['Q3 2013', 'Q1 2014'])
+      .enter().append("line")
+      .attr("class", "divide")
+      .style("stroke-dasharray", "1,1")
+      .attr("y1", y._min)
+      .attr("y2", y._max)
+      .attr("x1", function (d) {return d;})
+      .attr("x2", function (d) {return d;});
+    debugger;
     // Add a method to draw the chart on resize of the window.
     // Needs to be an anonymous to avoid conflicts with other resize functions
     $(window).resize(function(){
